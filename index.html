@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nimbus BCI - The Intel Inside for Brain-Computer Interfaces. Real-time, explainable neural inference technology for the next generation of BCI devices.">
+    <meta name="keywords" content="BCI, Brain-Computer Interface, Neural Inference, RxInfer, Neurotechnology, AI">
+    <meta name="author" content="Nimbus BCI">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Nimbus BCI - The Intel Inside for BCI">
+    <meta property="og:description" content="Real-time, explainable neural inference for brain-computer interfaces">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./Logowhite.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nimbus BCI - The Intel Inside for BCI">
+    <meta name="twitter:description" content="Real-time, explainable neural inference for brain-computer interfaces">
+    
+    <title>Nimbus BCI - Venture Pitch Deck | Real-time Neural Inference</title>
+    
+    <!-- External Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-white flex flex-col items-center justify-center min-h-screen p-4 overflow-hidden">
+
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#slides-wrapper" class="skip-to-content">Skip to presentation content</a>
+
+    <!-- Screen Reader Announcements (Accessibility) -->
+    <div id="sr-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+
+    <div id="presentation-container" 
+         class="w-full max-w-5xl h-[80vh] flex flex-col bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-yellow-500/20"
+         role="application"
+         aria-label="Nimbus BCI Presentation">
+        <!-- Slides container -->
+        <main id="slides-wrapper" 
+              class="flex-grow flex items-center justify-center overflow-y-auto relative bg-black"
+              style="position: relative;"
+              role="main">
+            
+            <!-- Slide 1: Title -->
+            <div class="slide active text-center relative bg-cover bg-center" style="background-image: url('Facebook.png');">
+                <!-- Background image without overlay for better visibility -->
+                <div class="relative z-10 p-4 flex flex-col justify-end h-full pb-16">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white text-shadow-strong">The Intel Inside for BCI</h1>
+                        <h2 class="text-2xl md:text-3xl mt-4 text-yellow-400">Real-time, Explainable Neural Inference</h2>
+                        <img src="Logowhite.png" alt="Nimbus BCI Logo" class="h-8 mx-auto mt-8" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: What is BCI (FIXED) -->
+            <div class="slide">
+                <div class="w-full p-8 md:p-12 lg:p-16">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">What is a BCI?</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">A Direct Pathway Between Brain and Machine</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <p class="text-lg text-gray-300 mb-4">A Brain-Computer Interface (BCI) is a technology that captures brain signals, analyzes them, and translates them into commands that are relayed to an output device to carry out a desired action.</p>
+                            <p class="text-lg text-gray-300">Essentially, BCI allows for the direct control of computers or other devices using only thought.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <img src="https://cdn.open-pr.com/W/1/W103482607_g.jpg" class="rounded-lg shadow-lg aspect-square object-cover" alt="Non-invasive BCI headset" loading="lazy">
+                                <p class="text-sm mt-2 text-gray-400"><strong>Non-Invasive BCI</strong><br>(e.g., EEG Headset)</p>
+                            </div>
+                             <div class="text-center">
+                                <img src="https://i.guim.co.uk/img/media/c70b5e8844fb3e62f0b17068c727a870199f3895/0_549_5760_3456/500.jpg?quality=85&auto=format&fit=max&s=b57f596555b5d8ee35ae1f4e787717c2" class="rounded-lg shadow-lg aspect-square object-cover" alt="Invasive BCI implant" loading="lazy">
+                                <p class="text-sm mt-2 text-gray-400"><strong>Invasive BCI</strong><br>(e.g., Neural Implant)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Problem -->
+            <div class="slide">
+                <div class="w-full p-8 md:p-12 lg:p-16">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 2: The Problem</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">The BCI Revolution Faces a Bottleneck</h2>
+                    <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
+                        <li><strong class="text-white">High Latency:</strong> Current systems suffer from a 100-300ms delay between thought and action.</li>
+                        <li><strong class="text-white">Low Adaptability:</strong> Models are static and fail to adapt to the brain's changing states, requiring costly retraining.</li>
+                        <li><strong class="text-white">The "Black Box" Issue:</strong> Lack of interpretability is a major roadblock for regulatory approval and user trust.</li>
+                    </ul>
+                    <p class="mt-8 text-yellow-300 bg-yellow-900/50 p-4 rounded-lg">These limitations hinder adoption in medicine, assistive technology, and immersive VR/AR.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3: Our Technological Core -->
+            <div class="slide">
+                <div class="w-full p-8 md:p-12 lg:p-16">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 3: Our Technological Core</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Introducing <span class="text-yellow-400">RxInfer</span>: The Reactive Inference Engine</h2>
+                    
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-full md:w-3/5">
+                            <p class="text-base text-gray-300 mb-4">
+                                RxInfer is a cutting-edge Julia library for automated Bayesian inference on factor graphs. 
+                                It's specifically designed for <strong class="text-white">probabilistic models</strong> that need to run in real-time.
+                            </p>
+                            
+                            <p class="text-base text-gray-300 mb-4">
+                                Instead of static, pre-trained models, RxInfer builds dynamic models that continuously update 
+                                as new data arrives, making it perfect for noisy, ever-changing brain signals.
+                            </p>
+                            
+                            <div class="flex flex-wrap items-center">
+                                <span class="text-base text-gray-300">Our co-founder,</span>
+                                <span class="text-yellow-400 text-base font-bold mx-1">Lazy Dynamics</span>
+                                <span class="text-base text-gray-300">is actively developing the RxInfer technology and its applications.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="w-full md:w-2/5">
+                            <div class="card-style p-3 rounded-lg mb-4">
+                                <h4 class="text-lg font-bold text-white mb-1">Probabilistic Programming</h4>
+                                <p class="text-sm text-gray-300">Models uncertainty directly, leading to robust and trustworthy predictions.</p>
+                            </div>
+                            
+                            <div class="card-style p-3 rounded-lg mb-4">
+                                <h4 class="text-lg font-bold text-white mb-1">Reactive Message Passing</h4>
+                                <p class="text-sm text-gray-300">An efficient algorithm for real-time inference on streaming data, ensuring minimal latency.</p>
+                            </div>
+                            
+                            <div class="flex flex-row items-center justify-center space-x-6 mt-2">
+                                <img src="rxinfer_logo.svg" alt="RxInfer Logo" class="h-8" loading="lazy">
+                                <img src="lazydynamics_logo.svg" alt="Lazy Dynamics Logo" class="h-6" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: The Competitive Landscape -->
+            <div class="slide w-full">
+                <div class="w-full p-8 md:p-12 lg:p-16">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">Slide 4: The Competitive Landscape</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Why BCI Processing Methods Fall Short</h2>
+                    <div class="table-container">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-slate-800 text-sm">
+                                <tr>
+                                    <th class="p-2 border border-slate-700">Criterion</th>
+                                    <th class="p-2 border border-slate-700">LDA</th>
+                                    <th class="p-2 border border-slate-700">SVM</th>
+                                    <th class="p-2 border border-slate-700">Deep Learning</th>
+                                    <th class="p-2 border border-slate-700 bg-yellow-900/50">Bayesian Inference on RxInfer</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300 text-xs">
+                                <tr>
+                                    <td class="p-2 border border-slate-700 font-semibold">Real-time Performance</td>
+                                    <td class="p-2 border border-slate-700">High <span class="block text-gray-400">Very fast for simple, linear problems.</span></td>
+                                    <td class="p-2 border border-slate-700">Medium <span class="block text-xs text-gray-400">Slower inference, especially with complex kernels.</span></td>
+                                    <td class="p-2 border border-slate-700">Low <span class="block text-xs text-gray-400">Computationally heavy, often requires offline processing.</span></td>
+                                    <td class="p-2 border border-slate-700 text-yellow-300 font-bold">High (Reactive) <span class="block text-yellow-400">Designed for streaming data and continuous updates.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-slate-700 font-semibold">Adaptability</td>
+                                    <td class="p-2 border border-slate-700">Low <span class="block text-gray-400">A static model that must be fully retrained.</span></td>
+                                    <td class="p-2 border border-slate-700">Medium <span class="block text-xs text-gray-400">Can be adapted, but it's often complex and inefficient.</span></td>
+                                    <td class="p-2 border border-slate-700">Medium <span class="block text-xs text-gray-400">Requires large new datasets and extensive retraining.</span></td>
+                                    <td class="p-2 border border-slate-700 text-yellow-300 font-bold">High (By Design) <span class="block text-yellow-400">Continuously learns and updates from new data points.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-slate-700 font-semibold">Robustness (to noise)</td>
+                                    <td class="p-2 border border-slate-700">Low <span class="block text-xs text-gray-400">Highly sensitive to outliers and noisy signals.</span></td>
+                                    <td class="p-2 border border-slate-700">Medium <span class="block text-xs text-gray-400">More robust than LDA but can still be affected.</span></td>
+                                    <td class="p-2 border border-slate-700">Medium <span class="block text-xs text-gray-400">Can learn to ignore noise but requires vast data.</span></td>
+                                    <td class="p-2 border border-slate-700 text-yellow-300 font-bold">High (Explicit Modeling) <span class="block text-yellow-400">Models uncertainty directly, making it resilient to noise.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-slate-700 font-semibold">Interpretability</td>
+                                    <td class="p-2 border border-slate-700">High <span class="block text-xs text-gray-400">Feature contributions are clear and understandable.</span></td>
+                                    <td class="p-2 border border-slate-700">Medium-Low <span class="block text-xs text-gray-400">Becomes a "black box" with non-linear kernels.</span></td>
+                                    <td class="p-2 border border-slate-700">Very Low ("Black Box") <span class="block text-xs text-gray-400">Decision-making process is completely opaque.</span></td>
+                                    <td class="p-2 border border-slate-700 text-yellow-300 font-bold">Very High ("White Box") <span class="block text-yellow-400">The entire model structure and reasoning is transparent.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Nimbus Studio Competitors -->
+            <div class="slide w-full">
+                <div class="w-full p-6 md:p-8 lg:p-10">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">Slide 5: Nimbus Studio Competitors</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-5">Why Existing Tools Fall Short</h2>
+                    <div class="table-container">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-slate-800 text-sm">
+                                <tr>
+                                    <th class="p-2 border border-slate-700">Alternative</th>
+                                    <th class="p-2 border border-slate-700">Limitation</th>
+                                    <th class="p-2 border border-slate-700 bg-yellow-900/50 text-yellow-300">Nimbus Advantage</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300 text-sm">
+                                <tr class="hover:bg-slate-800/50">
+                                    <td class="p-3 border border-slate-700 font-semibold text-white">NeuroPype</td>
+                                    <td class="p-3 border border-slate-700 text-gray-400">$2,000–$5,000/year, desktop-only, no embeddable SDK</td>
+                                    <td class="p-3 border border-slate-700 text-yellow-300 font-semibold">10× cheaper, web-based, embeddable SDK for hardware partners</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/50">
+                                    <td class="p-3 border border-slate-700 font-semibold text-white">OpenBCI GUI</td>
+                                    <td class="p-3 border border-slate-700 text-gray-400">No ML pipeline, no model training, visualization only</td>
+                                    <td class="p-3 border border-slate-700 text-yellow-300 font-semibold">Full ML pipeline from offline training to real-time deployment</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/50">
+                                    <td class="p-3 border border-slate-700 font-semibold text-white">MNE-Python</td>
+                                    <td class="p-3 border border-slate-700 text-gray-400">Code-only, requires deep Python expertise, no visual interface</td>
+                                    <td class="p-3 border border-slate-700 text-yellow-300 font-semibold">Visual drag-and-drop interface accessible to non-coders</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/50">
+                                    <td class="p-3 border border-slate-700 font-semibold text-white">MATLAB / BCILAB</td>
+                                    <td class="p-3 border border-slate-700 text-gray-400">Expensive license ($2K–$5K/year), legacy codebase, no cloud</td>
+                                    <td class="p-3 border border-slate-700 text-yellow-300 font-semibold">Modern cloud-native stack, no license fees, open integration</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/50">
+                                    <td class="p-3 border border-slate-700 font-semibold text-white">Custom dev team</td>
+                                    <td class="p-3 border border-slate-700 text-gray-400">$120K+/year per developer, 12–18 months to first working prototype</td>
+                                    <td class="p-3 border border-slate-700 text-yellow-300 font-semibold">SDK co-development at a fraction of the cost, 6× faster to market</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-4 text-center text-sm text-gray-400 italic">No existing tool combines a visual interface, Bayesian probabilistic outputs, and an embeddable hardware SDK in a single platform.</p>
+                </div>
+            </div>
+
+            <!-- Slide 6: The Solution -->
+            <div class="slide">
+                <div class="w-full p-8 md:p-12 lg:p-16">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 6: The Solution: RxInfer Inside</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Real-time, Explainable Inference for BCI</h2>
+                    <p class="text-lg text-gray-300 mb-6">We are building an <strong class="font-bold">SDK/API powered by RxInfer</strong> to serve as the core processing engine for the next generation of BCI devices.</p>
+                    <div class="grid md:grid-cols-3 gap-4 text-center">
+                        <div class="card-style p-4 rounded-lg">
+                            <h4 class="font-bold text-white">Factor Graphs</h4>
+                            <p class="text-sm text-gray-400">For "white box" models that regulators and users can trust.</p>
+                        </div>
+                        <div class="card-style p-4 rounded-lg">
+                            <h4 class="font-bold text-white">Variational Inference</h4>
+                            <p class="text-sm text-gray-400">For scalable computation balancing accuracy and speed.</p>
+                        </div>
+                        <div class="card-style p-4 rounded-lg">
+                            <h4 class="font-bold text-white">Reactive Message Passing</h4>
+                            <p class="text-sm text-gray-400">For adaptive, real-time performance on streaming data.</p>
+                        </div>
+                    </div>
+                    <p class="mt-8 text-2xl font-bold text-center">The result: We reduce BCI latency from over 200ms to a target of <span class="text-yellow-400">10-20ms</span>.</p>
+                </div>
+            </div>
+            
+            <!-- Slide 6: Product Offering -->
+            <div class="slide">
+                <div class="w-full p-8 md:p-12 lg:p-16">
+                    <div class="flex flex-col md:flex-row items-start gap-8">
+                        <div class="w-full md:w-1/2">
+                            <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 7: Product Offering</h3>
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">The "Intel Inside" for Neurotechnology</h2>
+                            <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
+                                <li><strong class="text-white">A Core Engine:</strong> A powerful inference engine deployable in the cloud or at the edge.</li>
+                                <li><strong class="text-white">Pre-built Models:</strong> A library of models for common BCI paradigms (e.g., motor imagery, SSVEP, P300).</li>
+                                <li><strong class="text-white">Developer Tools:</strong> A comprehensive SDK and API for seamless integration into any neurotech stack.</li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/2 flex justify-center items-center">
+                            <img src="nimbus_engine.png" alt="Nimbus Engine" class="max-w-full h-auto rounded-lg shadow-lg" / loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Visual Pipeline Builder -->
+            <div class="slide slide-image-full text-center relative bg-cover bg-center" style="background-image: url('pipeline_builder.png'); background-position: top center;">
+                <div class="relative z-10 flex flex-col justify-between h-full">
+                    <!-- Header at top -->
+                    <div style="background:rgba(13,17,23,0.92); padding:0.9rem 2rem; border-bottom:2px solid rgba(250,204,21,0.5); text-align:left;">
+                        <h3 style="color:#facc15; font-size:0.85rem; font-weight:700; margin:0 0 0.15rem;">Slide 8: Visual Pipeline Builder</h3>
+                        <h2 style="color:#ffffff; font-size:1.5rem; font-weight:800; margin:0; line-height:1.2;">Nimbus Visual BCI Pipeline Generator</h2>
+                    </div>
+                    <!-- Spacer -->
+                    <div style="flex:1;"></div>
+                    <!-- Key Features bar at bottom -->
+                    <div style="background:rgba(0,0,0,0.88); padding:0.7rem 1.5rem; border-top:1px solid rgba(255,255,255,0.1);">
+                        <div style="display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+                            <h4 style="color:#facc15; font-weight:700; font-size:0.9rem; margin:0; white-space:nowrap;">⚡ Key Features:</h4>
+                            <div style="display:flex; gap:1.2rem; color:#ffffff; flex-wrap:wrap; font-size:0.85rem;">
+                                <span>• Drag-and-drop interface</span>
+                                <span>• Real-time pipeline execution</span>
+                                <span>• Visual execution logs</span>
+                                <span>• No-code BCI development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Target Customers -->
+            <div class="slide w-full">
+                <div class="w-full p-6 md:p-8 lg:p-10">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">Slide 9: Target Customers</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-5">Three Validated Customer Segments</h2>
+                    <div class="space-y-3">
+                        <!-- Segment 1 -->
+                        <div class="card-style p-4 rounded-lg border-l-4 border-yellow-400">
+                            <div class="flex flex-col md:flex-row md:items-start gap-3">
+                                <div class="md:w-1/4">
+                                    <span class="inline-block bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded mb-1">SEGMENT 1</span>
+                                    <h4 class="font-bold text-white text-sm">Researchers, PhD Students &amp; BCI Consumers</h4>
+                                </div>
+                                <div class="md:w-1/4 text-xs text-gray-300">
+                                    <span class="text-gray-500 block mb-1">Who</span>
+                                    Postdocs, PI-led labs, enthusiasts, r/neuralinterfaces community
+                                </div>
+                                <div class="md:w-1/4 text-xs text-gray-300">
+                                    <span class="text-gray-500 block mb-1">Channel</span>
+                                    Academic conferences, Discord, NeurotechX, r/neuralinterfaces
+                                </div>
+                                <div class="md:w-1/4">
+                                    <span class="text-gray-500 block mb-1 text-xs">Price / Validation</span>
+                                    <span class="text-yellow-300 font-bold text-sm">$49–$199/month</span>
+                                    <span class="block text-xs text-green-400 mt-1">&#10003; 80+ on waiting list (zero marketing)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Segment 2 -->
+                        <div class="card-style p-4 rounded-lg border-l-4 border-yellow-400">
+                            <div class="flex flex-col md:flex-row md:items-start gap-3">
+                                <div class="md:w-1/4">
+                                    <span class="inline-block bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded mb-1">SEGMENT 2</span>
+                                    <h4 class="font-bold text-white text-sm">BCI Hardware Startups</h4>
+                                </div>
+                                <div class="md:w-1/4 text-xs text-gray-300">
+                                    <span class="text-gray-500 block mb-1">Who</span>
+                                    Miruns, BrainBit, PiEEG and similar hardware-first neurotech companies
+                                </div>
+                                <div class="md:w-1/4 text-xs text-gray-300">
+                                    <span class="text-gray-500 block mb-1">Channel</span>
+                                    Direct outreach, BCI Society events, hardware accelerators
+                                </div>
+                                <div class="md:w-1/4">
+                                    <span class="text-gray-500 block mb-1 text-xs">Price / Validation</span>
+                                    <span class="text-yellow-300 font-bold text-sm">$20K–$150K contract + equity</span>
+                                    <span class="block text-xs text-green-400 mt-1">&#10003; 2 signed LOIs (Miruns, BrainBit+PiEEG)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Segment 3 -->
+                        <div class="card-style p-4 rounded-lg border-l-4 border-gray-500">
+                            <div class="flex flex-col md:flex-row md:items-start gap-3">
+                                <div class="md:w-1/4">
+                                    <span class="inline-block bg-gray-600 text-white text-xs font-bold px-2 py-1 rounded mb-1">SEGMENT 3 — Q4 2026</span>
+                                    <h4 class="font-bold text-white text-sm">Medical Device &amp; Clinical Teams</h4>
+                                </div>
+                                <div class="md:w-1/4 text-xs text-gray-300">
+                                    <span class="text-gray-500 block mb-1">Who</span>
+                                    Medical device manufacturers, hospital neuro departments, clinical research organisations
+                                </div>
+                                <div class="md:w-1/4 text-xs text-gray-300">
+                                    <span class="text-gray-500 block mb-1">Channel</span>
+                                    Enterprise direct sales, medical device conferences, regulatory consultants
+                                </div>
+                                <div class="md:w-1/4">
+                                    <span class="text-gray-500 block mb-1 text-xs">Price / Validation</span>
+                                    <span class="text-yellow-300 font-bold text-sm">$6K–$60K/year</span>
+                                    <span class="block text-xs text-gray-400 mt-1">Planned Q4 2026 enterprise tier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Market Size & Growth -->
+            <div class="slide">
+                <div class="w-full p-6 md:p-8 lg:p-10">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">Slide 10: Market Size & Growth</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">A Rapidly Expanding Market Opportunity</h2>
+                    <!-- Total market headline -->
+                    <div class="text-center mb-5">
+                        <p class="text-5xl font-bold text-yellow-400">$6.2B</p>
+                        <p class="text-gray-300">Total BCI Market by 2030 &mdash; up from $2.3B in 2023</p>
+                        <p class="text-lg text-white mt-1 font-semibold">15&ndash;17% CAGR</p>
+                    </div>
+                    <!-- Market segments -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center mb-5">
+                        <div class="card-style p-3 rounded-lg">
+                            <p class="text-2xl font-bold text-white">$3.5B</p>
+                            <p class="text-gray-400 text-sm">Consumer</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg">
+                            <p class="text-2xl font-bold text-white">$2.5B</p>
+                            <p class="text-gray-400 text-sm">Medical</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg">
+                            <p class="text-2xl font-bold text-white">$1.2B</p>
+                            <p class="text-gray-400 text-sm">Invasive</p>
+                        </div>
+                    </div>
+                    <!-- Nimbus addressable segment -->
+                    <div class="border border-yellow-400/40 rounded-lg p-4 bg-yellow-900/10">
+                        <h4 class="text-yellow-400 font-bold text-sm mb-2">&#9654; Nimbus Addressable Segment</h4>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div class="text-sm text-gray-300">
+                                <span class="text-white font-semibold">Neurotech software tools:</span> $50&ndash;100M/year &mdash; BCI labs, researchers and developers paying for pipeline tools and ML infrastructure
+                            </div>
+                            <div class="text-sm text-gray-300">
+                                <span class="text-white font-semibold">B2B SDK licensing:</span> Structurally similar to Arm IP licensing &mdash; every hardware product built on Nimbus SDK pays a per-unit royalty
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Slide 11: Business Model & Pricing -->
+            <div class="slide">
+                <div class="w-full p-4 md:p-6 lg:p-8">
+                    <h3 class="text-lg font-bold text-yellow-400 mb-2">Slide 11: Business Model</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Two Independent Revenue Streams</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Stream 1: Nimbus Studio SaaS -->
+                        <div class="card-style p-4 rounded-lg border-2 border-yellow-400 bg-gradient-to-b from-slate-900 to-slate-800">
+                            <div class="text-center mb-3">
+                                <span class="inline-block bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full mb-2">STREAM 1</span>
+                                <h3 class="text-xl font-bold text-yellow-400">Nimbus Studio</h3>
+                                <p class="text-xs text-gray-400">Freemium SaaS &mdash; researchers &amp; BCI consumers</p>
+                            </div>
+                            <div class="text-center mb-3">
+                                <p class="text-3xl font-bold text-white">$49 &ndash; $199</p>
+                                <p class="text-xs text-gray-400">/month per seat</p>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">Free tier</strong> &mdash; unlimited pipeline building, community support</span></li>
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">Pro ($49/mo)</strong> &mdash; real-time execution, export, priority support</span></li>
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">Team ($199/mo)</strong> &mdash; shared workspaces, advanced models, SLA</span></li>
+                            </ul>
+                            <div class="mt-3 border-t border-slate-700 pt-2">
+                                <p class="text-xs text-green-400">&#10003; 80+ on waiting list &mdash; zero paid marketing</p>
+                            </div>
+                        </div>
+                        <!-- Stream 2: Nimbus SDK -->
+                        <div class="card-style p-4 rounded-lg border-2 border-gray-500 bg-gradient-to-b from-slate-900 to-slate-800">
+                            <div class="text-center mb-3">
+                                <span class="inline-block bg-gray-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-2">STREAM 2</span>
+                                <h3 class="text-xl font-bold text-white">Nimbus SDK</h3>
+                                <p class="text-xs text-gray-400">B2B co-development &mdash; hardware startups</p>
+                            </div>
+                            <div class="text-center mb-3">
+                                <p class="text-3xl font-bold text-white">$20K &ndash; $150K</p>
+                                <p class="text-xs text-gray-400">per contract + equity/royalties</p>
+                            </div>
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">9-month co-development</strong> &mdash; full team + advisors access</span></li>
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">RxInfer Pro license</strong> &mdash; embedded in partner hardware</span></li>
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">Per-unit royalty</strong> &mdash; recurring revenue on every device shipped</span></li>
+                            </ul>
+                            <div class="mt-3 border-t border-slate-700 pt-2">
+                                <p class="text-xs text-green-400">&#10003; 2 signed LOIs: Miruns &amp; BrainBit+PiEEG</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Partnership Model -->
+            <div class="slide w-full">
+                <div class="w-full p-6 md:p-8 lg:p-10">
+                    <h3 class="text-lg font-bold text-yellow-400 mb-3">Slide 12: Partnership Model</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-5">Why Partner with Nimbus?</h2>
+                    
+                    <!-- Hardware-Software-Applications Flow (Text-based) -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-center space-x-4 mb-4">
+                            <div class="card-style p-4 rounded-lg text-center bg-slate-800 border border-gray-600">
+                                <div class="w-8 h-8 bg-gray-600 rounded mx-auto mb-2 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-white">EEG Hardware</h4>
+                                <p class="text-xs text-gray-400">Your specialized sensors and acquisition systems</p>
+                            </div>
+                            <div class="text-yellow-400 text-2xl">→</div>
+                            <div class="card-style p-4 rounded-lg text-center bg-yellow-400 border-2 border-yellow-400">
+                                <div class="w-8 h-8 bg-black rounded mx-auto mb-2 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-black">Nimbus Software Layer</h4>
+                                <p class="text-xs text-black">Real-time inference engine with explainable AI</p>
+                            </div>
+                            <div class="text-yellow-400 text-2xl">→</div>
+                            <div class="card-style p-4 rounded-lg text-center bg-slate-800 border border-gray-600">
+                                <div class="w-8 h-8 bg-gray-600 rounded mx-auto mb-2 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-white">Applications</h4>
+                                <p class="text-xs text-gray-400">Medical devices, gaming, AR/VR, assistive tech, meditation, stress monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefits Grid -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="card-style p-3 rounded-lg">
+                            <h4 class="text-sm font-bold text-yellow-400 mb-2">Complete Computational Expertise</h4>
+                            <p class="text-xs text-gray-300">No need to hire expensive AI/ML specialists. We provide the entire software stack.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg">
+                            <h4 class="text-sm font-bold text-yellow-400 mb-2">Faster Time-to-Market</h4>
+                            <p class="text-xs text-gray-300">Launch products 6-12 months faster. Focus on hardware while we handle software.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg">
+                            <h4 class="text-sm font-bold text-yellow-400 mb-2">Cheaper than In-House</h4>
+                            <p class="text-xs text-gray-300">Save 60-80% compared to building an internal team.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg">
+                            <h4 class="text-sm font-bold text-yellow-400 mb-2">All Benefits of RxInfer</h4>
+                            <p class="text-xs text-gray-300">10x latency reduction, explainable AI, real-time adaptability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Value Proposition -->
+            <div class="slide">
+                <div class="w-full p-8 md:p-12 lg:p-16">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 13: Value Proposition</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Why We Win</h2>
+                     <ul class="space-y-6 text-lg text-gray-300 list-disc list-inside">
+                        <li><strong class="text-white">10x Performance Boost:</strong> A massive reduction in latency creates a fundamentally better user experience.</li>
+                        <li><strong class="text-white">Regulatory Advantage:</strong> Our "white box" approach provides the explainability required for FDA/CE approval.</li>
+                        <li><strong class="text-white">Operational Efficiency:</strong> High adaptability eliminates the need for frequent, expensive retraining campaigns.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Slide 14: Traction -->
+            <div class="slide w-full">
+                <div class="w-full p-6 md:p-8 lg:p-10">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">Slide 14: Traction</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-5">Early Validation &mdash; Before Funding</h2>
+                    <div class="grid md:grid-cols-3 gap-4 mb-5">
+                        <div class="card-style p-4 rounded-lg text-center border border-yellow-400/30">
+                            <p class="text-4xl font-bold text-yellow-400">80+</p>
+                            <p class="text-sm text-white font-semibold mt-1">Waiting List</p>
+                            <p class="text-xs text-gray-400 mt-1">Researchers &amp; labs signed up with zero paid marketing</p>
+                        </div>
+                        <div class="card-style p-4 rounded-lg text-center border border-yellow-400/30">
+                            <p class="text-4xl font-bold text-yellow-400">2</p>
+                            <p class="text-sm text-white font-semibold mt-1">Signed LOIs</p>
+                            <p class="text-xs text-gray-400 mt-1">Miruns &amp; BrainBit+PiEEG &mdash; hardware SDK co-development</p>
+                        </div>
+                        <div class="card-style p-4 rounded-lg text-center border border-yellow-400/30">
+                            <p class="text-4xl font-bold text-yellow-400">&#10003;</p>
+                            <p class="text-sm text-white font-semibold mt-1">Live Product</p>
+                            <p class="text-xs text-gray-400 mt-1">Nimbus Studio publicly accessible with working pipeline builder</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="card-style p-3 rounded-lg flex items-start gap-3">
+                            <span class="text-green-400 text-lg mt-0.5">&#10003;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">RxInfer.jl &mdash; 500+ GitHub stars, used in 10+ academic publications</p>
+                                <p class="text-xs text-gray-400">The inference engine powering Nimbus already has proven scientific traction</p>
+                            </div>
+                        </div>
+                        <div class="card-style p-3 rounded-lg flex items-start gap-3">
+                            <span class="text-green-400 text-lg mt-0.5">&#10003;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Advisory board with Jeff Beck (Duke), Ryan Smith (LIBR), Bert de Vries (TU/e), Alexander Kuck</p>
+                                <p class="text-xs text-gray-400">World-class scientific and industry validation secured</p>
+                            </div>
+                        </div>
+                        <div class="card-style p-3 rounded-lg flex items-start gap-3">
+                            <span class="text-green-400 text-lg mt-0.5">&#10003;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Presented at BCI Society 2024 &mdash; strong community reception</p>
+                                <p class="text-xs text-gray-400">Direct access to the global BCI research community</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Revenue Projections -->
+            <div class="slide w-full">
+                <div class="w-full p-6 md:p-8 lg:p-10">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">Slide 15: Revenue Projections</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-5">Path to $1.1M+ ARR by Year 3</h2>
+                    <!-- Year summary cards -->
+                    <div class="grid md:grid-cols-3 gap-4 mb-5">
+                        <div class="card-style p-4 rounded-lg border border-slate-600">
+                            <p class="text-xs text-gray-400 mb-1">Year 1 (2025)</p>
+                            <p class="text-3xl font-bold text-white">$20K</p>
+                            <div class="mt-2 space-y-1 text-xs text-gray-300">
+                                <p><span class="text-yellow-400">Studio:</span> Free beta &mdash; 0 revenue</p>
+                                <p><span class="text-yellow-400">SDK:</span> 1 co-dev contract ($20K)</p>
+                            </div>
+                        </div>
+                        <div class="card-style p-4 rounded-lg border border-yellow-400/40">
+                            <p class="text-xs text-gray-400 mb-1">Year 2 (2026)</p>
+                            <p class="text-3xl font-bold text-yellow-400">$120K</p>
+                            <div class="mt-2 space-y-1 text-xs text-gray-300">
+                                <p><span class="text-yellow-400">Studio:</span> 20 Pro seats &mdash; $20K/yr</p>
+                                <p><span class="text-yellow-400">SDK:</span> 2 contracts &mdash; $100K</p>
+                            </div>
+                        </div>
+                        <div class="card-style p-4 rounded-lg border border-yellow-400">
+                            <p class="text-xs text-gray-400 mb-1">Year 3 (2027)</p>
+                            <p class="text-3xl font-bold text-yellow-400">$1.1M+</p>
+                            <div class="mt-2 space-y-1 text-xs text-gray-300">
+                                <p><span class="text-yellow-400">Studio:</span> 300 seats &mdash; $770K/yr</p>
+                                <p><span class="text-yellow-400">SDK:</span> 3+ contracts &mdash; $300K+</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Upside scenario -->
+                    <div class="border border-yellow-400/30 rounded-lg p-4 bg-yellow-900/10">
+                        <div class="flex items-start gap-3">
+                            <span class="text-yellow-400 text-lg">&#9650;</span>
+                            <div>
+                                <p class="text-sm font-semibold text-yellow-300">Upside Scenario: $4.5M ARR by Year 3</p>
+                                <p class="text-xs text-gray-400 mt-1">If one SDK partner ships 10,000+ devices with per-unit royalty, or enterprise clinical tier launches on schedule in Q4 2026, cumulative Year 3 revenue reaches $4.5M. This is structurally similar to the Arm licensing model applied to BCI hardware.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 16: Long-Term Vision -->
+            <div class="slide w-full">
+                <div class="w-full p-6 md:p-8 lg:p-10">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">Slide 16: Long-Term Vision</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-5">The Figma of BCI</h2>
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="space-y-4">
+                            <div class="card-style p-4 rounded-lg border-l-4 border-yellow-400">
+                                <p class="text-xs text-gray-400 mb-1">Years 1&ndash;3 &mdash; Foundation</p>
+                                <p class="text-sm font-semibold text-white">Establish Nimbus Studio as the standard tool for BCI research. Sign 5+ SDK hardware partners. Reach $1M+ ARR.</p>
+                            </div>
+                            <div class="card-style p-4 rounded-lg border-l-4 border-yellow-400">
+                                <p class="text-xs text-gray-400 mb-1">Years 3&ndash;5 &mdash; Scale</p>
+                                <p class="text-sm font-semibold text-white">Launch enterprise clinical tier. Expand SDK royalty base to 50K+ devices. Build a community marketplace of BCI pipeline templates.</p>
+                            </div>
+                            <div class="card-style p-4 rounded-lg border-l-4 border-gray-500">
+                                <p class="text-xs text-gray-400 mb-1">Years 7&ndash;10 &mdash; Platform</p>
+                                <p class="text-sm font-semibold text-white">Become the default inference layer for BCI hardware globally &mdash; the &ldquo;Intel Inside&rdquo; of neurotechnology. Target: $50M+ valuation.</p>
+                            </div>
+                        </div>
+                        <div class="card-style p-5 rounded-lg bg-gradient-to-b from-slate-900 to-slate-800 flex flex-col justify-center">
+                            <p class="text-5xl font-bold text-yellow-400 text-center">$50M+</p>
+                            <p class="text-center text-gray-300 mt-2">Target valuation by Year 7&ndash;10</p>
+                            <div class="mt-5 space-y-2 text-sm text-gray-300">
+                                <p class="flex items-center gap-2"><span class="text-yellow-400">&#9679;</span> Every BCI device ships with Nimbus SDK</p>
+                                <p class="flex items-center gap-2"><span class="text-yellow-400">&#9679;</span> Researchers worldwide use Nimbus Studio</p>
+                                <p class="flex items-center gap-2"><span class="text-yellow-400">&#9679;</span> Nimbus = the standard for explainable neural inference</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 17: The Team -->
+            <div class="slide">
+                <div class="w-full p-4 md:p-6 lg:p-8">
+                    <h3 class="text-lg font-bold text-yellow-400 mb-2">Slide 17: The Team</h3>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Our Founding Team & Expertise</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div class="card-style p-3 rounded-lg text-center bg-slate-900">
+                            <img src="Sergey.svg" alt="Sergey Musienko" class="w-16 h-16 rounded-full mx-auto mb-2" loading="lazy">
+                            <div class="relative">
+                                <h4 class="text-sm font-bold text-white">Sergey Musienko</h4>
+                                <a href="https://www.linkedin.com/in/sergeymusienko/" target="_blank" class="absolute top-0 right-2 hover:text-yellow-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <p class="mt-1 text-yellow-400 text-sm">CEO</p>
+                            <p class="mt-1 text-xs text-gray-400">Drives strategy and partnerships in deep-tech ventures.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg text-center bg-slate-900">
+                            <img src="Albert.svg" alt="Albert Podusenko" class="w-16 h-16 rounded-full mx-auto mb-2" loading="lazy">
+                            <div class="relative">
+                                <h4 class="text-sm font-bold text-white">Albert Podusenko</h4>
+                                <a href="https://www.linkedin.com/in/albertpod/" target="_blank" class="absolute top-0 right-2 hover:text-yellow-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <p class="mt-1 text-yellow-400 text-sm">CTO</p>
+                            <p class="mt-1 text-xs text-gray-400">Tech development & probabilistic programming.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg text-center bg-slate-900">
+                            <img src="Kirill.svg" alt="Kirill Parinov" class="w-16 h-16 rounded-full mx-auto mb-2" loading="lazy">
+                            <div class="relative">
+                                <h4 class="text-sm font-bold text-white">Kirill Parinov</h4>
+                                <a href="https://www.linkedin.com/in/%F0%9F%90%9C-kir%C3%ADll-p%C3%A1rinov-1578161a5/" target="_blank" class="absolute top-0 right-2 hover:text-yellow-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <p class="mt-1 text-yellow-400 text-sm">CBDO</p>
+                            <p class="mt-1 text-xs text-gray-400">Market strategy & partnerships.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg text-center bg-slate-900">
+                            <img src="Dmitry.svg" alt="Dmitry Bagaev" class="w-16 h-16 rounded-full mx-auto mb-2" loading="lazy">
+                            <div class="relative">
+                                <h4 class="text-sm font-bold text-white">Dmitry Bagaev</h4>
+                                <a href="https://www.linkedin.com/in/bvdmitri/" target="_blank" class="absolute top-0 right-2 hover:text-yellow-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <p class="mt-1 text-yellow-400 text-sm">Core Architect</p>
+                            <p class="mt-1 text-xs text-gray-400">Creator of RxInfer, bridges research with products.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg text-center bg-slate-900">
+                            <img src="Ismail_bw.png" alt="İsmail Şenöz" class="w-16 h-16 rounded-full mx-auto mb-2" loading="lazy">
+                            <div class="relative">
+                                <h4 class="text-sm font-bold text-white">İsmail Şenöz</h4>
+                                <a href="https://www.linkedin.com/in/ismail-senoz/" target="_blank" class="absolute top-0 right-2 hover:text-yellow-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <p class="mt-1 text-yellow-400 text-sm">Chief Scientist</p>
+                            <p class="mt-1 text-xs text-gray-400">Ph.D. ML from TU/e, leads scientific discovery.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg text-center bg-slate-900">
+                            <img src="Bart_bw.png" alt="Bart van Erp" class="w-16 h-16 rounded-full mx-auto mb-2" loading="lazy">
+                            <div class="relative">
+                                <h4 class="text-sm font-bold text-white">Bart van Erp</h4>
+                                <a href="https://www.linkedin.com/in/bart-van-erp/" target="_blank" class="absolute top-0 right-2 hover:text-yellow-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <p class="mt-1 text-yellow-400 text-sm">Chief Product Officer</p>
+                            <p class="mt-1 text-xs text-gray-400">Ph.D. EE from TU/e, probabilistic programming tools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Advisory Board -->
+            <div class="slide">
+                <div class="w-full p-8 md:p-12 lg:p-16">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 18: Advisory Board</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Guidance from Industry Leaders</h2>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="card-style p-3 rounded-lg text-center">
+                            <a href="https://www.linkedin.com/in/jeff-beck-6b5085196/" target="_blank" class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors">
+                                <h4 class="text-lg font-bold text-white">Jeff Beck</h4>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <p class="mt-2 text-sm text-gray-400">Neuroscientist and Professor at Duke University with deep expertise in computational neuroscience and brain-machine interfaces.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg text-center">
+                            <a href="https://www.linkedin.com/in/ryan-smith-a03462281/" target="_blank" class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors">
+                                <h4 class="text-lg font-bold text-white">Ryan Smith</h4>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <p class="mt-2 text-sm text-gray-400">Associate Professor at Laureate Institute for Brain Research. Neuroscientist and entrepreneur specializing in brain-computer interfaces and neurotechnology translation.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg text-center">
+                            <a href="https://www.linkedin.com/in/bertdv/" target="_blank" class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors">
+                                <h4 class="text-lg font-bold text-white">Bert de Vries</h4>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <p class="mt-2 text-sm text-gray-400">Professor at Eindhoven University of Technology and co-founder of GN Hearing. Expert in Bayesian machine learning and signal processing.</p>
+                        </div>
+                        <div class="card-style p-3 rounded-lg text-center">
+                            <a href="https://www.linkedin.com/in/dr-alexander-kuck-1a146075/" target="_blank" class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors">
+                                <h4 class="text-lg font-bold text-white">Alexander Kuck</h4>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <p class="mt-2 text-sm text-gray-400">Industry leader and scientist with expertise in neurotechnology, brain-machine interfaces, and medical device software development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Slide 16: Contact -->
+            <div class="slide bg-black">
+                <div class="w-full p-8 md:p-12 lg:p-16 flex flex-row items-center">
+                    <!-- Left side with text content -->
+                    <div class="w-1/2 text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Thank You</h2>
+                        <p class="text-2xl text-yellow-400 font-semibold mb-8">Let's build the future of neurotechnology together.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <a href="https://nimbusbci.com/" target="_blank" class="text-lg text-gray-300 hover:text-yellow-400 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9"/></svg>
+                                    nimbusbci.com
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://www.linkedin.com/company/nimbusbci/" target="_blank" class="text-lg text-gray-300 hover:text-yellow-400 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                    linkedin.com/company/nimbusbci
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side with video -->
+                    <div class="w-1/2 flex justify-center">
+                        <video class="rounded-lg shadow-lg" width="100%" autoplay loop muted playsinline>
+                            <source src="nimbus.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Навигация -->
+        <footer class="bg-slate-950 p-4 flex items-center justify-between border-t border-slate-800">
+            <button id="prev-btn" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-lg transition-smooth disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous slide" aria-keyshortcuts="ArrowLeft">
+                Previous
+            </button>
+            <div id="slide-counter" class="text-gray-400" role="status" aria-live="polite" aria-atomic="true">1 / 16</div>
+            <button id="next-btn" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-lg transition-smooth disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Next slide" aria-keyshortcuts="ArrowRight">
+                Next
+            </button>
+        </footer>
+    </div>
+
+        <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
