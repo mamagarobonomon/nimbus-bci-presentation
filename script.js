@@ -212,6 +212,7 @@ function showSlide(index) {
     elements.slides.forEach((slide) => {
         slide.classList.remove('active');
         slide.setAttribute('aria-hidden', 'true');
+        slide.style.display = '';  // Clear any inline display override
     });
 
     // Show target slide
@@ -232,10 +233,7 @@ function showSlide(index) {
     } else {
         elements.slidesWrapper.classList.add('p-8', 'md:p-12', 'lg:p-16');
     }
-    // For slide-image-full, force display:flex so the column layout works
-    if (isFullImageSlide) {
-        slideToShow.style.display = 'flex';
-    }
+    // CSS handles display via .slide.active — no inline override needed
 
     // Update UI
     updateSlideCounter();
