@@ -101,41 +101,48 @@
             <div class="slide">
                 <div class="w-full p-8 md:p-12 lg:p-16">
                     <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 4: Our Technological Core</h3>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Introducing <span class="text-yellow-400">RxInfer</span>: The Reactive Inference Engine</h2>
-                    
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Introducing <span class="text-yellow-400">Nimbus SDK</span>: The Reactive Inference Engine</h2>
+
                     <div class="flex flex-col md:flex-row gap-6">
                         <div class="w-full md:w-3/5">
                             <p class="text-base text-gray-300 mb-4">
-                                RxInfer is a cutting-edge Julia library for automated Bayesian inference on factor graphs. 
-                                It's specifically designed for <strong class="text-white">probabilistic models</strong> that need to run in real-time.
+                                <strong class="text-white">Nimbus SDK</strong> is a production-ready inference engine built for real-time brain signal processing.
+                                Unlike static ML models, it runs <strong class="text-white">probabilistic models that continuously update</strong> as new data arrives &mdash;
+                                adapting to the brain's changing states without retraining.
                             </p>
-                            
+
                             <p class="text-base text-gray-300 mb-4">
-                                Instead of static, pre-trained models, RxInfer builds dynamic models that continuously update 
-                                as new data arrives, making it perfect for noisy, ever-changing brain signals.
+                                At its core, Nimbus SDK uses <strong class="text-white">reactive message passing on factor graphs</strong> &mdash;
+                                a technique pioneered by our team through <span class="text-yellow-400">RxInfer</span>, an open-source Bayesian inference library
+                                developed by <span class="text-yellow-400">Lazy Dynamics</span>, our co-founding company.
                             </p>
-                            
-                            <div class="flex flex-wrap items-center">
-                                <span class="text-base text-gray-300">Our co-founder,</span>
-                                <span class="text-yellow-400 text-base font-bold mx-1">Lazy Dynamics</span>
-                                <span class="text-base text-gray-300">is actively developing the RxInfer technology and its applications.</span>
-                            </div>
+
+                            <a href="https://docs.nimbusbci.com/" target="_blank"
+                               class="inline-flex items-center gap-2 mt-1 text-yellow-400 hover:text-yellow-300 transition-colors text-sm font-semibold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                docs.nimbusbci.com &rarr;
+                            </a>
                         </div>
-                        
+
                         <div class="w-full md:w-2/5">
-                            <div class="card-style p-3 rounded-lg mb-4">
-                                <h4 class="text-lg font-bold text-white mb-1">Probabilistic Programming</h4>
-                                <p class="text-sm text-gray-300">Models uncertainty directly, leading to robust and trustworthy predictions.</p>
+                            <div class="card-style p-3 rounded-lg mb-3">
+                                <h4 class="text-base font-bold text-white mb-1">&lt;10ms Inference Latency</h4>
+                                <p class="text-sm text-gray-300">Real-time processing of EEG and neural signals with sub-10ms end-to-end latency.</p>
                             </div>
-                            
-                            <div class="card-style p-3 rounded-lg mb-4">
-                                <h4 class="text-lg font-bold text-white mb-1">Reactive Message Passing</h4>
-                                <p class="text-sm text-gray-300">An efficient algorithm for real-time inference on streaming data, ensuring minimal latency.</p>
+
+                            <div class="card-style p-3 rounded-lg mb-3">
+                                <h4 class="text-base font-bold text-white mb-1">Continuous Adaptation</h4>
+                                <p class="text-sm text-gray-300">Models update on every new sample &mdash; no retraining cycles, no downtime.</p>
                             </div>
-                            
-                            <div class="flex flex-row items-center justify-center space-x-6 mt-2">
-                                <img src="rxinfer_logo.svg" alt="RxInfer Logo" class="h-8" loading="lazy">
-                                <img src="lazydynamics_logo.svg" alt="Lazy Dynamics Logo" class="h-6" loading="lazy">
+
+                            <div class="card-style p-3 rounded-lg mb-3">
+                                <h4 class="text-base font-bold text-white mb-1">Interpretable by Design</h4>
+                                <p class="text-sm text-gray-300">Probabilistic outputs with uncertainty estimates &mdash; built for regulatory transparency.</p>
+                            </div>
+
+                            <div class="flex flex-row items-center justify-center space-x-6 mt-3">
+                                <img src="rxinfer_logo.svg" alt="RxInfer" class="h-7 opacity-70" loading="lazy">
+                                <img src="lazydynamics_logo.svg" alt="Lazy Dynamics" class="h-5 opacity-70" loading="lazy">
                             </div>
                         </div>
                     </div>
