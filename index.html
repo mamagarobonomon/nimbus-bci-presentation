@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="text-white flex flex-col items-center justify-center min-h-screen p-4 overflow-hidden">
+<body class="text-white flex flex-col items-center justify-center min-h-dvh overflow-x-hidden p-4 pt-[max(1rem,env(safe-area-inset-top))] pb-[max(1rem,env(safe-area-inset-bottom))]">
 
     <!-- Skip to Content Link (Accessibility) -->
     <a href="#slides-wrapper" class="skip-to-content">Skip to presentation content</a>
@@ -38,13 +38,12 @@
 
 
     <div id="presentation-container" 
-         class="w-full max-w-5xl h-[80vh] flex flex-col bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-yellow-500/20"
+         class="w-full max-w-5xl min-h-[68dvh] h-[min(90dvh,56rem)] max-h-[94dvh] flex flex-col bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-yellow-500/20"
          role="application"
          aria-label="Nimbus BCI Presentation">
         <!-- Slides container -->
         <main id="slides-wrapper" 
-              class="flex-grow flex items-center justify-center overflow-y-auto relative bg-black"
-              style="position: relative;"
+              class="relative flex flex-grow items-center justify-center overflow-y-auto bg-black"
               role="main">
             
             <!-- Slide 1: Title -->
@@ -54,7 +53,7 @@
                     <div>
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white text-shadow-strong">The Intel Inside for BCI</h1>
                         <h2 class="text-2xl md:text-3xl mt-4 text-yellow-400">Real-time, Explainable Neural Inference</h2>
-                        <img src="Logowhite.png" alt="Nimbus BCI Logo" class="h-8 mx-auto mt-8" loading="lazy">
+                        <img src="Logowhite.png" alt="Nimbus BCI Logo" class="h-8 w-auto mx-auto mt-8" width="160" height="32" fetchpriority="high">
                     </div>
                 </div>
             </div>
@@ -88,10 +87,10 @@
                 <div class="w-full p-8 md:p-12 lg:p-16">
                     <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 3: The Problem</h3>
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">The BCI Revolution Faces a Bottleneck</h2>
-                    <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
-                        <li><strong class="text-white">High Latency:</strong> A 100–300ms gap between thought and action breaks immersion and usability. At that delay, the brain perceives a disconnect — making low latency not a feature, but a hard requirement for any viable BCI product.</li>
-                        <li><strong class="text-white">Low Adaptability:</strong> Static models can't track the brain's changing states. Retraining costs $10K–$50K per session clinically, plus weeks of engineering time — making iteration prohibitively expensive.</li>
-                        <li><strong class="text-white">The "Black Box" Issue:</strong> Uninterpretable models block regulatory approval and erode user trust.</li>
+                    <ul class="list-outside list-disc space-y-4 pl-6 text-lg text-gray-300 marker:text-gray-500">
+                        <li class="pl-1"><strong class="text-white">High Latency:</strong> A 100–300ms gap between thought and action breaks immersion and usability. At that delay, the brain perceives a disconnect — making low latency not a feature, but a hard requirement for any viable BCI product.</li>
+                        <li class="pl-1"><strong class="text-white">Low Adaptability:</strong> Static models can't track the brain's changing states. Retraining costs $10K–$50K per session clinically, plus weeks of engineering time — making iteration prohibitively expensive.</li>
+                        <li class="pl-1"><strong class="text-white">The "Black Box" Issue:</strong> Uninterpretable models block regulatory approval and erode user trust.</li>
                     </ul>
                     <p class="mt-8 text-yellow-300 bg-yellow-900/50 p-4 rounded-lg">Together, these bottlenecks stall adoption across medicine, assistive technology, and immersive VR/AR.</p>
                 </div>
@@ -100,9 +99,9 @@
             <!-- Slide 4: Our Technological Core -->
             <div class="slide">
                 <div class="w-full h-full flex flex-col justify-center p-8 md:p-12 lg:p-16">
-                    <div class="flex flex-row gap-6 items-center">
+                    <div class="flex min-w-0 flex-col items-stretch gap-6 md:flex-row md:items-center">
                         <!-- Left column -->
-                        <div class="w-3/5 flex-shrink-0">
+                        <div class="w-full min-w-0 md:w-3/5 md:flex-shrink-0">
                             <h3 class="text-xl font-bold text-yellow-400 mb-3">Slide 4: Our Technological Core</h3>
                             <h2 class="text-2xl font-bold mb-4">Introducing <span class="text-yellow-400">Nimbus SDK</span>: The Reactive Inference Engine</h2>
                             <p class="text-base text-gray-300 mb-4">
@@ -122,7 +121,7 @@
                             </a>
                         </div>
                         <!-- Right column -->
-                        <div class="flex-1">
+                        <div class="w-full min-w-0 md:flex-1">
                             <div class="card-style p-3 rounded-lg mb-3">
                                 <h4 class="text-base font-bold text-white mb-1">&lt;10ms Inference Latency</h4>
                                 <p class="text-sm text-gray-300">Real-time processing of EEG and neural signals with sub-10ms end-to-end latency.</p>
@@ -150,7 +149,7 @@
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Why BCI Processing Methods Fall Short</h2>
                     <div class="table-container">
                         <table class="w-full text-left border-collapse">
-                            <thead class="bg-slate-800 text-sm">
+                            <thead class="bg-slate-800 text-xs md:text-sm">
                                 <tr>
                                     <th class="p-2 border border-slate-700">Criterion</th>
                                     <th class="p-2 border border-slate-700">LDA</th>
@@ -159,7 +158,7 @@
                                     <th class="p-2 border border-slate-700 bg-yellow-900/50">Bayesian Inference on NimbusSDK</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-gray-300 text-xs">
+                            <tbody class="text-gray-300 text-xs md:text-sm">
                                 <tr>
                                     <td class="p-2 border border-slate-700 font-semibold">Real-time Performance</td>
                                     <td class="p-2 border border-slate-700">High <span class="block text-gray-400">Very fast for simple, linear problems.</span></td>
@@ -225,34 +224,31 @@
                         <div class="w-full md:w-1/2">
                             <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 7: Product Offering</h3>
                             <h2 class="text-3xl md:text-4xl font-bold mb-6">The "Intel Inside" for Neurotechnology</h2>
-                            <ul class="space-y-4 text-lg text-gray-300 list-disc list-inside">
-                                <li><strong class="text-white">A Core Engine:</strong> A powerful inference engine deployable in the cloud or at the edge.</li>
-                                <li><strong class="text-white">Pre-built Models:</strong> A library of models for common BCI paradigms (e.g., motor imagery, SSVEP, P300).</li>
-                                <li><strong class="text-white">Developer Tools:</strong> A comprehensive SDK and API for seamless integration into any neurotech stack.</li>
+                            <ul class="list-outside list-disc space-y-4 pl-6 text-lg text-gray-300 marker:text-gray-500">
+                                <li class="pl-1"><strong class="text-white">A Core Engine:</strong> A powerful inference engine deployable in the cloud or at the edge.</li>
+                                <li class="pl-1"><strong class="text-white">Pre-built Models:</strong> A library of models for common BCI paradigms (e.g., motor imagery, SSVEP, P300).</li>
+                                <li class="pl-1"><strong class="text-white">Developer Tools:</strong> A comprehensive SDK and API for seamless integration into any neurotech stack.</li>
                             </ul>
                         </div>
                         <div class="w-full md:w-1/2 flex justify-center items-center">
-                            <img src="nimbus_engine.png" alt="Nimbus Engine" class="max-w-full h-auto rounded-lg shadow-lg" / loading="lazy">
+                            <img src="nimbus_engine.png" alt="Nimbus Engine" class="max-h-[42vh] max-w-full rounded-lg object-contain shadow-lg md:max-h-none md:h-auto" width="800" height="450" loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Slide 8: Visual Pipeline Builder -->
-            <div class="slide slide-image-full text-center relative bg-cover bg-center" style="background-image: url('pipeline_builder.png'); background-position: top center;">
-                <div class="relative z-10 flex flex-col justify-between h-full">
-                    <!-- Header at top -->
-                    <div style="background:rgba(13,17,23,0.92); padding:0.9rem 2rem; border-bottom:2px solid rgba(250,204,21,0.5); text-align:left;">
-                        <h3 style="color:#facc15; font-size:0.85rem; font-weight:700; margin:0 0 0.15rem;">Slide 8: Visual Pipeline Builder</h3>
-                        <h2 style="color:#ffffff; font-size:1.5rem; font-weight:800; margin:0; line-height:1.2;">Nimbus Visual BCI Pipeline Generator</h2>
+            <div class="slide slide-image-full relative bg-cover bg-top bg-center text-center" style="background-image: url('pipeline_builder.png');">
+                <div class="relative z-10 flex h-full flex-col justify-between">
+                    <div class="border-b-2 border-yellow-500/50 bg-slate-950/90 px-6 py-3 text-left backdrop-blur-sm sm:px-8 sm:py-3.5">
+                        <h3 class="mb-0.5 text-[0.85rem] font-bold text-yellow-400">Slide 8: Visual Pipeline Builder</h3>
+                        <h2 class="m-0 text-xl font-extrabold leading-tight text-white sm:text-2xl">Nimbus Visual BCI Pipeline Generator</h2>
                     </div>
-                    <!-- Spacer -->
-                    <div style="flex:1;"></div>
-                    <!-- Key Features bar at bottom -->
-                    <div style="background:rgba(0,0,0,0.88); padding:0.7rem 1.5rem; border-top:1px solid rgba(255,255,255,0.1);">
-                        <div style="display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
-                            <h4 style="color:#facc15; font-weight:700; font-size:0.9rem; margin:0; white-space:nowrap;">⚡ Key Features:</h4>
-                            <div style="display:flex; gap:1.2rem; color:#ffffff; flex-wrap:wrap; font-size:0.85rem;">
+                    <div class="min-h-0 flex-1"></div>
+                    <div class="border-t border-white/10 bg-black/90 px-4 py-3 sm:px-6">
+                        <div class="flex flex-col items-center justify-center gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
+                            <h4 class="m-0 shrink-0 text-sm font-bold text-yellow-400">⚡ Key Features:</h4>
+                            <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-white sm:text-sm">
                                 <span>• Drag-and-drop interface</span>
                                 <span>• Real-time pipeline execution</span>
                                 <span>• Visual execution logs</span>
@@ -270,14 +266,14 @@
                     <h2 class="text-2xl md:text-3xl font-bold mb-5">Why Existing Tools Fall Short</h2>
                     <div class="table-container">
                         <table class="w-full text-left border-collapse">
-                            <thead class="bg-slate-800 text-sm">
+                            <thead class="bg-slate-800 text-xs md:text-sm">
                                 <tr>
                                     <th class="p-2 border border-slate-700">Alternative</th>
                                     <th class="p-2 border border-slate-700">Limitation</th>
                                     <th class="p-2 border border-slate-700 bg-yellow-900/50 text-yellow-300">Nimbus Advantage</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-gray-300 text-sm">
+                            <tbody class="text-gray-300 text-sm md:text-base">
                                 <tr class="hover:bg-slate-800/50">
                                     <td class="p-3 border border-slate-700 font-semibold text-white">NeuroPype</td>
                                     <td class="p-3 border border-slate-700 text-gray-400">$2,000–$5,000/year, desktop-only, no embeddable SDK</td>
@@ -496,7 +492,7 @@
                     
                     <!-- Hardware-Software-Applications Flow (Text-based) -->
                     <div class="mb-6">
-                        <div class="flex items-center justify-center space-x-4 mb-4">
+                        <div class="mb-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
                             <div class="card-style p-4 rounded-lg text-center bg-slate-800 border border-gray-600">
                                 <div class="w-8 h-8 bg-gray-600 rounded mx-auto mb-2 flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -556,10 +552,10 @@
                 <div class="w-full p-8 md:p-12 lg:p-16">
                     <h3 class="text-xl font-bold text-yellow-400 mb-4">Slide 14: Value Proposition</h3>
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">Why We Win</h2>
-                     <ul class="space-y-6 text-lg text-gray-300 list-disc list-inside">
-                        <li><strong class="text-white">10x Performance Boost:</strong> A massive reduction in latency creates a fundamentally better user experience.</li>
-                        <li><strong class="text-white">Regulatory Advantage:</strong> Our "white box" approach provides the explainability required for FDA/CE approval.</li>
-                        <li><strong class="text-white">Operational Efficiency:</strong> High adaptability eliminates the need for frequent, expensive retraining campaigns.</li>
+                    <ul class="list-outside list-disc space-y-6 pl-6 text-lg text-gray-300 marker:text-gray-500">
+                        <li class="pl-1"><strong class="text-white">10x Performance Boost:</strong> A massive reduction in latency creates a fundamentally better user experience.</li>
+                        <li class="pl-1"><strong class="text-white">Regulatory Advantage:</strong> Our "white box" approach provides the explainability required for FDA/CE approval.</li>
+                        <li class="pl-1"><strong class="text-white">Operational Efficiency:</strong> High adaptability eliminates the need for frequent, expensive retraining campaigns.</li>
                     </ul>
                 </div>
             </div>
@@ -858,9 +854,9 @@
 
             <!-- Slide 20: Contact -->
             <div class="slide bg-black">
-                <div class="w-full p-8 md:p-12 lg:p-16 flex flex-row items-center">
+                <div class="flex w-full flex-col items-center gap-8 p-8 md:flex-row md:items-center md:gap-10 md:p-12 lg:p-16">
                     <!-- Left side with text content -->
-                    <div class="w-1/2 text-left">
+                    <div class="w-full text-center md:w-1/2 md:text-left">
                         <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Thank You</h2>
                         <p class="text-2xl text-yellow-400 font-semibold mb-8">Let's build the future of neurotechnology together.</p>
                         <div class="space-y-4">
@@ -882,8 +878,8 @@
                     </div>
                     
                     <!-- Right side with video -->
-                    <div class="w-1/2 flex justify-center">
-                        <video class="rounded-lg shadow-lg" width="100%" autoplay loop muted playsinline>
+                    <div class="flex w-full max-w-lg justify-center md:w-1/2 md:max-w-none">
+                        <video class="max-h-[38vh] w-full rounded-lg object-contain shadow-lg md:max-h-[min(50vh,28rem)]" autoplay loop muted playsinline>
                             <source src="nimbus.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -898,7 +894,7 @@
             <button id="prev-btn" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-lg transition-smooth disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous slide" aria-keyshortcuts="ArrowLeft">
                 Previous
             </button>
-            <div id="slide-counter" class="text-gray-400" role="status" aria-live="polite" aria-atomic="true">1 / 16</div>
+            <div id="slide-counter" class="text-gray-400" role="status" aria-live="polite" aria-atomic="true">1 / 20</div>
             <button id="next-btn" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-lg transition-smooth disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Next slide" aria-keyshortcuts="ArrowRight">
                 Next
             </button>

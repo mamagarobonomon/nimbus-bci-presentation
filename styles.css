@@ -54,6 +54,30 @@ body {
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .slide {
+        animation: none;
+    }
+
+    .card-style {
+        transition: none;
+    }
+
+    .card-style:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .transition-smooth {
+        transition: none;
+    }
+
+    button:not(:disabled):hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
 /* ============================================
    CARD COMPONENTS
    ============================================ */

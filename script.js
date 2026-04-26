@@ -14,6 +14,13 @@ const CONFIG = {
     SWIPE_THRESHOLD: 50 // pixels
 };
 
+function getAnimationDuration() {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return 0;
+    }
+    return CONFIG.ANIMATION_DURATION;
+}
+
 // ============================================
 // DOM ELEMENTS
 // ============================================
@@ -245,7 +252,7 @@ function showSlide(index) {
     // Reset animating flag after animation completes
     setTimeout(() => {
         state.isAnimating = false;
-    }, CONFIG.ANIMATION_DURATION);
+    }, getAnimationDuration());
 }
 
 /**
