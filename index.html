@@ -47,9 +47,9 @@
               role="main">
             
             <!-- Slide 1: Title -->
-            <div class="slide active text-center relative bg-cover bg-center" style="background-image: url('Facebook.png');">
-                <!-- Background image without overlay for better visibility -->
-                <div class="relative z-10 p-4 flex flex-col justify-end h-full pb-16">
+            <div class="slide active relative bg-cover bg-center text-center" style="background-image: url('Facebook.png');">
+                <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" aria-hidden="true"></div>
+                <div class="relative z-10 flex h-full flex-col justify-end p-4 pb-12 sm:pb-16">
                     <div>
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white text-shadow-strong">The Intel Inside for BCI</h1>
                         <h2 class="text-2xl md:text-3xl mt-4 text-yellow-400">Real-time, Explainable Neural Inference</h2>
@@ -63,18 +63,18 @@
                 <div class="w-full p-8 md:p-12 lg:p-16">
                     <h3 class="text-xl font-bold text-yellow-400 mb-4">What is a BCI?</h3>
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">A Direct Pathway Between Brain and Machine</h2>
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
+                    <div class="grid items-center gap-6 md:grid-cols-2 md:gap-8">
+                        <div class="min-w-0">
                             <p class="text-lg text-gray-300 mb-4">A Brain-Computer Interface (BCI) is a technology that captures brain signals, analyzes them, and translates them into commands that are relayed to an output device to carry out a desired action.</p>
                             <p class="text-lg text-gray-300">Essentially, BCI allows for the direct control of computers or other devices using only thought.</p>
                         </div>
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div class="text-center">
-                                <img src="https://cdn.open-pr.com/W/1/W103482607_g.jpg" class="rounded-lg shadow-lg aspect-square object-cover" alt="Non-invasive BCI headset" loading="lazy">
-                                <p class="text-sm mt-2 text-gray-400"><strong>Non-Invasive BCI</strong><br>(e.g., EEG Headset)</p>
+                                <img src="https://cdn.open-pr.com/W/1/W103482607_g.jpg" class="aspect-square w-full max-w-md rounded-lg object-cover shadow-lg mx-auto sm:max-w-none" width="500" height="500" alt="Non-invasive BCI headset" loading="lazy" decoding="async">
+                                <p class="mt-2 text-sm text-gray-400"><strong>Non-Invasive BCI</strong><br>(e.g., EEG Headset)</p>
                             </div>
                              <div class="text-center">
-                                <img src="https://i.guim.co.uk/img/media/c70b5e8844fb3e62f0b17068c727a870199f3895/0_549_5760_3456/500.jpg?quality=85&auto=format&fit=max&s=b57f596555b5d8ee35ae1f4e787717c2" class="rounded-lg shadow-lg aspect-square object-cover" alt="Invasive BCI implant" loading="lazy">
+                                <img src="https://i.guim.co.uk/img/media/c70b5e8844fb3e62f0b17068c727a870199f3895/0_549_5760_3456/500.jpg?quality=85&auto=format&fit=max&s=b57f596555b5d8ee35ae1f4e787717c2" class="aspect-square w-full max-w-md rounded-lg object-cover shadow-lg mx-auto sm:max-w-none" width="500" height="500" alt="Invasive BCI implant" loading="lazy" decoding="async">
                                 <p class="text-sm mt-2 text-gray-400"><strong>Invasive BCI</strong><br>(e.g., Neural Implant)</p>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                                 <h4 class="text-base font-bold text-white mb-1">Interpretable by Design</h4>
                                 <p class="text-sm text-gray-300">Probabilistic outputs with uncertainty estimates &mdash; built for regulatory transparency.</p>
                             </div>
-                            <div class="flex flex-row items-center justify-center space-x-6 mt-3">
+                            <div class="mt-3 flex flex-wrap items-center justify-center gap-6">
                                 <img src="rxinfer_logo.svg" alt="RxInfer" class="h-7 opacity-70" loading="lazy">
                                 <img src="lazydynamics_logo.svg" alt="Lazy Dynamics" class="h-5 opacity-70" loading="lazy">
                             </div>
@@ -314,20 +314,20 @@
                     <div class="space-y-3">
                         <!-- Segment 1 -->
                         <div class="card-style p-4 rounded-lg border-l-4 border-yellow-400">
-                            <div class="flex flex-col md:flex-row md:items-start gap-3">
-                                <div class="md:w-1/4">
+                            <div class="flex flex-col gap-3 md:flex-row md:items-start">
+                                <div class="w-full min-w-0 md:w-1/4">
                                     <span class="inline-block bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded mb-1">SEGMENT 1</span>
                                     <h4 class="font-bold text-white text-sm">Researchers, PhD Students &amp; BCI Consumers</h4>
                                 </div>
-                                <div class="md:w-1/4 text-xs text-gray-300">
+                                <div class="w-full min-w-0 text-xs text-gray-300 md:w-1/4">
                                     <span class="text-gray-500 block mb-1">Who</span>
                                     Postdocs, PI-led labs, enthusiasts, r/neuralinterfaces community
                                 </div>
-                                <div class="md:w-1/4 text-xs text-gray-300">
+                                <div class="w-full min-w-0 text-xs text-gray-300 md:w-1/4">
                                     <span class="text-gray-500 block mb-1">Channel</span>
                                     Academic conferences, Discord, NeurotechX, r/neuralinterfaces
                                 </div>
-                                <div class="md:w-1/4">
+                                <div class="w-full min-w-0 md:w-1/4">
                                     <span class="text-gray-500 block mb-1 text-xs">Price / Validation</span>
                                     <span class="text-yellow-300 font-bold text-sm">$49–$199/month</span>
                                     <span class="block text-xs text-green-400 mt-1">&#10003; 80+ on waiting list (zero marketing)</span>
@@ -336,20 +336,20 @@
                         </div>
                         <!-- Segment 2 -->
                         <div class="card-style p-4 rounded-lg border-l-4 border-yellow-400">
-                            <div class="flex flex-col md:flex-row md:items-start gap-3">
-                                <div class="md:w-1/4">
+                            <div class="flex flex-col gap-3 md:flex-row md:items-start">
+                                <div class="w-full min-w-0 md:w-1/4">
                                     <span class="inline-block bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded mb-1">SEGMENT 2</span>
                                     <h4 class="font-bold text-white text-sm">BCI Hardware Startups</h4>
                                 </div>
-                                <div class="md:w-1/4 text-xs text-gray-300">
+                                <div class="w-full min-w-0 text-xs text-gray-300 md:w-1/4">
                                     <span class="text-gray-500 block mb-1">Who</span>
                                     Miruns, BrainBit, PiEEG and similar hardware-first neurotech companies
                                 </div>
-                                <div class="md:w-1/4 text-xs text-gray-300">
+                                <div class="w-full min-w-0 text-xs text-gray-300 md:w-1/4">
                                     <span class="text-gray-500 block mb-1">Channel</span>
                                     Direct outreach, BCI Society events, hardware accelerators
                                 </div>
-                                <div class="md:w-1/4">
+                                <div class="w-full min-w-0 md:w-1/4">
                                     <span class="text-gray-500 block mb-1 text-xs">Price / Validation</span>
                                     <span class="text-yellow-300 font-bold text-sm">$20K–$150K contract + equity</span>
                                     <span class="block text-xs text-green-400 mt-1">&#10003; 2 signed LOIs (Miruns, BrainBit+PiEEG)</span>
@@ -358,20 +358,20 @@
                         </div>
                         <!-- Segment 3 -->
                         <div class="card-style p-4 rounded-lg border-l-4 border-gray-500">
-                            <div class="flex flex-col md:flex-row md:items-start gap-3">
-                                <div class="md:w-1/4">
+                            <div class="flex flex-col gap-3 md:flex-row md:items-start">
+                                <div class="w-full min-w-0 md:w-1/4">
                                     <span class="inline-block bg-gray-600 text-white text-xs font-bold px-2 py-1 rounded mb-1">SEGMENT 3 — Q4 2026</span>
                                     <h4 class="font-bold text-white text-sm">Medical Device &amp; Clinical Teams</h4>
                                 </div>
-                                <div class="md:w-1/4 text-xs text-gray-300">
+                                <div class="w-full min-w-0 text-xs text-gray-300 md:w-1/4">
                                     <span class="text-gray-500 block mb-1">Who</span>
                                     Medical device manufacturers, hospital neuro departments, clinical research organisations
                                 </div>
-                                <div class="md:w-1/4 text-xs text-gray-300">
+                                <div class="w-full min-w-0 text-xs text-gray-300 md:w-1/4">
                                     <span class="text-gray-500 block mb-1">Channel</span>
                                     Enterprise direct sales, medical device conferences, regulatory consultants
                                 </div>
-                                <div class="md:w-1/4">
+                                <div class="w-full min-w-0 md:w-1/4">
                                     <span class="text-gray-500 block mb-1 text-xs">Price / Validation</span>
                                     <span class="text-yellow-300 font-bold text-sm">$6K–$60K/year</span>
                                     <span class="block text-xs text-gray-400 mt-1">Planned Q4 2026 enterprise tier</span>
@@ -502,7 +502,7 @@
                                 <h4 class="text-sm font-bold text-white">EEG Hardware</h4>
                                 <p class="text-xs text-gray-400">Your specialized sensors and acquisition systems</p>
                             </div>
-                            <div class="text-yellow-400 text-2xl">→</div>
+                            <div class="shrink-0 text-2xl text-yellow-400" aria-hidden="true">→</div>
                             <div class="card-style p-4 rounded-lg text-center bg-yellow-400 border-2 border-yellow-400">
                                 <div class="w-8 h-8 bg-black rounded mx-auto mb-2 flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -512,7 +512,7 @@
                                 <h4 class="text-sm font-bold text-black">Nimbus Software Layer</h4>
                                 <p class="text-xs text-black">Real-time inference engine with explainable AI</p>
                             </div>
-                            <div class="text-yellow-400 text-2xl">→</div>
+                            <div class="shrink-0 text-2xl text-yellow-400" aria-hidden="true">→</div>
                             <div class="card-style p-4 rounded-lg text-center bg-slate-800 border border-gray-600">
                                 <div class="w-8 h-8 bg-gray-600 rounded mx-auto mb-2 flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -780,11 +780,11 @@
                     <h3 class="text-xl font-bold text-yellow-400 mb-2">Slide 19: Advisory Board</h3>
                     <h2 class="text-2xl md:text-3xl font-bold mb-1">Guidance from World-Class Scientists</h2>
                     <p class="text-xs text-gray-500 mb-4">For context: Yann LeCun (ex-Meta Chief AI Scientist) averages ~50K citations/year on Google Scholar.</p>
-                    <div class="grid md:grid-cols-4 gap-3">
+                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
 
                         <!-- Jeff Beck -->
-                        <div class="card-style p-4 rounded-lg flex flex-col items-center text-center">
-                            <img src="logo_duke_white.svg" alt="Duke University" class="h-6 mb-3 opacity-90" style="max-width:120px;object-fit:contain;">
+                        <div class="card-style flex flex-col items-center rounded-lg p-4 text-center">
+                            <img src="logo_duke_white.svg" alt="Duke University" class="mb-3 h-6 max-w-[120px] object-contain opacity-90">
                             <a href="https://www.linkedin.com/in/jeff-beck-6b5085196/" target="_blank" class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors mb-1">
                                 <h4 class="text-base font-bold text-white">Jeff Beck</h4>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -799,8 +799,8 @@
                         </div>
 
                         <!-- Ryan Smith -->
-                        <div class="card-style p-4 rounded-lg flex flex-col items-center text-center">
-                            <img src="logo_libr.png" alt="LIBR" class="h-6 mb-3" style="max-width:120px;object-fit:contain;filter:brightness(10) grayscale(1);">
+                        <div class="card-style flex flex-col items-center rounded-lg p-4 text-center">
+                            <img src="logo_libr.png" alt="LIBR" class="advisory-logo-libr mb-3 h-6">
                             <a href="https://www.linkedin.com/in/ryan-smith-a03462281/" target="_blank" class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors mb-1">
                                 <h4 class="text-base font-bold text-white">Ryan Smith</h4>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -815,8 +815,8 @@
                         </div>
 
                         <!-- Bert de Vries -->
-                        <div class="card-style p-4 rounded-lg flex flex-col items-center text-center">
-                            <img src="logo_tue_white.svg" alt="TU/e" class="h-6 mb-3 opacity-90" style="max-width:120px;object-fit:contain;">
+                        <div class="card-style flex flex-col items-center rounded-lg p-4 text-center">
+                            <img src="logo_tue_white.svg" alt="TU/e" class="mb-3 h-6 max-w-[120px] object-contain opacity-90">
                             <a href="https://www.linkedin.com/in/bertdv/" target="_blank" class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors mb-1">
                                 <h4 class="text-base font-bold text-white">Bert de Vries</h4>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -831,8 +831,8 @@
                         </div>
 
                         <!-- Alexander Kuck -->
-                        <div class="card-style p-4 rounded-lg flex flex-col items-center text-center">
-                            <img src="logo_medtronic.svg?v=2" alt="Medtronic" class="h-6 mb-3 opacity-90" style="max-width:140px;object-fit:contain;">
+                        <div class="card-style flex flex-col items-center rounded-lg p-4 text-center">
+                            <img src="logo_medtronic.svg?v=2" alt="Medtronic" class="mb-3 h-6 max-w-[140px] object-contain opacity-90">
                             <a href="https://www.linkedin.com/in/dr-alexander-kuck-1a146075/" target="_blank" class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors mb-1">
                                 <h4 class="text-base font-bold text-white">Alexander Kuck</h4>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -891,11 +891,11 @@
 
         <!-- Навигация -->
         <footer class="bg-slate-950 p-4 flex items-center justify-between border-t border-slate-800">
-            <button id="prev-btn" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-lg transition-smooth disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous slide" aria-keyshortcuts="ArrowLeft">
+            <button id="prev-btn" class="min-h-11 min-w-[5.5rem] touch-manipulation rounded-lg bg-yellow-600 px-4 py-2.5 font-bold text-black transition-smooth hover:bg-yellow-500 disabled:cursor-not-allowed disabled:opacity-50" aria-label="Previous slide" aria-keyshortcuts="ArrowLeft">
                 Previous
             </button>
             <div id="slide-counter" class="text-gray-400" role="status" aria-live="polite" aria-atomic="true">1 / 20</div>
-            <button id="next-btn" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-lg transition-smooth disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Next slide" aria-keyshortcuts="ArrowRight">
+            <button id="next-btn" class="min-h-11 min-w-[5.5rem] touch-manipulation rounded-lg bg-yellow-600 px-4 py-2.5 font-bold text-black transition-smooth hover:bg-yellow-500 disabled:cursor-not-allowed disabled:opacity-50" aria-label="Next slide" aria-keyshortcuts="ArrowRight">
                 Next
             </button>
         </footer>

@@ -98,6 +98,18 @@ body {
    RESPONSIVE TABLE STYLES
    ============================================ */
 
+.table-container table th,
+.table-container table td {
+    vertical-align: top;
+}
+
+/* Advisory LIBR mark on dark background */
+.advisory-logo-libr {
+    max-width: 120px;
+    object-fit: contain;
+    filter: brightness(10) grayscale(1);
+}
+
 @media (max-width: 768px) {
     .table-container {
         overflow-x: auto;
