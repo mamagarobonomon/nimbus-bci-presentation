@@ -21,6 +21,33 @@ body {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Full-bleed product slide: opacity-only entrance (avoids scale() subpixel blur on large bitmaps) */
+.slide.slide-image-full {
+    animation: slideImageFadeIn 0.45s ease-out;
+}
+
+@keyframes slideImageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*
+ * nimbus_studio_ui.png is 1024×580 — do not display wider/taller than native pixels
+ * or the browser upscales and UI looks soft. Replace asset with e.g. 2048-wide export for retina.
+ */
+.studio-screenshot-crisp {
+    width: auto;
+    height: auto;
+    max-width: min(100%, 1024px);
+    max-height: min(100%, 580px);
+    object-fit: contain;
+    object-position: center;
+}
+
 .slide.active {
     display: flex !important;
     flex-direction: column;
@@ -55,7 +82,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .slide {
+    .slide,
+    .slide.slide-image-full {
         animation: none;
     }
 
