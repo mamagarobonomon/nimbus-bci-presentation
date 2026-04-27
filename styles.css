@@ -36,14 +36,14 @@ body {
 }
 
 /*
- * nimbus_studio_ui.png is 1024×580 — do not display wider/taller than native pixels
- * or the browser upscales and UI looks soft. Replace asset with e.g. 2048-wide export for retina.
+ * nimbus_studio_slide8.png is 1024×576 — cap at native px to avoid upscale blur.
+ * For retina sharpness, replace with a 2× export and bump the max-* values.
  */
 .studio-screenshot-crisp {
     width: auto;
     height: auto;
     max-width: min(100%, 1024px);
-    max-height: min(100%, 580px);
+    max-height: min(100%, 576px);
     object-fit: contain;
     object-position: center;
 }
