@@ -1,6 +1,12 @@
 # Nimbus BCI Presentation - Change Log
 
+## Repository layout (April 2026)
+
+- **Structure:** `css/`, `js/`, `assets/images/`, `assets/video/`, `docs/`; `index.html`, `CNAME`, and `.nojekyll` stay at the site root for GitHub Pages.
+- **Open Graph / Twitter:** Preview image URL updated to `.../assets/images/Facebook.png`.
+
 ## Version 2.0 - Final Production Release
+
 **Date:** December 10, 2025
 
 ---
@@ -8,12 +14,14 @@
 ## 🎯 Latest Updates
 
 ### 1. **Pipeline Builder Image Updated**
+
 - **Slide:** Slide 8 - Visual Pipeline Builder
 - **Change:** Replaced old pipeline_builder.png with new Nimbus Studio interface screenshot
 - **File:** `pipeline_builder.png` (391 KB)
 - **Impact:** Shows the actual Nimbus Studio interface with both desktop and mobile views
 
 ### 2. **Advisory Board Description Shortened**
+
 - **Slide:** Slide 15 - Advisory Board
 - **Change:** Shortened Alexander Kuck's description to match other advisors
 - **Before:** "Experienced industry leader and scientist with deep expertise in neurotechnology, brain–machine interfacing, and applied machine learning. Combines a strong scientific foundation with extensive experience in medical device software development and strategic innovation."
@@ -25,6 +33,7 @@
 ## 📋 Previous Updates (Version 1.0)
 
 ### Code Refactoring
+
 - ✅ Separated HTML, CSS, and JavaScript into modular files
 - ✅ Fixed slide counter bug (15 → 16)
 - ✅ Added comprehensive accessibility features (ARIA labels, keyboard navigation)
@@ -34,11 +43,13 @@
 - ✅ Removed magic numbers and improved code quality
 
 ### Assets Recovered
+
 - ✅ Downloaded all 13 image/video assets from source
 - ✅ Verified all images load correctly
 - ✅ Optimized file structure for deployment
 
 ### Documentation
+
 - ✅ Created comprehensive README.md
 - ✅ Created detailed CODE_REVIEW.md
 - ✅ Created REFACTORING_SUMMARY.md
@@ -48,33 +59,18 @@
 
 ## 📦 Current Package Contents
 
-### Core Files (3)
-- `index.html` - Main presentation (54 KB)
-- `styles.css` - External stylesheet (3.1 KB)
-- `script.js` - External JavaScript (9.2 KB)
+### Core layout
 
-### Images (10)
-- `Logowhite.png` - Nimbus logo (5.1 KB)
-- `Facebook.png` - Title slide background (641 KB)
-- `nimbus_engine.png` - Engine diagram (152 KB)
-- `pipeline_builder.png` - **NEW** Pipeline builder screenshot (391 KB)
-- `Ismail_bw.png` - Team photo (1.3 MB)
-- `Bart_bw.png` - Team photo (1.2 MB)
+- `index.html` - Main presentation
+- `css/styles.css` - External stylesheet
+- `js/script.js` - External JavaScript
+- `assets/images/` - PNG/SVG used by slides (logos, team, product shots, backgrounds)
+- `assets/video/nimbus.mp4` - Thank you slide video
 
-### SVG Graphics (6)
-- `rxinfer_logo.svg` - RxInfer logo (7.5 KB)
-- `lazydynamics_logo.svg` - Lazy Dynamics logo (4.5 KB)
-- `Sergey.svg` - Team photo (380 KB)
-- `Albert.svg` - Team photo (756 KB)
-- `Kirill.svg` - Team photo (386 KB)
-- `Dmitry.svg` - Team photo (636 KB)
+### Documentation
 
-### Video (1)
-- `nimbus.mp4` - Thank you video (1.6 MB)
-
-### Documentation (2)
-- `DEPLOYMENT_GUIDE.md` - Comprehensive deployment instructions
-- `CHANGELOG.md` - This file
+- `docs/DEPLOYMENT_GUIDE.md` - Deployment instructions
+- `docs/CHANGELOG.md` - This file
 
 **Total Package Size:** 6.8 MB
 
@@ -83,6 +79,7 @@
 ## ✅ Quality Assurance
 
 ### Testing Completed
+
 - ✅ All 16 slides display correctly
 - ✅ All images load properly
 - ✅ Navigation works (keyboard, mouse, touch)
@@ -93,6 +90,7 @@
 - ✅ Cross-browser compatibility confirmed
 
 ### Browser Support
+
 - ✅ Chrome 90+
 - ✅ Firefox 88+
 - ✅ Safari 14+
@@ -106,13 +104,17 @@
 **Ready for Production:** ✅ YES
 
 ### Recommended Deployment Method
+
 **Netlify Drop** - https://app.netlify.com/drop
+
 - Drag and drop the zip file
 - Get instant permanent URL
 - No account needed for basic deployment
 
 ### Alternative Options
+
 See `DEPLOYMENT_GUIDE.md` for 7 different deployment methods including:
+
 - Vercel
 - GitHub Pages
 - Cloudflare Pages
@@ -135,16 +137,17 @@ See `DEPLOYMENT_GUIDE.md` for 7 different deployment methods including:
 
 ## 🔄 Version History
 
-| Version | Date | Changes | Package Size |
-|---------|------|---------|--------------|
-| 2.0 | Dec 10, 2025 | Pipeline image + Alex description | 6.8 MB |
-| 1.0 | Dec 10, 2025 | Initial refactored release | 6.5 MB |
+| Version | Date         | Changes                           | Package Size |
+| ------- | ------------ | --------------------------------- | ------------ |
+| 2.0     | Dec 10, 2025 | Pipeline image + Alex description | 6.8 MB       |
+| 1.0     | Dec 10, 2025 | Initial refactored release        | 6.5 MB       |
 
 ---
 
 ## 📞 Support
 
 For questions or issues:
+
 - **Email:** support@nimbusbci.com
 - **Website:** https://nimbusbci.com
 - **LinkedIn:** https://linkedin.com/company/nimbusbci
