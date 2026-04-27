@@ -48,6 +48,16 @@ body {
     object-position: center;
 }
 
+/* Slide 12 SDK card: docs screenshot (1024×621), avoid upscale in narrow column */
+.sdk-docs-screenshot {
+    width: 100%;
+    height: auto;
+    max-width: min(100%, 1024px);
+    max-height: min(55vh, 420px);
+    object-fit: contain;
+    object-position: top center;
+}
+
 .slide.active {
     display: flex !important;
     flex-direction: column;
