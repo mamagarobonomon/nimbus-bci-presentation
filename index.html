@@ -451,9 +451,9 @@
                     <h3 class="text-lg font-bold text-yellow-400 mb-2">Slide 12: Business Model</h3>
                     <h2 class="text-2xl md:text-3xl font-bold mb-4">Two Independent Revenue Streams</h2>
                     
-                    <div class="grid items-start gap-4 md:grid-cols-2">
+                    <div class="grid gap-4 md:grid-cols-2 md:items-stretch">
                         <!-- Stream 1: Nimbus Studio SaaS -->
-                        <div class="card-style flex flex-col rounded-lg border-2 border-yellow-400 bg-gradient-to-b from-slate-900 to-slate-800 p-4">
+                        <div class="card-style flex h-full min-h-0 flex-col rounded-lg border-2 border-yellow-400 bg-gradient-to-b from-slate-900 to-slate-800 p-4">
                             <div class="mb-3 text-center">
                                 <span class="mb-2 inline-block rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold text-black">STREAM 1</span>
                                 <h3 class="text-xl font-bold text-yellow-400">Nimbus Studio</h3>
@@ -471,37 +471,33 @@
                                 <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">Pro ($49/mo)</strong> &mdash; real-time execution, export, priority support</span></li>
                                 <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">Team ($199/mo)</strong> &mdash; shared workspaces, advanced models, SLA</span></li>
                             </ul>
-                            <div class="mt-3 border-t border-slate-700 pt-2">
+                            <div class="mt-auto border-t border-slate-700 pt-3">
                                 <p class="text-xs text-green-400">&#10003; 80+ on waiting list &mdash; zero paid marketing</p>
                             </div>
                         </div>
                         <!-- Stream 2: Nimbus SDK -->
-                        <div class="card-style flex flex-col rounded-lg border-2 border-gray-500 bg-gradient-to-b from-slate-900 to-slate-800 p-4">
+                        <div class="card-style flex h-full min-h-0 flex-col rounded-lg border-2 border-gray-500 bg-gradient-to-b from-slate-900 to-slate-800 p-4">
                             <div class="mb-3 text-center">
                                 <span class="mb-2 inline-block rounded-full bg-gray-500 px-3 py-1 text-xs font-bold text-white">STREAM 2</span>
                                 <h3 class="text-xl font-bold text-white">Nimbus SDK</h3>
                                 <p class="text-xs text-gray-400">B2B co-development &mdash; hardware startups</p>
                             </div>
-                            <div class="flex min-h-0 flex-1 flex-col gap-3 md:flex-row md:items-start md:gap-4">
-                                <div class="flex min-w-0 flex-1 flex-col">
-                                    <div class="mb-3 text-center md:text-left">
-                                        <p class="text-3xl font-bold text-white">$20K &ndash; $150K</p>
-                                        <p class="text-xs text-gray-400">per contract + equity/royalties</p>
-                                    </div>
-                                    <ul class="flex-1 space-y-2 text-xs text-gray-300">
-                                        <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">9-month co-development</strong> &mdash; full team + advisors access</span></li>
-                                        <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">RxInfer Pro license</strong> &mdash; embedded in partner hardware</span></li>
-                                        <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">Per-unit royalty</strong> &mdash; recurring revenue on every device shipped</span></li>
-                                    </ul>
-                                    <div class="mt-3 border-t border-slate-700 pt-2">
-                                        <p class="text-xs text-green-400">&#10003; 1 commercial codevelopment contract: BrainBit &amp; PiEEG</p>
-                                    </div>
-                                </div>
-                                <figure class="mx-auto w-full max-w-[min(100%,280px)] shrink-0 overflow-hidden rounded-lg border border-slate-600 bg-black/60 md:mx-0 md:mt-1 md:w-[44%] md:max-w-[min(44vw,320px)] lg:max-w-[340px]">
-                                    <a href="https://docs.nimbusbci.com/" target="_blank" rel="noopener noreferrer" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400">
-                                        <img src="nimbus_sdk_docs.png" alt="Nimbus BCI Engine documentation at docs.nimbusbci.com" class="sdk-docs-screenshot mx-auto block" width="1024" height="621" loading="lazy" decoding="async">
-                                    </a>
-                                </figure>
+                            <figure class="mb-3 overflow-hidden rounded-lg border border-slate-500/35 bg-black/50">
+                                <a href="https://docs.nimbusbci.com/" target="_blank" rel="noopener noreferrer" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400">
+                                    <img src="nimbus_sdk_docs.png" alt="Nimbus BCI Engine documentation at docs.nimbusbci.com" class="mx-auto max-h-[min(30vh,13.5rem)] w-full object-contain object-center sm:max-h-[min(34vh,15rem)] md:max-h-[min(38vh,17rem)]" width="1024" height="621" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                            <div class="mb-3 text-center">
+                                <p class="text-3xl font-bold text-white">$20K &ndash; $150K</p>
+                                <p class="text-xs text-gray-400">per contract + equity/royalties</p>
+                            </div>
+                            <ul class="flex-1 space-y-2 text-xs text-gray-300">
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">9-month co-development</strong> &mdash; full team + advisors access</span></li>
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">RxInfer Pro license</strong> &mdash; embedded in partner hardware</span></li>
+                                <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">&#10003;</span><span><strong class="text-white">Per-unit royalty</strong> &mdash; recurring revenue on every device shipped</span></li>
+                            </ul>
+                            <div class="mt-auto border-t border-slate-700 pt-3">
+                                <p class="text-xs text-green-400">&#10003; 1 commercial codevelopment contract: BrainBit &amp; PiEEG</p>
                             </div>
                         </div>
                     </div>
