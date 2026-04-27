@@ -25,8 +25,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "format": "prettier --write \"**/*.{html,css,js,md}\"",
-    "format:check": "prettier --check \"**/*.{html,css,js,md}\"",
+    "format": "prettier --write \"**/*.{html,css,js,md,mjs}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,md,mjs}\"",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
