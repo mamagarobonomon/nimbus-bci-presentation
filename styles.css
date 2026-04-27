@@ -48,6 +48,35 @@ body {
     object-position: center;
 }
 
+/* Slide 12: identical image slot height for both product shots */
+.slide12-media-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 11rem;
+}
+
+@media (min-width: 640px) {
+    .slide12-media-slot {
+        height: 13rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .slide12-media-slot {
+        height: 15rem;
+    }
+}
+
+.slide12-media-slot img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
 .slide.active {
     display: flex !important;
     flex-direction: column;
