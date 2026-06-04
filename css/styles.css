@@ -239,21 +239,223 @@ a:focus-visible {
 }
 
 /* ============================================
+   PDF EXPORT MODE (?export=pdf&slide=N)
+   A4 landscape (297mm × 210mm) — one slide per PDF page
+   ============================================ */
+
+/* Match browser base (Tailwind default 16px) — 12px was shrinking the whole deck */
+html.pdf-export {
+  font-size: 16px;
+}
+
+html.pdf-export,
+html.pdf-export body {
+  width: 297mm;
+  height: 210mm;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background-color: #0a0a0f !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  display: block !important;
+}
+
+html.pdf-export .skip-to-content,
+html.pdf-export #sr-announcement,
+html.pdf-export footer,
+html.pdf-export button {
+  display: none !important;
+}
+
+html.pdf-export #presentation-container {
+  width: 297mm !important;
+  height: 210mm !important;
+  max-width: none !important;
+  min-height: 210mm !important;
+  max-height: 210mm !important;
+  flex: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+html.pdf-export #slides-wrapper {
+  display: block !important;
+  width: 297mm !important;
+  height: 210mm !important;
+  flex: none !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+/* showSlide() adds p-8/md:p-12 on wrapper — strip for full-bleed PDF */
+html.pdf-export #slides-wrapper.p-8,
+html.pdf-export #slides-wrapper.md\:p-12,
+html.pdf-export #slides-wrapper.lg\:p-16 {
+  padding: 0 !important;
+}
+
+/* Hide every slide; nth-child rules below reveal the requested index only */
+html.pdf-export-single .slide {
+  display: none !important;
+  animation: none !important;
+}
+
+html.pdf-export-single[data-export-slide="0"]
+  #slides-wrapper
+  > .slide:nth-child(1),
+html.pdf-export-single[data-export-slide="1"]
+  #slides-wrapper
+  > .slide:nth-child(2),
+html.pdf-export-single[data-export-slide="2"]
+  #slides-wrapper
+  > .slide:nth-child(3),
+html.pdf-export-single[data-export-slide="3"]
+  #slides-wrapper
+  > .slide:nth-child(4),
+html.pdf-export-single[data-export-slide="4"]
+  #slides-wrapper
+  > .slide:nth-child(5),
+html.pdf-export-single[data-export-slide="5"]
+  #slides-wrapper
+  > .slide:nth-child(6),
+html.pdf-export-single[data-export-slide="6"]
+  #slides-wrapper
+  > .slide:nth-child(7),
+html.pdf-export-single[data-export-slide="7"]
+  #slides-wrapper
+  > .slide:nth-child(8),
+html.pdf-export-single[data-export-slide="8"]
+  #slides-wrapper
+  > .slide:nth-child(9),
+html.pdf-export-single[data-export-slide="9"]
+  #slides-wrapper
+  > .slide:nth-child(10),
+html.pdf-export-single[data-export-slide="10"]
+  #slides-wrapper
+  > .slide:nth-child(11),
+html.pdf-export-single[data-export-slide="11"]
+  #slides-wrapper
+  > .slide:nth-child(12),
+html.pdf-export-single[data-export-slide="12"]
+  #slides-wrapper
+  > .slide:nth-child(13),
+html.pdf-export-single[data-export-slide="13"]
+  #slides-wrapper
+  > .slide:nth-child(14),
+html.pdf-export-single[data-export-slide="14"]
+  #slides-wrapper
+  > .slide:nth-child(15),
+html.pdf-export-single[data-export-slide="15"]
+  #slides-wrapper
+  > .slide:nth-child(16),
+html.pdf-export-single[data-export-slide="16"]
+  #slides-wrapper
+  > .slide:nth-child(17),
+html.pdf-export-single[data-export-slide="17"]
+  #slides-wrapper
+  > .slide:nth-child(18),
+html.pdf-export-single[data-export-slide="18"]
+  #slides-wrapper
+  > .slide:nth-child(19),
+html.pdf-export-single[data-export-slide="19"]
+  #slides-wrapper
+  > .slide:nth-child(20) {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 297mm !important;
+  height: 210mm !important;
+  min-height: 210mm !important;
+  max-height: 210mm !important;
+  overflow: hidden !important;
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  page-break-after: auto;
+  break-after: auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html.pdf-export,
+html.pdf-export * {
+  animation: none !important;
+  transition: none !important;
+}
+
+html.pdf-export-single[data-export-slide="7"]
+  #slides-wrapper
+  > .slide:nth-child(8) {
+  justify-content: flex-start !important;
+}
+
+/* ============================================
    PRINT STYLES
    ============================================ */
 
 @media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
   body {
-    background-color: white;
+    background-color: #0a0a0f !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
   }
 
-  .slide {
-    display: block !important;
-    page-break-after: always;
-  }
-
+  .skip-to-content,
+  #sr-announcement,
   footer,
   button {
     display: none !important;
+  }
+
+  #presentation-container {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  #slides-wrapper {
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  html:not(.pdf-export-single) .slide {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 297mm !important;
+    height: 210mm !important;
+    min-height: 210mm !important;
+    max-height: 210mm !important;
+    overflow: hidden !important;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-after: page;
+    break-inside: avoid;
+    animation: none !important;
+  }
+
+  html:not(.pdf-export-single) .slide:last-child {
+    page-break-after: auto;
+  }
+
+  html:not(.pdf-export-single) .slide.slide-image-full {
+    justify-content: flex-start !important;
   }
 }

@@ -53,6 +53,21 @@
 
     <title>Nimbus BCI - Venture Pitch Deck | Real-time Neural Inference</title>
 
+    <!-- PDF export: apply layout before first paint (headless Chrome prints before JS runs) -->
+    <script>
+      (function () {
+        var params = new URLSearchParams(location.search);
+        if (!params.has("export")) return;
+        var root = document.documentElement;
+        root.classList.add("pdf-export");
+        var slide = params.get("slide");
+        if (slide !== null && slide !== "") {
+          root.classList.add("pdf-export-single");
+          root.setAttribute("data-export-slide", slide);
+        }
+      })();
+    </script>
+
     <!-- External Stylesheets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1294,35 +1309,6 @@
           </div>
         </div>
 
-        <!-- Slide 14: Value Proposition -->
-        <div class="slide">
-          <div class="w-full p-8 md:p-12 lg:p-16">
-            <h3 class="text-xl font-bold text-yellow-400 mb-4">
-              Slide 14: Value Proposition
-            </h3>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Why We Win</h2>
-            <ul
-              class="list-outside list-disc space-y-6 pl-6 text-lg text-gray-300 marker:text-gray-500"
-            >
-              <li class="pl-1">
-                <strong class="text-white">10x Performance Boost:</strong> A
-                massive reduction in latency creates a fundamentally better user
-                experience.
-              </li>
-              <li class="pl-1">
-                <strong class="text-white">Regulatory Advantage:</strong> Our
-                "white box" approach provides the explainability required for
-                FDA/CE approval.
-              </li>
-              <li class="pl-1">
-                <strong class="text-white">Operational Efficiency:</strong> High
-                adaptability eliminates the need for frequent, expensive
-                retraining campaigns.
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <!-- Slide 15: Traction -->
         <div class="slide w-full">
           <div class="w-full p-6 md:p-8 lg:p-10">
@@ -1424,7 +1410,7 @@
             <div class="grid md:grid-cols-3 gap-4 mb-5">
               <div class="card-style p-4 rounded-lg border border-slate-600">
                 <p class="text-xs text-gray-400 mb-1">Year 1 (2025)</p>
-                <p class="text-3xl font-bold text-white">$20K</p>
+                <p class="text-3xl font-bold text-white">$7K</p>
                 <div class="mt-2 space-y-1 text-xs text-gray-300">
                   <p>
                     <span class="text-yellow-400">Studio:</span> Free beta
@@ -1432,7 +1418,7 @@
                   </p>
                   <p>
                     <span class="text-yellow-400">SDK:</span> 1 co-dev contract
-                    ($20K)
+                    ($7K)
                   </p>
                 </div>
               </div>
@@ -1546,91 +1532,16 @@
           </div>
         </div>
 
-        <!-- Slide 18: Long-Term Vision -->
-        <div class="slide w-full">
-          <div class="w-full p-6 md:p-8 lg:p-10">
-            <h3 class="text-xl font-bold text-yellow-400 mb-2">
-              Slide 18: Long-Term Vision
-            </h3>
-            <h2 class="text-2xl md:text-3xl font-bold mb-5">
-              The Figma of BCI
-            </h2>
-            <div class="grid md:grid-cols-2 gap-5">
-              <div class="space-y-4">
-                <div
-                  class="card-style p-4 rounded-lg border-l-4 border-yellow-400"
-                >
-                  <p class="text-xs text-gray-400 mb-1">
-                    Years 1&ndash;3 &mdash; Foundation
-                  </p>
-                  <p class="text-sm font-semibold text-white">
-                    Establish Nimbus Studio as the standard tool for BCI
-                    research. Sign 5+ SDK hardware partners. Reach $1M+ ARR.
-                  </p>
-                </div>
-                <div
-                  class="card-style p-4 rounded-lg border-l-4 border-yellow-400"
-                >
-                  <p class="text-xs text-gray-400 mb-1">
-                    Years 3&ndash;5 &mdash; Scale
-                  </p>
-                  <p class="text-sm font-semibold text-white">
-                    Launch enterprise clinical tier. Expand SDK royalty base to
-                    50K+ devices. Build a community marketplace of BCI pipeline
-                    templates.
-                  </p>
-                </div>
-                <div
-                  class="card-style p-4 rounded-lg border-l-4 border-gray-500"
-                >
-                  <p class="text-xs text-gray-400 mb-1">
-                    Years 7&ndash;10 &mdash; Platform
-                  </p>
-                  <p class="text-sm font-semibold text-white">
-                    Become the default inference layer for BCI hardware globally
-                    &mdash; the &ldquo;Intel Inside&rdquo; of neurotechnology.
-                    Target: $50M+ valuation.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="card-style p-5 rounded-lg bg-gradient-to-b from-slate-900 to-slate-800 flex flex-col justify-center"
-              >
-                <p class="text-5xl font-bold text-yellow-400 text-center">
-                  $50M+
-                </p>
-                <p class="text-center text-gray-300 mt-2">
-                  Target valuation by Year 7&ndash;10
-                </p>
-                <div class="mt-5 space-y-2 text-sm text-gray-300">
-                  <p class="flex items-center gap-2">
-                    <span class="text-yellow-400">&#9679;</span> Every BCI
-                    device ships with Nimbus SDK
-                  </p>
-                  <p class="flex items-center gap-2">
-                    <span class="text-yellow-400">&#9679;</span> Researchers
-                    worldwide use Nimbus Studio
-                  </p>
-                  <p class="flex items-center gap-2">
-                    <span class="text-yellow-400">&#9679;</span> Nimbus = the
-                    standard for explainable neural inference
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 19: The Team -->
+        <!-- Slide 18: The Team -->
         <div class="slide">
           <div class="w-full p-4 md:p-6 lg:p-8">
             <h3 class="text-lg font-bold text-yellow-400 mb-2">
-              Slide 19: The Team
+              Slide 18: The Team
             </h3>
             <h2 class="text-2xl md:text-3xl font-bold mb-4">
               Our Founding Team & Expertise
             </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <div class="card-style p-3 rounded-lg text-center bg-slate-900">
                 <img
                   src="assets/images/Sergey.svg"
@@ -1690,71 +1601,7 @@
                 </div>
                 <p class="mt-1 text-yellow-400 text-sm">CTO</p>
                 <p class="mt-1 text-xs text-gray-400">
-                  Tech development & probabilistic programming.
-                </p>
-              </div>
-              <div class="card-style p-3 rounded-lg text-center bg-slate-900">
-                <img
-                  src="assets/images/Kirill.svg"
-                  alt="Kirill Parinov"
-                  class="w-16 h-16 rounded-full mx-auto mb-2"
-                  loading="lazy"
-                />
-                <div class="relative">
-                  <h4 class="text-sm font-bold text-white">Kirill Parinov</h4>
-                  <a
-                    href="https://www.linkedin.com/in/%F0%9F%90%9C-kir%C3%ADll-p%C3%A1rinov-1578161a5/"
-                    target="_blank"
-                    class="absolute top-0 right-2 hover:text-yellow-300 transition-colors"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 text-gray-400"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-                <p class="mt-1 text-yellow-400 text-sm">CBDO</p>
-                <p class="mt-1 text-xs text-gray-400">
-                  Market strategy & partnerships.
-                </p>
-              </div>
-              <div class="card-style p-3 rounded-lg text-center bg-slate-900">
-                <img
-                  src="assets/images/AvaAlex.png"
-                  alt="Alex Sidorov"
-                  class="w-16 h-16 rounded-full mx-auto mb-2 object-cover"
-                  loading="lazy"
-                />
-                <div class="relative">
-                  <h4 class="text-sm font-bold text-white">Alex Sidorov</h4>
-                  <a
-                    href="https://www.linkedin.com/in/sidorovalexey/"
-                    target="_blank"
-                    class="absolute top-0 right-2 hover:text-yellow-300 transition-colors"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 text-gray-400"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-                <p class="mt-1 text-yellow-400 text-sm">
-                  Chief Revenue Officer
-                </p>
-                <p class="mt-1 text-xs text-gray-400">
-                  15+ years management consulting and B2B SaaS.
+                  Ph.D., tech development &amp; probabilistic programming.
                 </p>
               </div>
               <div class="card-style p-3 rounded-lg text-center bg-slate-900">
@@ -1825,11 +1672,11 @@
           </div>
         </div>
 
-        <!-- Slide 20: Advisory Board -->
+        <!-- Slide 19: Advisory Board -->
         <div class="slide">
           <div class="w-full p-6 md:p-8">
             <h3 class="text-xl font-bold text-yellow-400 mb-2">
-              Slide 20: Advisory Board
+              Slide 19: Advisory Board
             </h3>
             <h2 class="text-2xl md:text-3xl font-bold mb-1">
               Guidance from World-Class Scientists
@@ -2023,7 +1870,7 @@
           </div>
         </div>
 
-        <!-- Slide 21: Contact -->
+        <!-- Slide 20: Contact -->
         <div class="slide bg-black">
           <div
             class="flex w-full flex-col items-center gap-8 p-8 md:flex-row md:items-center md:gap-10 md:p-12 lg:p-16"
@@ -2120,7 +1967,7 @@
           aria-live="polite"
           aria-atomic="true"
         >
-          1 / 21
+          1 / 20
         </div>
         <button
           id="next-btn"

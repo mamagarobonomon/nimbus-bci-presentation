@@ -24,3 +24,4 @@ Thumbs.db
 
 # Optional local caches (if tooling adds them later)
 .cache/
+.export-tmp/

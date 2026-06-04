@@ -78,13 +78,25 @@ function initPresentation() {
     // Set up event listeners
     setupEventListeners();
 
-    // Show first slide
-    showSlide(0);
+    // Show first slide (or export target from URL)
+    const exportParams = new URLSearchParams(window.location.search);
+    let initialSlide = 0;
+    if (exportParams.has("export")) {
+      const slideParam = exportParams.get("slide");
+      if (slideParam !== null && slideParam !== "") {
+        const parsed = Number.parseInt(slideParam, 10);
+        if (!Number.isNaN(parsed)) {
+          initialSlide = parsed;
+        }
+      }
+    }
+    showSlide(initialSlide);
 
     // Announce to screen readers
     announceToScreenReader("Presentation loaded. Use arrow keys to navigate.");
 
     console.log(`Presentation initialized: ${state.totalSlides} slides`);
+    document.dispatchEvent(new CustomEvent("presentation:ready"));
   } catch (error) {
     console.error("Failed to initialize presentation:", error);
     showError("Failed to load presentation. Please refresh the page.");
@@ -239,11 +251,11 @@ function showSlide(index) {
   // Update current slide
   state.currentSlide = index;
 
-  // Handle padding for full-background slides
+  // Handle padding for full-background slides (skip in PDF export — full A4 bleed)
+  const isPdfExport = document.documentElement.classList.contains("pdf-export");
   const isFullImageSlide =
     slideToShow && slideToShow.classList.contains("slide-image-full");
-  if (index === 0 || isFullImageSlide) {
-    // First slide and full-image slides have no padding
+  if (isPdfExport || index === 0 || isFullImageSlide) {
     elements.slidesWrapper.classList.remove("p-8", "md:p-12", "lg:p-16");
   } else {
     elements.slidesWrapper.classList.add("p-8", "md:p-12", "lg:p-16");
@@ -358,6 +370,44 @@ function showError(message) {
 // ============================================
 // INITIALIZATION ON DOM READY
 // ============================================
+
+/**
+ * PDF export: ?export=pdf (all slides) or ?export=pdf&slide=N (single slide).
+ */
+function applyPdfExportFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.has("export")) {
+    return;
+  }
+
+  document.documentElement.classList.add("pdf-export");
+
+  const slideParam = params.get("slide");
+  if (slideParam !== null && slideParam !== "") {
+    document.documentElement.classList.add("pdf-export-single");
+    const index = Number.parseInt(slideParam, 10);
+    if (!Number.isNaN(index)) {
+      const applySlide = () => showSlide(index);
+      if (state.totalSlides > 0) {
+        applySlide();
+      } else {
+        document.addEventListener(
+          "presentation:ready",
+          applySlide,
+          { once: true },
+        );
+      }
+    }
+  }
+}
+
+if (new URLSearchParams(window.location.search).has("export")) {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", applyPdfExportFromUrl);
+  } else {
+    applyPdfExportFromUrl();
+  }
+}
 
 // Initialize when DOM is fully loaded
 if (document.readyState === "loading") {
