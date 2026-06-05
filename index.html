@@ -505,6 +505,83 @@
           </div>
         </div>
 
+        <!-- Benchmark Validation -->
+        <div class="slide w-full">
+          <div class="w-full p-5 md:p-7 lg:p-8">
+            <h3 class="mb-1 text-lg font-bold text-yellow-400">
+              Benchmark Validation
+            </h3>
+            <h2 class="mb-2 text-2xl font-bold md:text-3xl">
+              Same Accuracy. 1000&times; Faster Compute.
+            </h2>
+            <p
+              class="mb-2 max-w-4xl text-sm leading-relaxed text-gray-300 md:text-base"
+            >
+              Session-to-session adaptation is one of the biggest challenges in
+              EEG. Nimbus updates user-specific models in milliseconds while
+              maintaining benchmark accuracy.
+            </p>
+            <p class="mb-4 text-sm text-gray-500">
+              BNCI 2014-004 motor imagery &middot; frozen CSP &middot; CPU
+              batch=1 &middot; nimbusbench S3
+            </p>
+            <div
+              class="benchmark-charts-grid grid gap-3 md:grid-cols-2 md:gap-4"
+            >
+              <figure class="benchmark-figure m-0">
+                <img
+                  src="assets/images/s3_accuracy_adaptation_comparison_dark.png"
+                  alt="Final-round accuracy for session-adapting heads on BNCI 2014-004: Nimbus partial_fit matches sklearn LDA and MLP refit and PyTorch MLP refit within error bars"
+                  class="benchmark-dark-chart"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="benchmark-figure m-0">
+                <img
+                  src="assets/images/s3_mean_update_vs_eval_round_dark.png"
+                  alt="Head update cost vs evaluation round on BNCI 2014-004: Nimbus partial_fit stays lowest on a log scale while PyTorch MLP refit is orders of magnitude slower"
+                  class="benchmark-dark-chart"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+            <div
+              class="mt-4 grid grid-cols-3 gap-2 text-center sm:gap-3 md:mx-auto md:max-w-3xl"
+            >
+              <div class="card-style rounded-lg px-2 py-2 sm:px-3">
+                <p class="text-lg font-bold text-yellow-400 sm:text-xl">
+                  ~Same
+                </p>
+                <p class="text-[0.65rem] text-gray-400 sm:text-xs">
+                  Adapting-head accuracy
+                </p>
+              </div>
+              <div class="card-style rounded-lg px-2 py-2 sm:px-3">
+                <p class="text-lg font-bold text-yellow-400 sm:text-xl">
+                  ~10&times;
+                </p>
+                <p class="text-[0.65rem] text-gray-400 sm:text-xs">
+                  Cheaper updates vs sklearn LDA
+                </p>
+              </div>
+              <div class="card-style rounded-lg px-2 py-2 sm:px-3">
+                <p class="text-lg font-bold text-yellow-400 sm:text-xl">
+                  ~1000&times;
+                </p>
+                <p class="text-[0.65rem] text-gray-400 sm:text-xs">
+                  Cheaper updates vs PyTorch MLP
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Slide 6: The Solution -->
         <div class="slide">
           <div class="w-full p-8 md:p-12 lg:p-16">
@@ -1160,150 +1237,199 @@
 
         <!-- Slide 13: Partnership Model -->
         <div class="slide w-full">
-          <div class="w-full p-6 md:p-8 lg:p-10">
-            <h3 class="text-lg font-bold text-yellow-400 mb-3">
+          <div class="w-full p-5 md:p-7 lg:p-8">
+            <h3 class="mb-2 text-sm font-bold text-yellow-400 md:text-base">
               Slide 13: Partnership Model
             </h3>
-            <h2 class="text-2xl md:text-3xl font-bold mb-5">
-              Why Partner with Nimbus?
+            <h2
+              class="mb-4 text-xl font-bold leading-tight md:mb-5 md:text-2xl lg:text-3xl"
+            >
+              We are the adaptive layer of the
+              <span class="text-yellow-400">BCI stack</span>.
             </h2>
 
-            <!-- Hardware-Software-Applications Flow (Text-based) -->
-            <div class="mb-6">
-              <div
-                class="mb-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
-              >
-                <div
-                  class="card-style p-4 rounded-lg text-center bg-slate-800 border border-gray-600"
-                >
-                  <div
-                    class="w-8 h-8 bg-gray-600 rounded mx-auto mb-2 flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-yellow-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-                      />
-                    </svg>
-                  </div>
-                  <h4 class="text-sm font-bold text-white">EEG Hardware</h4>
-                  <p class="text-xs text-gray-400">
-                    Your specialized sensors and acquisition systems
+            <div
+              class="grid items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10"
+            >
+              <!-- BCI stack diagram -->
+              <div class="bci-stack" aria-label="BCI technology stack">
+                <div class="bci-stack-layer bci-stack-layer--muted">
+                  <p class="bci-stack-layer__title">Applications</p>
+                  <p class="bci-stack-layer__sub">
+                    motor imagery &middot; P300 &middot; assistive &middot; VR
                   </p>
                 </div>
-                <div
-                  class="shrink-0 text-2xl text-yellow-400"
-                  aria-hidden="true"
-                >
-                  →
-                </div>
-                <div
-                  class="card-style p-4 rounded-lg text-center bg-yellow-400 border-2 border-yellow-400"
-                >
-                  <div
-                    class="w-8 h-8 bg-black rounded mx-auto mb-2 flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-yellow-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                  <h4 class="text-sm font-bold text-black">
-                    Nimbus Software Layer
-                  </h4>
-                  <p class="text-xs text-black">
-                    Real-time inference engine with explainable AI
-                  </p>
-                </div>
-                <div
-                  class="shrink-0 text-2xl text-yellow-400"
-                  aria-hidden="true"
-                >
-                  →
-                </div>
-                <div
-                  class="card-style p-4 rounded-lg text-center bg-slate-800 border border-gray-600"
-                >
-                  <div
-                    class="w-8 h-8 bg-gray-600 rounded mx-auto mb-2 flex items-center justify-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-yellow-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <h4 class="text-sm font-bold text-white">Applications</h4>
-                  <p class="text-xs text-gray-400">
-                    Medical devices, gaming, AR/VR, assistive tech, meditation,
-                    stress monitoring
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <!-- Benefits Grid -->
-            <div class="grid grid-cols-2 gap-3">
-              <div class="card-style p-3 rounded-lg">
-                <h4 class="text-sm font-bold text-yellow-400 mb-2">
-                  Complete Computational Expertise
-                </h4>
-                <p class="text-xs text-gray-300">
-                  No need to hire expensive AI/ML specialists. We provide the
-                  entire software stack.
-                </p>
+                <div class="bci-stack-adaptive">
+                  <p class="bci-stack-adaptive__label">Adaptive layer</p>
+                  <div class="bci-stack-adaptive__row">
+                    <div class="bci-stack-nimbus">
+                      <p class="bci-stack-nimbus__title">Nimbus SDK</p>
+                      <p class="bci-stack-nimbus__sub">
+                        Bayesian BCI inference
+                      </p>
+                      <div class="bci-stack-loop" aria-hidden="true">
+                        <span>Sense</span>
+                        <span class="bci-stack-loop__arrow">&rarr;</span>
+                        <span>Learn</span>
+                        <span class="bci-stack-loop__arrow">&rarr;</span>
+                        <span>Act</span>
+                      </div>
+                    </div>
+                    <span class="bci-stack-or">or</span>
+                    <div class="bci-stack-alt">
+                      <p class="bci-stack-alt__title">Deep learning</p>
+                      <p class="bci-stack-alt__sub">learned, end-to-end</p>
+                    </div>
+                  </div>
+                  <div class="bci-stack-io" aria-hidden="true">
+                    <span class="bci-stack-io__up">&uarr; neural signals</span>
+                    <span class="bci-stack-io__down">&darr; commands</span>
+                  </div>
+                </div>
+
+                <div class="bci-stack-layer bci-stack-layer--middleware">
+                  <p class="bci-stack-layer__title">Device middleware</p>
+                  <p class="bci-stack-layer__sub">
+                    streaming &middot; filters &middot; vendor SDK
+                  </p>
+                </div>
+                <div class="bci-stack-layer bci-stack-layer--muted">
+                  <p class="bci-stack-layer__title">Hardware</p>
+                  <p class="bci-stack-layer__sub">
+                    headsets &middot; amplifiers &middot; edge compute
+                  </p>
+                </div>
+                <div class="bci-stack-layer bci-stack-layer--muted">
+                  <p class="bci-stack-layer__title">Sensors</p>
+                  <p class="bci-stack-layer__sub">
+                    EEG &middot; fNIRS &middot; implants
+                  </p>
+                </div>
+
+                <ul class="bci-stack-legend">
+                  <li>
+                    <span
+                      class="bci-stack-legend__swatch bci-stack-legend__swatch--nimbus"
+                    ></span>
+                    Nimbus SDK
+                  </li>
+                  <li>
+                    <span
+                      class="bci-stack-legend__swatch bci-stack-legend__swatch--middleware"
+                    ></span>
+                    device middleware
+                  </li>
+                  <li>
+                    <span
+                      class="bci-stack-legend__swatch bci-stack-legend__swatch--stack"
+                    ></span>
+                    stack layers
+                  </li>
+                </ul>
               </div>
-              <div class="card-style p-3 rounded-lg">
-                <h4 class="text-sm font-bold text-yellow-400 mb-2">
-                  Faster Time-to-Market
-                </h4>
-                <p class="text-xs text-gray-300">
-                  Launch products 6-12 months faster. Focus on hardware while we
-                  handle software.
+
+              <!-- Partnership narrative -->
+              <div class="min-w-0">
+                <p
+                  class="mb-4 text-sm leading-relaxed text-gray-300 md:text-base"
+                >
+                  <strong class="text-white">Nimbus SDK</strong> is our
+                  on-device inference engine for brain-computer interfaces.
+                  Hardware partners plug it in as the
+                  <strong class="text-white">adaptive layer</strong> &mdash;
+                  closing the Sense&nbsp;&rarr;&nbsp;Learn&nbsp;&rarr;&nbsp;Act
+                  loop through your device stack, without hiring an ML team or
+                  shipping frozen end-to-end models.
                 </p>
-              </div>
-              <div class="card-style p-3 rounded-lg">
-                <h4 class="text-sm font-bold text-yellow-400 mb-2">
-                  Cheaper than In-House
-                </h4>
-                <p class="text-xs text-gray-300">
-                  Save 60-80% compared to building an internal team.
+
+                <p class="mb-3 text-sm font-semibold text-white md:text-base">
+                  What&rsquo;s unique &mdash;
+                  <span class="text-yellow-400"
+                    >it knows what it doesn&rsquo;t know</span
+                  >, so it can:
                 </p>
-              </div>
-              <div class="card-style p-3 rounded-lg">
-                <h4 class="text-sm font-bold text-yellow-400 mb-2">
-                  All Benefits of RxInfer
-                </h4>
-                <p class="text-xs text-gray-300">
-                  10x latency reduction, explainable AI, real-time adaptability.
-                </p>
+
+                <ul class="bci-partner-usps space-y-3">
+                  <li class="bci-partner-usps__item">
+                    <span class="bci-partner-usps__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                        />
+                      </svg>
+                    </span>
+                    <div>
+                      <p class="text-sm font-semibold text-white">
+                        Gates decisions by confidence
+                      </p>
+                      <p class="text-xs text-gray-400 md:text-sm">
+                        Posteriors and entropy drive rejection and usable
+                        throughput &mdash; not just the top class.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="bci-partner-usps__item">
+                    <span class="bci-partner-usps__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                        />
+                      </svg>
+                    </span>
+                    <div>
+                      <p class="text-sm font-semibold text-white">
+                        Stays robust in noisy sessions
+                      </p>
+                      <p class="text-xs text-gray-400 md:text-sm">
+                        Uncertainty-aware decoding when electrodes slip or
+                        signal quality drops.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="bci-partner-usps__item">
+                    <span class="bci-partner-usps__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="1.75"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4 12c2-2 4-3 8-3s6 1 8 3M4 12c2 2 4 3 8 3s6-1 8-3M4 12v4c2 2 4 3 8 3s6-1 8-3v-4"
+                        />
+                      </svg>
+                    </span>
+                    <div>
+                      <p class="text-sm font-semibold text-white">
+                        Adapts to neural drift
+                      </p>
+                      <p class="text-xs text-gray-400 md:text-sm">
+                        Online updates across trials &mdash; no weekly refit or
+                        cloud retraining.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1433,8 +1559,8 @@
                     adoption &mdash; $10K/yr
                   </p>
                   <p>
-                    <span class="text-yellow-400">SDK:</span> 1&ndash;2 contracts
-                    &mdash; $40K
+                    <span class="text-yellow-400">SDK:</span> 1&ndash;2
+                    contracts &mdash; $40K
                   </p>
                 </div>
               </div>
@@ -1546,7 +1672,7 @@
                 <img
                   src="assets/images/Sergey.svg"
                   alt="Sergey Musienko"
-                  class="w-16 h-16 rounded-full mx-auto mb-2"
+                  class="team-photo mx-auto mb-2 rounded-full"
                   loading="lazy"
                 />
                 <div class="relative">
@@ -1577,7 +1703,7 @@
                 <img
                   src="assets/images/Albert.svg"
                   alt="Albert Podusenko"
-                  class="w-16 h-16 rounded-full mx-auto mb-2"
+                  class="team-photo mx-auto mb-2 rounded-full"
                   loading="lazy"
                 />
                 <div class="relative">
@@ -1608,7 +1734,7 @@
                 <img
                   src="assets/images/Ismail_bw.png"
                   alt="İsmail Şenöz"
-                  class="w-16 h-16 rounded-full mx-auto mb-2"
+                  class="team-photo mx-auto mb-2 rounded-full"
                   loading="lazy"
                 />
                 <div class="relative">
@@ -1639,7 +1765,7 @@
                 <img
                   src="assets/images/Bart_bw.png"
                   alt="Bart van Erp"
-                  class="w-16 h-16 rounded-full mx-auto mb-2"
+                  class="team-photo mx-auto mb-2 rounded-full"
                   loading="lazy"
                 />
                 <div class="relative">
@@ -1992,7 +2118,7 @@
           aria-live="polite"
           aria-atomic="true"
         >
-          1 / 20
+          1 / 19
         </div>
         <button
           id="next-btn"

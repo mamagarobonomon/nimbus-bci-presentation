@@ -153,7 +153,10 @@ function handleKeyPress(e) {
     case "ArrowDown":
     case "PageDown":
     case " ": // Spacebar
-      if (e.key === " " && e.target.tagName !== "BUTTON") {
+      if (
+        e.key === " " &&
+        (!(e.target instanceof HTMLElement) || e.target.tagName !== "BUTTON")
+      ) {
         e.preventDefault();
       }
       nextSlide();
@@ -391,11 +394,9 @@ function applyPdfExportFromUrl() {
       if (state.totalSlides > 0) {
         applySlide();
       } else {
-        document.addEventListener(
-          "presentation:ready",
-          applySlide,
-          { once: true },
-        );
+        document.addEventListener("presentation:ready", applySlide, {
+          once: true,
+        });
       }
     }
   }

@@ -11,9 +11,10 @@ import { chromium } from "playwright";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const port = process.env.PORT || "3456";
-const baseUrl = (
-  process.argv[2] || `http://127.0.0.1:${port}/`
-).replace(/\/?$/, "/");
+const baseUrl = (process.argv[2] || `http://127.0.0.1:${port}/`).replace(
+  /\/?$/,
+  "/",
+);
 const outputPath = resolve(
   root,
   process.argv[3] || "Nimbus-BCI-Venture-Deck.pdf",
@@ -88,7 +89,9 @@ console.log(
 
 for (let i = 0; i < slideCount; i++) {
   const url = `${baseUrl}?export=pdf&slide=${i}`;
-  process.stdout.write(`  slide ${String(i + 1).padStart(2)}/${slideCount} ... `);
+  process.stdout.write(
+    `  slide ${String(i + 1).padStart(2)}/${slideCount} ... `,
+  );
 
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 20_000 });
   await page.waitForSelector("#presentation-container", { state: "visible" });
