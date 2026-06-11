@@ -46,7 +46,10 @@ const state = {
   totalSlides: 0,
   isAnimating: false,
   touchStartX: 0,
+  touchStartY: 0,
   touchEndX: 0,
+  touchEndY: 0,
+  touchStartedInScrollable: false,
 };
 
 // ============================================
@@ -91,6 +94,8 @@ function initPresentation() {
       }
     }
     showSlide(initialSlide);
+    initResponsiveTables();
+    initMobileAccordions();
 
     // Announce to screen readers
     announceToScreenReader("Presentation loaded. Use arrow keys to navigate.");
@@ -133,6 +138,13 @@ function setupEventListeners() {
     elements.presentation.addEventListener("touchend", handleTouchEnd, {
       passive: true,
     });
+  }
+
+  if (elements.slidesWrapper) {
+    elements.slidesWrapper.addEventListener("scroll", updateScrollHint, {
+      passive: true,
+    });
+    window.addEventListener("resize", updateScrollHint);
   }
 
   // Prevent default behavior for arrow keys (page scrolling)
@@ -185,7 +197,15 @@ function handleKeyPress(e) {
  * @param {TouchEvent} e - Touch event
  */
 function handleTouchStart(e) {
-  state.touchStartX = e.changedTouches[0].screenX;
+  const touch = e.changedTouches[0];
+  state.touchStartX = touch.screenX;
+  state.touchStartY = touch.screenY;
+  state.touchStartedInScrollable = Boolean(
+    e.target instanceof Element &&
+      e.target.closest(
+        ".table-container, .mobile-accordion-list, .mobile-accordion, [data-swipe-lock]",
+      ),
+  );
 }
 
 /**
@@ -193,7 +213,9 @@ function handleTouchStart(e) {
  * @param {TouchEvent} e - Touch event
  */
 function handleTouchEnd(e) {
-  state.touchEndX = e.changedTouches[0].screenX;
+  const touch = e.changedTouches[0];
+  state.touchEndX = touch.screenX;
+  state.touchEndY = touch.screenY;
   handleSwipe();
 }
 
@@ -201,22 +223,78 @@ function handleTouchEnd(e) {
  * Process swipe gesture
  */
 function handleSwipe() {
-  const swipeDistance = state.touchStartX - state.touchEndX;
+  if (state.touchStartedInScrollable) {
+    return;
+  }
 
-  if (Math.abs(swipeDistance) > CONFIG.SWIPE_THRESHOLD) {
-    if (swipeDistance > 0) {
-      // Swipe left - next slide
-      nextSlide();
-    } else {
-      // Swipe right - previous slide
-      prevSlide();
-    }
+  const deltaX = state.touchStartX - state.touchEndX;
+  const deltaY = state.touchStartY - state.touchEndY;
+
+  if (Math.abs(deltaX) <= CONFIG.SWIPE_THRESHOLD) {
+    return;
+  }
+
+  // Prefer vertical scroll inside the slide over horizontal slide changes
+  if (Math.abs(deltaY) >= Math.abs(deltaX)) {
+    return;
+  }
+
+  if (deltaX > 0) {
+    nextSlide();
+  } else {
+    prevSlide();
   }
 }
 
-// ============================================
-// SLIDE NAVIGATION
-// ============================================
+/**
+ * Add data-label attributes from thead for mobile card layout
+ */
+function initResponsiveTables() {
+  document.querySelectorAll(".table-cards").forEach((table) => {
+    const headers = [...table.querySelectorAll("thead th")].map((th) =>
+      th.textContent.trim(),
+    );
+
+    table.querySelectorAll("tbody tr").forEach((row) => {
+      row.querySelectorAll("td").forEach((cell, index) => {
+        if (headers[index]) {
+          cell.setAttribute("data-label", headers[index]);
+        }
+        if (
+          table.classList.contains("table-cards-highlight-last") &&
+          index === headers.length - 1
+        ) {
+          cell.classList.add("table-cards-highlight");
+        }
+      });
+    });
+  });
+}
+
+/**
+ * Refresh scroll hint when mobile accordions expand or collapse
+ */
+function initMobileAccordions() {
+  document.querySelectorAll(".mobile-accordion").forEach((accordion) => {
+    accordion.addEventListener("toggle", updateScrollHint);
+  });
+}
+
+/**
+ * Toggle scroll hint when slide content overflows the viewport
+ */
+function updateScrollHint() {
+  if (!elements.slidesWrapper) {
+    return;
+  }
+
+  const wrapper = elements.slidesWrapper;
+  const canScroll = wrapper.scrollHeight > wrapper.clientHeight + 4;
+  const atBottom =
+    wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight - 8;
+
+  wrapper.classList.toggle("can-scroll", canScroll && !atBottom);
+}
 
 /**
  * Show a specific slide
@@ -259,15 +337,21 @@ function showSlide(index) {
   const isFullImageSlide =
     slideToShow && slideToShow.classList.contains("slide-image-full");
   if (isPdfExport || index === 0 || isFullImageSlide) {
-    elements.slidesWrapper.classList.remove("p-8", "md:p-12", "lg:p-16");
+    elements.slidesWrapper.classList.remove("md:p-8", "lg:p-12");
   } else {
-    elements.slidesWrapper.classList.add("p-8", "md:p-12", "lg:p-16");
+    elements.slidesWrapper.classList.add("md:p-8", "lg:p-12");
   }
+
+  if (elements.slidesWrapper) {
+    elements.slidesWrapper.scrollTop = 0;
+  }
+
   // CSS handles display via .slide.active — no inline override needed
 
   // Update UI
   updateSlideCounter();
   updateButtonStates();
+  requestAnimationFrame(updateScrollHint);
 
   // Announce slide change to screen readers
   announceToScreenReader(`Slide ${index + 1} of ${state.totalSlides}`);
@@ -275,6 +359,7 @@ function showSlide(index) {
   // Reset animating flag after animation completes
   setTimeout(() => {
     state.isAnimating = false;
+    updateScrollHint();
   }, getAnimationDuration());
 }
 
