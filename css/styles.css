@@ -100,6 +100,11 @@ body {
   object-fit: cover;
 }
 
+.team-grid .team-photo {
+  width: 4.75rem;
+  height: 4.75rem;
+}
+
 .benchmark-dark-chart {
   display: block;
   width: 100%;
@@ -720,7 +725,11 @@ body {
     font-size: 0.75rem;
   }
 
-  .slide-competitive .table-cards-compact tbody td.table-cards-highlight span.block {
+  .slide-competitive
+    .table-cards-compact
+    tbody
+    td.table-cards-highlight
+    span.block {
     display: none;
   }
 
@@ -936,7 +945,10 @@ html.pdf-export-single[data-export-slide="18"]
   > .slide:nth-child(19),
 html.pdf-export-single[data-export-slide="19"]
   #slides-wrapper
-  > .slide:nth-child(20) {
+  > .slide:nth-child(20),
+html.pdf-export-single[data-export-slide="20"]
+  #slides-wrapper
+  > .slide:nth-child(21) {
   display: flex !important;
   flex-direction: column;
   align-items: center;
@@ -958,6 +970,11 @@ html.pdf-export-single[data-export-slide="19"]
 html.pdf-export .team-photo {
   width: 7.5rem;
   height: 7.5rem;
+}
+
+html.pdf-export .team-grid .team-photo {
+  width: 4.25rem;
+  height: 4.25rem;
 }
 
 html.pdf-export,

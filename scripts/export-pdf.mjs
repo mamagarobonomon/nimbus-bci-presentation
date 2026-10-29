@@ -19,7 +19,7 @@ const outputPath = resolve(
   root,
   process.argv[3] || "Nimbus-BCI-Venture-Deck.pdf",
 );
-const slideCount = Number(process.env.SLIDE_COUNT || "20");
+const slideCount = Number(process.env.SLIDE_COUNT || "21");
 /** 2× retina capture by default; set PDF_SCALE=1 for a faster draft */
 const scale = Number(process.env.PDF_SCALE || "2");
 

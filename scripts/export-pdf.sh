@@ -28,5 +28,5 @@ python3 -c "from PIL import Image" 2>/dev/null || {
   exit 1
 }
 
-PORT="${PORT}" SLIDE_COUNT="${SLIDE_COUNT:-20}" node scripts/export-pdf.mjs \
+PORT="${PORT}" SLIDE_COUNT="${SLIDE_COUNT:-21}" node scripts/export-pdf.mjs \
   "http://127.0.0.1:${PORT}/" "${OUTPUT}"

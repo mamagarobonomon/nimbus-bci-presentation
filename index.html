@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Nimbus BCI - The Intel Inside for Brain-Computer Interfaces. Real-time, explainable neural inference technology for the next generation of BCI devices."
+      content="Nimbus BCI - The Intel Inside for Brain-Computer Interfaces. Studio, MCP, and a sub-20ms SDK for real-time, explainable neural inference."
     />
     <meta
       name="keywords"
-      content="BCI, Brain-Computer Interface, Neural Inference, RxInfer, Neurotechnology, AI"
+      content="BCI, Brain-Computer Interface, Neural Inference, RxInfer, Neurotechnology, AI, MCP, Nimbus SDK"
     />
     <meta name="author" content="Nimbus BCI" />
 
@@ -146,7 +146,9 @@
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-4">
               What is a BCI?
             </h3>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6">
+            <h2
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6"
+            >
               A Direct Pathway Between Brain and Machine
             </h2>
             <div class="grid items-center gap-4 md:grid-cols-2 md:gap-8">
@@ -162,7 +164,8 @@
                   other devices using only thought.
                 </p>
                 <p class="mt-3 text-xs text-gray-500 md:hidden">
-                  From non-invasive EEG headsets to implantable neural interfaces.
+                  From non-invasive EEG headsets to implantable neural
+                  interfaces.
                 </p>
               </div>
               <div class="hidden md:grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -205,32 +208,52 @@
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-4">
               Slide 3: The Problem
             </h3>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6">
+            <h2
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6"
+            >
               The BCI Revolution Faces a Bottleneck
             </h2>
 
             <div class="mobile-accordion-list md:hidden" data-swipe-lock>
               <details class="mobile-accordion card-style" open>
-                <summary class="mobile-accordion__summary">High latency (100–300ms)</summary>
+                <summary class="mobile-accordion__summary">
+                  High latency (100–300ms)
+                </summary>
                 <div class="mobile-accordion__body">
-                  <p>Breaks immersion — low latency is a hard requirement for viable BCI products.</p>
+                  <p>
+                    Breaks immersion — low latency is a hard requirement for
+                    viable BCI products.
+                  </p>
                 </div>
               </details>
               <details class="mobile-accordion card-style">
-                <summary class="mobile-accordion__summary">Low adaptability</summary>
+                <summary class="mobile-accordion__summary">
+                  Low adaptability
+                </summary>
                 <div class="mobile-accordion__body">
-                  <p>Static models can't track changing brain states; retraining costs $10K–$50K per clinical session.</p>
+                  <p>
+                    Static models can't track changing brain states; retraining
+                    costs $10K–$50K per clinical session.
+                  </p>
                 </div>
               </details>
               <details class="mobile-accordion card-style">
-                <summary class="mobile-accordion__summary">Black-box models</summary>
+                <summary class="mobile-accordion__summary">
+                  Black-box models
+                </summary>
                 <div class="mobile-accordion__body">
-                  <p>Uninterpretable outputs block regulatory approval and erode user trust.</p>
+                  <p>
+                    Uninterpretable outputs block regulatory approval and erode
+                    user trust.
+                  </p>
                 </div>
               </details>
             </div>
-            <p class="mt-3 text-sm text-yellow-300 bg-yellow-900/50 p-3 rounded-lg md:hidden">
-              These bottlenecks stall adoption across medicine, assistive tech, and VR/AR.
+            <p
+              class="mt-3 text-sm text-yellow-300 bg-yellow-900/50 p-3 rounded-lg md:hidden"
+            >
+              These bottlenecks stall adoption across medicine, assistive tech,
+              and VR/AR.
             </p>
 
             <ul
@@ -255,7 +278,9 @@
                 trust.
               </li>
             </ul>
-            <p class="hidden md:block mt-8 text-yellow-300 bg-yellow-900/50 p-4 rounded-lg">
+            <p
+              class="hidden md:block mt-8 text-yellow-300 bg-yellow-900/50 p-4 rounded-lg"
+            >
               Together, these bottlenecks stall adoption across medicine,
               assistive technology, and immersive VR/AR.
             </p>
@@ -272,7 +297,9 @@
             >
               <!-- Left column -->
               <div class="w-full min-w-0 md:w-3/5 md:flex-shrink-0">
-                <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-3">
+                <h3
+                  class="hidden md:block text-xl font-bold text-yellow-400 mb-3"
+                >
                   Slide 4: Our Technological Core
                 </h3>
                 <h2 class="text-xl sm:text-2xl font-bold mb-3 md:mb-4">
@@ -280,14 +307,12 @@
                   The Reactive Inference Engine
                 </h2>
                 <p class="text-sm md:text-base text-gray-300 mb-3 md:mb-4">
-                  <strong class="text-white">Nimbus SDK</strong> is a
-                  production-ready inference engine built for real-time brain
-                  signal processing. Unlike static ML models, it runs
-                  <strong class="text-white"
-                    >probabilistic models that continuously update</strong
-                  >
-                  as new data arrives &mdash; adapting to the brain's changing
-                  states without retraining.
+                  <strong class="text-white">Nimbus SDK 0.8</strong>
+                  (<span class="text-yellow-400">nimbus-bci</span> on PyPI, plus
+                  Julia) is the on-device runtime. Personalizer freezes any EEG
+                  trunk and adapts a Bayesian head. Conductor governs drift,
+                  label budgets, and rollback &mdash; without retraining the
+                  encoder.
                 </p>
                 <p class="hidden md:block text-base text-gray-300 mb-4">
                   At its core, Nimbus SDK uses
@@ -325,30 +350,36 @@
               <!-- Right column -->
               <div class="w-full min-w-0 md:flex-1 tech-core-features">
                 <div class="card-style p-2 md:p-3 rounded-lg mb-2 md:mb-3">
-                  <h4 class="text-sm md:text-base font-bold text-white mb-0 md:mb-1">
-                    &lt;10ms Inference Latency
+                  <h4
+                    class="text-sm md:text-base font-bold text-white mb-0 md:mb-1"
+                  >
+                    Sub-20ms, on device
                   </h4>
                   <p class="hidden md:block text-sm text-gray-300">
-                    Real-time processing of EEG and neural signals with sub-10ms
-                    end-to-end latency.
+                    Inference and adaptation stay local. No cloud round-trip on
+                    the streaming loop.
                   </p>
                 </div>
                 <div class="card-style p-2 md:p-3 rounded-lg mb-2 md:mb-3">
-                  <h4 class="text-sm md:text-base font-bold text-white mb-0 md:mb-1">
-                    Continuous Adaptation
+                  <h4
+                    class="text-sm md:text-base font-bold text-white mb-0 md:mb-1"
+                  >
+                    Personalizer
                   </h4>
                   <p class="hidden md:block text-sm text-gray-300">
-                    Models update on every new sample &mdash; no retraining
-                    cycles, no downtime.
+                    One API on frozen trunks &mdash; EEGNet, classical models,
+                    and foundation encoders such as REVE.
                   </p>
                 </div>
                 <div class="card-style p-2 md:p-3 rounded-lg mb-2 md:mb-3">
-                  <h4 class="text-sm md:text-base font-bold text-white mb-0 md:mb-1">
-                    Interpretable by Design
+                  <h4
+                    class="text-sm md:text-base font-bold text-white mb-0 md:mb-1"
+                  >
+                    Conductor
                   </h4>
                   <p class="hidden md:block text-sm text-gray-300">
-                    Probabilistic outputs with uncertainty estimates &mdash;
-                    built for regulatory transparency.
+                    Uncertainty, drift checks, and rollback decide when to
+                    adapt, ask for a label, or abstain.
                   </p>
                 </div>
                 <div
@@ -377,7 +408,9 @@
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-2">
               Slide 5: The Competitive Landscape
             </h3>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4">
+            <h2
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4"
+            >
               Why BCI Processing Methods Fall Short
             </h2>
             <div class="table-container">
@@ -532,27 +565,30 @@
                 </tbody>
               </table>
             </div>
-            <p class="table-cards-compact-note mt-2 text-center text-xs text-gray-500">
+            <p
+              class="table-cards-compact-note mt-2 text-center text-xs text-gray-500"
+            >
               Full LDA / SVM / deep-learning comparison on tablet and desktop.
             </p>
           </div>
         </div>
 
-        <!-- Benchmark Validation -->
+        <!-- Slide 6: Benchmark Validation -->
         <div class="slide w-full">
           <div class="w-full p-4 md:p-7 lg:p-8">
             <h3 class="mb-1 text-lg font-bold text-yellow-400">
-              Benchmark Validation
+              Slide 6: Benchmark Validation
             </h3>
             <h2 class="mb-2 text-2xl font-bold md:text-3xl">
-              Same Accuracy. 1000&times; Faster Compute.
+              Same Accuracy as a Refit. 10&times; Cheaper Than LDA.
             </h2>
             <p
               class="mb-2 max-w-4xl text-sm leading-relaxed text-gray-300 md:text-base"
             >
-              Session-to-session adaptation is one of the biggest challenges in
-              EEG. Nimbus updates user-specific models in milliseconds while
-              maintaining benchmark accuracy.
+              Nimbus updates the head in place. Accuracy stays with a full
+              refit of sklearn LDA or an MLP (&minus;0.1 pp versus LDA). The
+              update is about 10&times; cheaper than refitting LDA, already the
+              fast baseline.
             </p>
             <p class="mb-3 text-sm text-gray-500 md:mb-4">
               BNCI 2014-004 motor imagery &middot; frozen CSP &middot; CPU
@@ -563,27 +599,31 @@
                 class="order-first grid grid-cols-3 gap-2 text-center sm:gap-3 md:order-last md:mx-auto md:mt-4 md:max-w-3xl"
               >
                 <div class="card-style rounded-lg px-2 py-2 sm:px-3">
-                  <p class="hidden md:block text-lg font-bold text-yellow-400 sm:text-xl">
+                  <p
+                    class="hidden md:block text-lg font-bold text-yellow-400 sm:text-xl"
+                  >
                     ~Same
                   </p>
                   <p class="text-xs text-gray-400">
-                    Adapting-head accuracy
+                    Versus a full LDA or MLP refit
                   </p>
                 </div>
                 <div class="card-style rounded-lg px-2 py-2 sm:px-3">
-                  <p class="hidden md:block text-lg font-bold text-yellow-400 sm:text-xl">
+                  <p
+                    class="hidden md:block text-lg font-bold text-yellow-400 sm:text-xl"
+                  >
+                    &minus;0.1 pp
+                  </p>
+                  <p class="text-xs text-gray-400">Versus sklearn LDA accuracy</p>
+                </div>
+                <div class="card-style rounded-lg px-2 py-2 sm:px-3">
+                  <p
+                    class="hidden md:block text-lg font-bold text-yellow-400 sm:text-xl"
+                  >
                     ~10&times;
                   </p>
                   <p class="text-xs text-gray-400">
-                    Cheaper updates vs sklearn LDA
-                  </p>
-                </div>
-                <div class="card-style rounded-lg px-2 py-2 sm:px-3">
-                  <p class="hidden md:block text-lg font-bold text-yellow-400 sm:text-xl">
-                    ~1000&times;
-                  </p>
-                  <p class="text-xs text-gray-400">
-                    Cheaper updates vs PyTorch MLP
+                    Cheaper updates than sklearn LDA
                   </p>
                 </div>
               </div>
@@ -604,7 +644,7 @@
                 <figure class="benchmark-figure benchmark-figure--latency m-0">
                   <img
                     src="assets/images/s3_mean_update_vs_eval_round_dark.png"
-                    alt="Head update cost vs evaluation round on BNCI 2014-004: Nimbus partial_fit stays lowest on a log scale while PyTorch MLP refit is orders of magnitude slower"
+                    alt="Head update cost on BNCI 2014-004: Nimbus partial_fit stays about 10 times under sklearn LDA refit. A PyTorch MLP refit is a full retrain and sits higher, as expected."
                     class="benchmark-dark-chart"
                     width="1200"
                     height="750"
@@ -613,87 +653,103 @@
                   />
                 </figure>
               </div>
-              <p class="benchmark-mobile-note m-0 text-center text-xs text-gray-500">
-                Latency chart shown on tablet/desktop &mdash; key speedups above.
+              <p class="m-0 text-center text-xs text-gray-500">
+                The high line on the cost chart is a full PyTorch retrain. That
+                gap is expected. The comparison is Nimbus against sklearn LDA.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Slide 6: The Solution -->
+        <!-- Slide 7: The Solution -->
         <div class="slide">
           <div class="w-full p-4 sm:p-6 md:p-12 lg:p-16">
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-4">
-              Slide 6: The Solution: RxInfer Inside
+              Slide 7: The Solution: RxInfer Inside
             </h3>
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6">
+            <h2
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6"
+            >
               Real-time, Explainable Inference for BCI
             </h2>
             <p class="text-sm md:text-lg text-gray-300 mb-4 md:mb-6">
-              We are building an
-              <strong class="font-bold">SDK/API powered by RxInfer</strong> to
-              serve as the core processing engine for the next generation of BCI
-              devices.
+              The platform is live: Studio, MCP, and an
+              <strong class="font-bold">RxInfer-powered SDK</strong> are the
+              processing layer hardware and research teams plug in.
             </p>
-            <div class="slide-solution-cards grid grid-cols-3 gap-2 md:grid-cols-3 md:gap-4 text-center">
+            <div
+              class="slide-solution-cards grid grid-cols-3 gap-2 md:grid-cols-3 md:gap-4 text-center"
+            >
               <div class="card-style p-2 md:p-4 rounded-lg">
-                <h4 class="text-xs md:text-base font-bold text-white">Factor Graphs</h4>
+                <h4 class="text-xs md:text-base font-bold text-white">
+                  Factor Graphs
+                </h4>
                 <p class="hidden md:block text-sm text-gray-400">
                   For "white box" models that regulators and users can trust.
                 </p>
               </div>
               <div class="card-style p-2 md:p-4 rounded-lg">
-                <h4 class="text-xs md:text-base font-bold text-white">Variational Inference</h4>
+                <h4 class="text-xs md:text-base font-bold text-white">
+                  Variational Inference
+                </h4>
                 <p class="hidden md:block text-sm text-gray-400">
                   For scalable computation balancing accuracy and speed.
                 </p>
               </div>
               <div class="card-style p-2 md:p-4 rounded-lg">
-                <h4 class="text-xs md:text-base font-bold text-white">Reactive Message Passing</h4>
+                <h4 class="text-xs md:text-base font-bold text-white">
+                  Reactive Message Passing
+                </h4>
                 <p class="hidden md:block text-sm text-gray-400">
                   For adaptive, real-time performance on streaming data.
                 </p>
               </div>
             </div>
             <p class="mt-4 md:mt-8 text-base md:text-2xl font-bold text-center">
-              The result: We reduce BCI latency from over 200ms to a target of
-              <span class="text-yellow-400">10-20ms</span>.
+              The result: inference and adaptation run locally in
+              <span class="text-yellow-400">under 20ms</span>.
             </p>
           </div>
         </div>
 
-        <!-- Slide 7: Product Offering -->
+        <!-- Slide 8: Product Offering -->
         <div class="slide">
           <div class="w-full p-4 sm:p-6 md:p-12 lg:p-16">
             <div class="flex flex-col md:flex-row items-start gap-4 md:gap-8">
               <div class="w-full md:w-1/2">
-                <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-4">
-                  Slide 7: Product Offering
+                <h3
+                  class="hidden md:block text-xl font-bold text-yellow-400 mb-4"
+                >
+                  Slide 8: Product Offering
                 </h3>
-                <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6">
+                <h2
+                  class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6"
+                >
                   The "Intel Inside" for Neurotechnology
                 </h2>
                 <ul
                   class="list-outside list-disc space-y-2 md:space-y-4 pl-5 md:pl-6 text-sm md:text-lg text-gray-300 marker:text-gray-500"
                 >
                   <li class="pl-1">
-                    <strong class="text-white">A Core Engine:</strong> A
-                    powerful inference engine deployable in the cloud or at the
-                    edge.
+                    <strong class="text-white">Nimbus Studio:</strong> Visual
+                    IDE with AI pipeline generation, 30+ headsets, seven
+                    foundation backbones, and one-click Python export.
                   </li>
                   <li class="pl-1">
-                    <strong class="text-white">Pre-built Models:</strong> A
-                    library of models for common BCI paradigms (e.g., motor
-                    imagery, SSVEP, P300).
+                    <strong class="text-white">Nimbus MCP:</strong> 58 tools so
+                    Claude Code, Cursor, and Claude Desktop run benchmarks,
+                    sweeps, and confirm-gated live sessions.
                   </li>
                   <li class="pl-1">
-                    <strong class="text-white">Developer Tools:</strong> A
-                    comprehensive SDK and API for seamless integration into any
-                    neurotech stack.
+                    <strong class="text-white">Nimbus SDK 0.8:</strong>
+                    Personalizer and Conductor. Sub-20ms, on device,
+                    sklearn-compatible, in Python and Julia.
                   </li>
                 </ul>
               </div>
-              <div class="hidden md:flex w-full md:w-1/2 justify-center items-center">
+              <div
+                class="hidden md:flex w-full md:w-1/2 justify-center items-center"
+              >
                 <img
                   src="assets/images/nimbus_engine.png"
                   alt="Nimbus Engine"
@@ -707,7 +763,7 @@
           </div>
         </div>
 
-        <!-- Slide 8: Visual Pipeline Builder -->
+        <!-- Slide 9: Visual Pipeline Builder -->
         <div class="slide slide-image-full relative bg-black text-center">
           <div
             class="relative z-10 flex h-full min-h-0 flex-col justify-between"
@@ -716,7 +772,7 @@
               class="shrink-0 border-b border-yellow-500/40 bg-slate-950/85 px-4 py-2 text-left backdrop-blur-sm sm:px-6"
             >
               <h3 class="text-xs font-bold text-yellow-400 sm:text-[0.85rem]">
-                Slide 8: Visual Pipeline Builder
+                Slide 9: Visual Pipeline Builder
               </h3>
             </div>
             <div
@@ -770,21 +826,21 @@
                 <div
                   class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-white sm:text-sm"
                 >
-                  <span>• Drag-and-drop interface</span>
-                  <span>• Real-time pipeline execution</span>
-                  <span>• Visual execution logs</span>
-                  <span>• No-code BCI development</span>
+                  <span>• Create with AI</span>
+                  <span>• 30+ headsets</span>
+                  <span>• 7 foundation models</span>
+                  <span>• 1-click Python export</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Slide 9: Nimbus Studio Competitors -->
+        <!-- Slide 10: Nimbus Studio Competitors -->
         <div class="slide w-full">
           <div class="w-full p-4 sm:p-6 md:p-8 lg:p-10">
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-2">
-              Slide 9: Nimbus Studio Competitors
+              Slide 10: Nimbus Studio Competitors
             </h3>
             <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-5">
               Why Existing Tools Fall Short
@@ -814,7 +870,8 @@
                   </p>
                   <p class="mobile-accordion__highlight">
                     <span class="mobile-accordion__label">Nimbus</span>
-                    Full ML pipeline from offline training to real-time deployment
+                    Full ML pipeline from offline training to real-time
+                    deployment
                   </p>
                 </div>
               </details>
@@ -823,7 +880,8 @@
                 <div class="mobile-accordion__body">
                   <p>
                     <span class="mobile-accordion__label">Limitation</span>
-                    Code-only, requires deep Python expertise, no visual interface
+                    Code-only, requires deep Python expertise, no visual
+                    interface
                   </p>
                   <p class="mobile-accordion__highlight">
                     <span class="mobile-accordion__label">Nimbus</span>
@@ -832,7 +890,9 @@
                 </div>
               </details>
               <details class="mobile-accordion card-style">
-                <summary class="mobile-accordion__summary">MATLAB / BCILAB</summary>
+                <summary class="mobile-accordion__summary">
+                  MATLAB / BCILAB
+                </summary>
                 <div class="mobile-accordion__body">
                   <p>
                     <span class="mobile-accordion__label">Limitation</span>
@@ -845,15 +905,19 @@
                 </div>
               </details>
               <details class="mobile-accordion card-style">
-                <summary class="mobile-accordion__summary">Custom dev team</summary>
+                <summary class="mobile-accordion__summary">
+                  Custom dev team
+                </summary>
                 <div class="mobile-accordion__body">
                   <p>
                     <span class="mobile-accordion__label">Limitation</span>
-                    $120K+/year per developer, 12–18 months to first working prototype
+                    $120K+/year per developer, 12–18 months to first working
+                    prototype
                   </p>
                   <p class="mobile-accordion__highlight">
                     <span class="mobile-accordion__label">Nimbus</span>
-                    SDK co-development at a fraction of the cost, 6× faster to market
+                    SDK co-development at a fraction of the cost, 6× faster to
+                    market
                   </p>
                 </div>
               </details>
@@ -960,19 +1024,20 @@
                 </tbody>
               </table>
             </div>
-            <p class="mt-3 md:mt-4 text-center text-xs md:text-sm text-gray-400 italic">
-              No existing tool combines a visual interface, Bayesian
-              probabilistic outputs, and an embeddable hardware SDK in a single
-              platform.
+            <p
+              class="mt-3 md:mt-4 text-center text-xs md:text-sm text-gray-400 italic"
+            >
+              No existing tool combines a visual IDE, agent-native MCP, Bayesian
+              personalization, and an embeddable SDK in one platform.
             </p>
           </div>
         </div>
 
-        <!-- Slide 10: Target Customers -->
+        <!-- Slide 11: Target Customers -->
         <div class="slide w-full">
           <div class="w-full p-4 sm:p-6 md:p-8 lg:p-10">
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-2">
-              Slide 10: Target Customers
+              Slide 11: Target Customers
             </h3>
             <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-5">
               Three Validated Customer Segments
@@ -980,41 +1045,68 @@
 
             <!-- Mobile: compact summary with expandable details -->
             <div class="mobile-accordion-list md:hidden" data-swipe-lock>
-              <details class="mobile-accordion card-style border-l-4 border-yellow-400" open>
+              <details
+                class="mobile-accordion card-style border-l-4 border-yellow-400"
+                open
+              >
                 <summary class="mobile-accordion__summary">
-                  <span class="mobile-accordion__badge mobile-accordion__badge--active">S1</span>
-                  <span class="mobile-accordion__title">Researchers &amp; BCI consumers</span>
-                  <span class="mobile-accordion__meta text-yellow-300">$49–199/mo</span>
+                  <span
+                    class="mobile-accordion__badge mobile-accordion__badge--active"
+                    >S1</span
+                  >
+                  <span class="mobile-accordion__title"
+                    >Researchers &amp; BCI consumers</span
+                  >
+                  <span class="mobile-accordion__meta text-yellow-300"
+                    >Pro $29/mo</span
+                  >
                 </summary>
                 <div class="mobile-accordion__body">
                   <p>
                     <span class="mobile-accordion__label">Validation</span>
-                    <span class="text-green-400">&#10003; 80+ on waiting list (zero marketing)</span>
+                    <span class="text-green-400"
+                      >&#10003; 80+ on waiting list (zero marketing)</span
+                    >
                   </p>
                   <p>
                     <span class="mobile-accordion__label">Who</span>
-                    Postdocs, PI-led labs, enthusiasts, r/neuralinterfaces community
+                    Postdocs, PI-led labs, enthusiasts, r/neuralinterfaces
+                    community
                   </p>
                   <p>
                     <span class="mobile-accordion__label">Channel</span>
-                    Academic conferences, Discord, NeurotechX, r/neuralinterfaces
+                    Academic conferences, Discord, NeurotechX,
+                    r/neuralinterfaces
                   </p>
                 </div>
               </details>
-              <details class="mobile-accordion card-style border-l-4 border-yellow-400">
+              <details
+                class="mobile-accordion card-style border-l-4 border-yellow-400"
+              >
                 <summary class="mobile-accordion__summary">
-                  <span class="mobile-accordion__badge mobile-accordion__badge--active">S2</span>
-                  <span class="mobile-accordion__title">BCI hardware startups</span>
-                  <span class="mobile-accordion__meta text-yellow-300">$20K–150K</span>
+                  <span
+                    class="mobile-accordion__badge mobile-accordion__badge--active"
+                    >S2</span
+                  >
+                  <span class="mobile-accordion__title"
+                    >BCI hardware startups</span
+                  >
+                  <span class="mobile-accordion__meta text-yellow-300"
+                    >$20K–150K</span
+                  >
                 </summary>
                 <div class="mobile-accordion__body">
                   <p>
                     <span class="mobile-accordion__label">Validation</span>
-                    <span class="text-green-400">&#10003; BrainBit &amp; PiEEG codevelopment contract</span>
+                    <span class="text-green-400"
+                      >&#10003; BrainBit &amp; PiEEG codevelopment
+                      contract</span
+                    >
                   </p>
                   <p>
                     <span class="mobile-accordion__label">Who</span>
-                    BrainBit, PiEEG, and similar hardware-first neurotech companies
+                    BrainBit, PiEEG, and similar hardware-first neurotech
+                    companies
                   </p>
                   <p>
                     <span class="mobile-accordion__label">Channel</span>
@@ -1022,11 +1114,17 @@
                   </p>
                 </div>
               </details>
-              <details class="mobile-accordion card-style border-l-4 border-gray-500">
+              <details
+                class="mobile-accordion card-style border-l-4 border-gray-500"
+              >
                 <summary class="mobile-accordion__summary">
                   <span class="mobile-accordion__badge">S3</span>
-                  <span class="mobile-accordion__title">Clinical teams (Q4 2026)</span>
-                  <span class="mobile-accordion__meta text-yellow-300">$6K–60K/yr</span>
+                  <span class="mobile-accordion__title"
+                    >Clinical teams (Q4 2026)</span
+                  >
+                  <span class="mobile-accordion__meta text-yellow-300"
+                    >$6K–60K/yr</span
+                  >
                 </summary>
                 <div class="mobile-accordion__body">
                   <p>
@@ -1035,11 +1133,13 @@
                   </p>
                   <p>
                     <span class="mobile-accordion__label">Who</span>
-                    Medical device manufacturers, hospital neuro departments, clinical research orgs
+                    Medical device manufacturers, hospital neuro departments,
+                    clinical research orgs
                   </p>
                   <p>
                     <span class="mobile-accordion__label">Channel</span>
-                    Enterprise direct sales, medical device conferences, regulatory consultants
+                    Enterprise direct sales, medical device conferences,
+                    regulatory consultants
                   </p>
                 </div>
               </details>
@@ -1075,7 +1175,7 @@
                       >Price / Validation</span
                     >
                     <span class="text-yellow-300 font-bold text-sm"
-                      >$49–$199/month</span
+                      >Free, Pro $29/month</span
                     >
                     <span class="block text-xs text-green-400 mt-1"
                       >&#10003; 80+ on waiting list (zero marketing)</span
@@ -1121,7 +1221,9 @@
                 </div>
               </div>
               <!-- Segment 3 -->
-              <div class="card-style p-3 md:p-4 rounded-lg border-l-4 border-gray-500">
+              <div
+                class="card-style p-3 md:p-4 rounded-lg border-l-4 border-gray-500"
+              >
                 <div class="flex flex-col gap-3 md:flex-row md:items-start">
                   <div class="w-full min-w-0 md:w-1/4">
                     <span
@@ -1159,13 +1261,13 @@
           </div>
         </div>
 
-        <!-- Slide 11: Market Size & Growth -->
+        <!-- Slide 12: Market Size & Growth -->
         <div class="slide">
           <div
             class="w-full h-full flex flex-col justify-center p-4 sm:p-6 md:p-8 lg:p-10"
           >
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-2">
-              Slide 11: Market Size &amp; Growth
+              Slide 12: Market Size &amp; Growth
             </h3>
             <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-5">
               A $400 Billion Market Opportunity in the US Alone
@@ -1173,21 +1275,27 @@
 
             <!-- Mobile market summary -->
             <div class="md:hidden space-y-2">
-              <div class="card-style rounded-lg border-2 border-yellow-400 bg-yellow-900/10 p-3 text-center">
+              <div
+                class="card-style rounded-lg border-2 border-yellow-400 bg-yellow-900/10 p-3 text-center"
+              >
                 <p class="text-3xl font-bold text-yellow-400">~$400B</p>
                 <p class="text-sm font-semibold text-white">Total US TAM</p>
-                <p class="mt-1 text-xs text-gray-400">BCI implants — Morgan Stanley, 2024</p>
+                <p class="mt-1 text-xs text-gray-400">
+                  BCI implants — Morgan Stanley, 2024
+                </p>
               </div>
               <div class="grid grid-cols-3 gap-1.5">
                 <div class="card-style rounded-lg p-2 text-center">
                   <p class="text-sm font-bold text-white">$50–100M</p>
-                  <p class="text-[0.625rem] text-yellow-400">SAM 2025</p>
+                  <p class="text-[0.625rem] text-yellow-400">SAM 2026</p>
                 </div>
                 <div class="card-style rounded-lg p-2 text-center">
                   <p class="text-sm font-bold text-white">$500M–1B</p>
                   <p class="text-[0.625rem] text-yellow-400">@ 5% pen.</p>
                 </div>
-                <div class="card-style rounded-lg p-2 text-center border border-yellow-400/40">
+                <div
+                  class="card-style rounded-lg p-2 text-center border border-yellow-400/40"
+                >
                   <p class="text-sm font-bold text-yellow-400">$1–2B+</p>
                   <p class="text-[0.625rem] text-yellow-400">Maturity</p>
                 </div>
@@ -1195,11 +1303,15 @@
             </div>
 
             <!-- Morgan Stanley TAM breakdown -->
-            <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mb-3 md:mb-5">
+            <div
+              class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mb-3 md:mb-5"
+            >
               <div
                 class="card-style p-3 md:p-4 rounded-lg text-center border border-yellow-400/30"
               >
-                <p class="text-3xl md:text-4xl font-bold text-yellow-400">$80.8B</p>
+                <p class="text-3xl md:text-4xl font-bold text-yellow-400">
+                  $80.8B
+                </p>
                 <p class="text-white font-semibold mt-1">Early TAM</p>
                 <p class="text-gray-400 text-sm mt-1">
                   ~2.8M patients with critical impairments (ALS, stroke, SCI,
@@ -1212,7 +1324,9 @@
               <div
                 class="card-style p-3 md:p-4 rounded-lg text-center border border-yellow-400/30"
               >
-                <p class="text-3xl md:text-4xl font-bold text-yellow-400">$320B</p>
+                <p class="text-3xl md:text-4xl font-bold text-yellow-400">
+                  $320B
+                </p>
                 <p class="text-white font-semibold mt-1">Intermediate TAM</p>
                 <p class="text-gray-400 text-sm mt-1">
                   ~6.8M follow-on adopters with moderate impairments as
@@ -1225,7 +1339,9 @@
               <div
                 class="card-style p-3 md:p-4 rounded-lg text-center border border-2 border-yellow-400 bg-yellow-900/10"
               >
-                <p class="text-3xl md:text-4xl font-bold text-yellow-400">~$400B</p>
+                <p class="text-3xl md:text-4xl font-bold text-yellow-400">
+                  ~$400B
+                </p>
                 <p class="text-white font-semibold mt-1">Total US TAM</p>
                 <p class="text-gray-400 text-sm mt-1">
                   Combined addressable market for BCI implants in the United
@@ -1252,7 +1368,7 @@
                 <div class="bg-slate-800/60 rounded-lg p-3 text-center">
                   <p class="text-xl font-bold text-white">$50&ndash;100M</p>
                   <p class="text-yellow-400 text-xs font-semibold mt-1">
-                    SAM Today (2025)
+                    SAM (2026)
                   </p>
                   <p class="text-gray-400 text-xs mt-1">
                     Developer tools &amp; pipeline software for BCI labs and
@@ -1287,42 +1403,74 @@
             </div>
           </div>
         </div>
-        <!-- Slide 12: Business Model & Pricing -->
+        <!-- Slide 13: Business Model & Pricing -->
         <div class="slide">
           <div class="w-full p-4 md:p-6 lg:p-8">
             <h3 class="hidden md:block text-lg font-bold text-yellow-400 mb-2">
-              Slide 12: Business Model
+              Slide 13: Business Model
             </h3>
             <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-4">
               Two Independent Revenue Streams
             </h2>
 
             <div class="mobile-accordion-list md:hidden" data-swipe-lock>
-              <details class="mobile-accordion card-style border-l-4 border-yellow-400" open>
+              <details
+                class="mobile-accordion card-style border-l-4 border-yellow-400"
+                open
+              >
                 <summary class="mobile-accordion__summary">
-                  <span class="mobile-accordion__badge mobile-accordion__badge--active">1</span>
-                  <span class="mobile-accordion__title">Nimbus Studio SaaS</span>
-                  <span class="mobile-accordion__meta text-yellow-300">$49–199/mo</span>
+                  <span
+                    class="mobile-accordion__badge mobile-accordion__badge--active"
+                    >1</span
+                  >
+                  <span class="mobile-accordion__title"
+                    >Nimbus Studio SaaS</span
+                  >
+                  <span class="mobile-accordion__meta text-yellow-300"
+                    >Pro $29/mo</span
+                  >
                 </summary>
                 <div class="mobile-accordion__body">
-                  <p><span class="mobile-accordion__label">Model</span>Freemium SaaS for researchers &amp; BCI consumers</p>
-                  <p><span class="mobile-accordion__label">Validation</span><span class="text-green-400">&#10003; 80+ waiting list</span></p>
+                  <p>
+                    <span class="mobile-accordion__label">Model</span>Freemium
+                    SaaS for researchers &amp; BCI consumers
+                  </p>
+                  <p>
+                    <span class="mobile-accordion__label">Validation</span
+                    ><span class="text-green-400"
+                      >&#10003; 80+ waiting list</span
+                    >
+                  </p>
                 </div>
               </details>
-              <details class="mobile-accordion card-style border-l-4 border-gray-500">
+              <details
+                class="mobile-accordion card-style border-l-4 border-gray-500"
+              >
                 <summary class="mobile-accordion__summary">
                   <span class="mobile-accordion__badge">2</span>
                   <span class="mobile-accordion__title">Nimbus SDK</span>
-                  <span class="mobile-accordion__meta text-yellow-300">$20K–150K</span>
+                  <span class="mobile-accordion__meta text-yellow-300"
+                    >$20K–150K</span
+                  >
                 </summary>
                 <div class="mobile-accordion__body">
-                  <p><span class="mobile-accordion__label">Model</span>B2B co-development + per-unit royalties</p>
-                  <p><span class="mobile-accordion__label">Validation</span><span class="text-green-400">&#10003; BrainBit &amp; PiEEG contract</span></p>
+                  <p>
+                    <span class="mobile-accordion__label">Model</span>B2B
+                    co-development + per-unit royalties
+                  </p>
+                  <p>
+                    <span class="mobile-accordion__label">Validation</span
+                    ><span class="text-green-400"
+                      >&#10003; BrainBit &amp; PiEEG contract</span
+                    >
+                  </p>
                 </div>
               </details>
             </div>
 
-            <div class="hidden md:grid gap-3 md:grid-cols-2 md:gap-4 md:items-stretch">
+            <div
+              class="hidden md:grid gap-3 md:grid-cols-2 md:gap-4 md:items-stretch"
+            >
               <!-- Stream 1: Nimbus Studio SaaS -->
               <div
                 class="card-style flex h-full min-h-0 flex-col rounded-lg border-2 border-yellow-400 bg-gradient-to-b from-slate-900 to-slate-800 p-4"
@@ -1352,29 +1500,29 @@
                   />
                 </figure>
                 <div class="mb-3 text-center">
-                  <p class="text-3xl font-bold text-white">$49 &ndash; $199</p>
-                  <p class="text-xs text-gray-400">/month per seat</p>
+                  <p class="text-3xl font-bold text-white">$29</p>
+                  <p class="text-xs text-gray-400">/month &mdash; Studio Pro</p>
                 </div>
                 <ul class="flex-1 space-y-2 text-xs text-gray-300">
                   <li class="flex items-start gap-2">
                     <span class="text-yellow-400 mt-0.5">&#10003;</span
                     ><span
-                      ><strong class="text-white">Free tier</strong> &mdash;
-                      unlimited pipeline building, community support</span
+                      ><strong class="text-white">Free</strong> &mdash; 20
+                      public-dataset runs/mo, Python export, AI assistant</span
                     >
                   </li>
                   <li class="flex items-start gap-2">
                     <span class="text-yellow-400 mt-0.5">&#10003;</span
                     ><span
-                      ><strong class="text-white">Pro ($49/mo)</strong> &mdash;
-                      real-time execution, export, priority support</span
+                      ><strong class="text-white">Pro ($29/mo)</strong> &mdash;
+                      unlimited runs, your data, cloud GPU, live EEG</span
                     >
                   </li>
                   <li class="flex items-start gap-2">
                     <span class="text-yellow-400 mt-0.5">&#10003;</span
                     ><span
-                      ><strong class="text-white">Team ($199/mo)</strong>
-                      &mdash; shared workspaces, advanced models, SLA</span
+                      ><strong class="text-white">MCP included</strong> &mdash;
+                      agents on the free tier; calibration on Pro</span
                     >
                   </li>
                 </ul>
@@ -1461,13 +1609,13 @@
           </div>
         </div>
 
-        <!-- Slide 13: Partnership Model -->
+        <!-- Slide 14: Partnership Model -->
         <div class="slide w-full">
           <div class="w-full p-4 md:p-7 lg:p-8">
             <h3
               class="hidden md:block mb-2 text-sm font-bold text-yellow-400 md:text-base"
             >
-              Slide 13: Partnership Model
+              Slide 14: Partnership Model
             </h3>
             <h2
               class="mb-2 text-base font-bold leading-tight sm:text-lg md:mb-5 md:text-2xl lg:text-3xl"
@@ -1494,7 +1642,7 @@
                     <div class="bci-stack-nimbus">
                       <p class="bci-stack-nimbus__title">Nimbus SDK</p>
                       <p class="bci-stack-nimbus__sub">
-                        Bayesian BCI inference
+                        Personalizer &middot; Conductor
                       </p>
                       <div class="bci-stack-loop" aria-hidden="true">
                         <span>Sense</span>
@@ -1504,10 +1652,12 @@
                         <span>Act</span>
                       </div>
                     </div>
-                    <span class="bci-stack-or">or</span>
+                    <span class="bci-stack-or">on</span>
                     <div class="bci-stack-alt">
-                      <p class="bci-stack-alt__title">Deep learning</p>
-                      <p class="bci-stack-alt__sub">learned, end-to-end</p>
+                      <p class="bci-stack-alt__title">Frozen trunks</p>
+                      <p class="bci-stack-alt__sub">
+                        EEGNet &middot; REVE &middot; LaBraM
+                      </p>
                     </div>
                   </div>
                   <div class="bci-stack-io" aria-hidden="true">
@@ -1562,16 +1712,16 @@
                 <p
                   class="hidden md:block mb-4 text-sm leading-relaxed text-gray-300 md:text-base"
                 >
-                  <strong class="text-white">Nimbus SDK</strong> is our
-                  on-device inference engine for brain-computer interfaces.
-                  Hardware partners plug it in as the
-                  <strong class="text-white">adaptive layer</strong> &mdash;
-                  closing the Sense&nbsp;&rarr;&nbsp;Learn&nbsp;&rarr;&nbsp;Act
-                  loop through your device stack, without hiring an ML team or
-                  shipping frozen end-to-end models.
+                  <strong class="text-white">Nimbus SDK</strong> is the adaptive
+                  layer. Partners keep their encoder &mdash; classical or a
+                  foundation model &mdash; and Personalizer adapts a Bayesian
+                  head on device. Conductor decides when to update, ask for a
+                  label, or abstain.
                 </p>
 
-                <p class="mb-2 md:mb-3 text-sm font-semibold text-white md:text-base">
+                <p
+                  class="mb-2 md:mb-3 text-sm font-semibold text-white md:text-base"
+                >
                   What&rsquo;s unique &mdash;
                   <span class="text-yellow-400"
                     >it knows what it doesn&rsquo;t know</span
@@ -1580,21 +1730,36 @@
 
                 <div class="mobile-accordion-list md:hidden" data-swipe-lock>
                   <details class="mobile-accordion card-style" open>
-                    <summary class="mobile-accordion__summary">Gates decisions by confidence</summary>
+                    <summary class="mobile-accordion__summary">
+                      Gates decisions by confidence
+                    </summary>
                     <div class="mobile-accordion__body">
-                      <p>Posteriors and entropy drive rejection and usable throughput.</p>
+                      <p>
+                        Posteriors and entropy drive rejection and usable
+                        throughput.
+                      </p>
                     </div>
                   </details>
                   <details class="mobile-accordion card-style">
-                    <summary class="mobile-accordion__summary">Stays robust in noisy sessions</summary>
+                    <summary class="mobile-accordion__summary">
+                      Stays robust in noisy sessions
+                    </summary>
                     <div class="mobile-accordion__body">
-                      <p>Uncertainty-aware decoding when electrodes slip or signal quality drops.</p>
+                      <p>
+                        Uncertainty-aware decoding when electrodes slip or
+                        signal quality drops.
+                      </p>
                     </div>
                   </details>
                   <details class="mobile-accordion card-style">
-                    <summary class="mobile-accordion__summary">Adapts to neural drift</summary>
+                    <summary class="mobile-accordion__summary">
+                      Adapts to neural drift
+                    </summary>
                     <div class="mobile-accordion__body">
-                      <p>Online updates across trials — no weekly refit or cloud retraining.</p>
+                      <p>
+                        Online updates across trials — no weekly refit or cloud
+                        retraining.
+                      </p>
                     </div>
                   </details>
                 </div>
@@ -1684,11 +1849,128 @@
           </div>
         </div>
 
-        <!-- Slide 15: Traction -->
+        <!-- Shipped: SDK, MCP, preprints -->
+        <div class="slide">
+          <div class="w-full p-4 sm:p-6 md:p-10 lg:p-12">
+            <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-2">
+              Slide 15: What shipped
+            </h3>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-1 md:mb-2">
+              SDK 0.8, MCP, and two preprints
+            </h2>
+            <p class="mb-3 text-sm text-gray-400 md:mb-5">
+              Public on
+              <a
+                href="https://nimbusbci.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-yellow-400 hover:text-yellow-300"
+                >nimbusbci.com</a
+              >
+              &mdash; PyPI
+              <span class="text-white">nimbus-bci 0.8.2</span>
+              and
+              <span class="text-white">nimbus-mcp</span>.
+            </p>
+            <div class="grid grid-cols-2 gap-2 md:gap-4">
+              <div class="card-style rounded-lg p-3 md:p-4">
+                <p
+                  class="text-xs font-bold uppercase tracking-wide text-yellow-400"
+                >
+                  SDK 0.8
+                </p>
+                <h4 class="mt-1 text-sm font-bold text-white md:text-base">
+                  Personalizer + Conductor
+                </h4>
+                <p
+                  class="mt-2 text-xs leading-relaxed text-gray-300 md:text-sm"
+                >
+                  Freeze the trunk, adapt a Bayesian head on device in under
+                  20ms. Head updates are about 23&times; cheaper than
+                  fine-tuning the trunk. Python and Julia.
+                </p>
+              </div>
+              <div class="card-style rounded-lg p-3 md:p-4">
+                <p
+                  class="text-xs font-bold uppercase tracking-wide text-yellow-400"
+                >
+                  Nimbus MCP
+                </p>
+                <h4 class="mt-1 text-sm font-bold text-white md:text-base">
+                  58 tools for coding agents
+                </h4>
+                <p
+                  class="mt-2 text-xs leading-relaxed text-gray-300 md:text-sm"
+                >
+                  Claude Code, Cursor, and Claude Desktop. Benchmarks on 90+
+                  datasets, sweeps up to 25 runs, BIDS export. Live hardware is
+                  confirm-gated.
+                </p>
+                <a
+                  href="https://nimbusbci.com/mcp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-2 inline-block text-xs font-semibold text-yellow-400 hover:text-yellow-300"
+                  >nimbusbci.com/mcp &rarr;</a
+                >
+              </div>
+              <div class="card-style rounded-lg p-3 md:p-4">
+                <p
+                  class="text-xs font-bold uppercase tracking-wide text-yellow-400"
+                >
+                  Preprint &middot; Jul 2026
+                </p>
+                <h4 class="mt-1 text-sm font-bold text-white md:text-base">
+                  Universal BCI Personalization
+                </h4>
+                <p
+                  class="mt-2 text-xs leading-relaxed text-gray-300 md:text-sm"
+                >
+                  One API for frozen EEG trunks and foundation models, including
+                  REVE. Same Personalizer surface across classical and
+                  foundation encoders.
+                </p>
+                <a
+                  href="https://arxiv.org/abs/2607.22397"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-2 inline-block text-xs font-semibold text-yellow-400 hover:text-yellow-300"
+                  >arXiv:2607.22397 &rarr;</a
+                >
+              </div>
+              <div class="card-style rounded-lg p-3 md:p-4">
+                <p
+                  class="text-xs font-bold uppercase tracking-wide text-yellow-400"
+                >
+                  Preprint &middot; Oct 2026
+                </p>
+                <h4 class="mt-1 text-sm font-bold text-white md:text-base">
+                  Studio matches reference pipelines
+                </h4>
+                <p
+                  class="mt-2 text-xs leading-relaxed text-gray-300 md:text-sm"
+                >
+                  Deterministic pipelines (CSP+LDA, Riemannian MDM, xDAWN, and
+                  bring-your-own code) match independent MNE / sklearn /
+                  pyRiemann references exactly.
+                </p>
+                <a
+                  href="https://arxiv.org/abs/2610.13894"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-2 inline-block text-xs font-semibold text-yellow-400 hover:text-yellow-300"
+                  >arXiv:2610.13894 &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 16: Traction -->
         <div class="slide w-full">
           <div class="w-full p-4 sm:p-6 md:p-8 lg:p-10">
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-2">
-              Slide 15: Traction
+              Slide 16: Traction
             </h3>
             <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-5">
               Early Validation &mdash; Before Funding
@@ -1697,8 +1979,12 @@
               <div
                 class="card-style p-2 md:p-4 rounded-lg text-center border border-yellow-400/30"
               >
-                <p class="text-2xl md:text-4xl font-bold text-yellow-400">80+</p>
-                <p class="text-[0.65rem] md:text-sm text-white font-semibold mt-1">
+                <p class="text-2xl md:text-4xl font-bold text-yellow-400">
+                  80+
+                </p>
+                <p
+                  class="text-[0.65rem] md:text-sm text-white font-semibold mt-1"
+                >
                   Waiting List
                 </p>
                 <p class="hidden md:block text-xs text-gray-400 mt-1">
@@ -1709,7 +1995,9 @@
                 class="card-style p-2 md:p-4 rounded-lg text-center border border-yellow-400/30"
               >
                 <p class="text-2xl md:text-4xl font-bold text-yellow-400">1</p>
-                <p class="text-[0.65rem] md:text-sm text-white font-semibold mt-1">
+                <p
+                  class="text-[0.65rem] md:text-sm text-white font-semibold mt-1"
+                >
                   Commercial contract
                 </p>
                 <p class="hidden md:block text-xs text-gray-400 mt-1">
@@ -1720,13 +2008,14 @@
               <div
                 class="card-style p-2 md:p-4 rounded-lg text-center border border-yellow-400/30"
               >
-                <p class="text-2xl md:text-4xl font-bold text-yellow-400">&#10003;</p>
-                <p class="text-[0.65rem] md:text-sm text-white font-semibold mt-1">
-                  Live Product
+                <p class="text-2xl md:text-4xl font-bold text-yellow-400">2</p>
+                <p
+                  class="text-[0.65rem] md:text-sm text-white font-semibold mt-1"
+                >
+                  Preprints
                 </p>
                 <p class="hidden md:block text-xs text-gray-400 mt-1">
-                  Nimbus Studio publicly accessible with working pipeline
-                  builder
+                  Personalizer API and Studio parity study, both on arXiv
                 </p>
               </div>
             </div>
@@ -1748,8 +2037,8 @@
                 <span class="text-green-400 text-lg mt-0.5">&#10003;</span>
                 <div>
                   <p class="text-sm font-semibold text-white">
-                    Advisory board with Jeff Beck (Duke), Ryan Smith (LIBR),
-                    Bert de Vries (TU/e), Alexander Kuck
+                    Advisory board with Jeff Beck (Duke), Bert de Vries (TU/e),
+                    Alexander Kuck (Medtronic)
                   </p>
                   <p class="text-xs text-gray-400">
                     World-class scientific and industry validation secured
@@ -1760,11 +2049,10 @@
                 <span class="text-green-400 text-lg mt-0.5">&#10003;</span>
                 <div>
                   <p class="text-sm font-semibold text-white">
-                    Nimbus SDK &amp; Nimbus Studio — production-ready
+                    SDK 0.8, Studio, and MCP are public
                   </p>
                   <p class="text-xs text-gray-400">
-                    Both core products are built and available for partner
-                    integration today
+                    nimbus-bci and nimbus-mcp on PyPI; 58 agent tools live
                   </p>
                 </div>
               </div>
@@ -1772,21 +2060,27 @@
           </div>
         </div>
 
-        <!-- Slide 16: Revenue Projections -->
+        <!-- Slide 17: Revenue Projections -->
         <div class="slide w-full">
           <div class="w-full p-4 sm:p-6 md:p-8 lg:p-10">
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-2">
-              Slide 16: Revenue Projections
+              Slide 17: Revenue Projections
             </h3>
             <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-5">
-              Path to $1.1M+ ARR by Year 3
+              Path to $400K+ ARR by Year 3
             </h2>
             <!-- Year summary cards -->
             <div class="grid grid-cols-3 gap-2 md:gap-4 mb-3 md:mb-5">
-              <div class="card-style p-2 md:p-4 rounded-lg border border-slate-600 text-center md:text-left">
-                <p class="text-[0.625rem] md:text-xs text-gray-400 mb-1">Year 1</p>
+              <div
+                class="card-style p-2 md:p-4 rounded-lg border border-slate-600 text-center md:text-left"
+              >
+                <p class="text-[0.625rem] md:text-xs text-gray-400 mb-1">
+                  Year 1
+                </p>
                 <p class="text-xl md:text-3xl font-bold text-white">$7K</p>
-                <div class="hidden md:block mt-2 space-y-1 text-xs text-gray-300">
+                <div
+                  class="hidden md:block mt-2 space-y-1 text-xs text-gray-300"
+                >
                   <p>
                     <span class="text-yellow-400">Studio:</span> Free beta
                     &mdash; 0 revenue
@@ -1800,9 +2094,15 @@
               <div
                 class="card-style p-2 md:p-4 rounded-lg border border-yellow-400/40 text-center md:text-left"
               >
-                <p class="text-[0.625rem] md:text-xs text-gray-400 mb-1">Year 2</p>
-                <p class="text-xl md:text-3xl font-bold text-yellow-400">$50K</p>
-                <div class="hidden md:block mt-2 space-y-1 text-xs text-gray-300">
+                <p class="text-[0.625rem] md:text-xs text-gray-400 mb-1">
+                  Year 2
+                </p>
+                <p class="text-xl md:text-3xl font-bold text-yellow-400">
+                  $50K
+                </p>
+                <div
+                  class="hidden md:block mt-2 space-y-1 text-xs text-gray-300"
+                >
                   <p>
                     <span class="text-yellow-400">Studio:</span> early Pro
                     adoption &mdash; $10K/yr
@@ -1813,13 +2113,21 @@
                   </p>
                 </div>
               </div>
-              <div class="card-style p-2 md:p-4 rounded-lg border border-yellow-400 text-center md:text-left">
-                <p class="text-[0.625rem] md:text-xs text-gray-400 mb-1">Year 3</p>
-                <p class="text-xl md:text-3xl font-bold text-yellow-400">$1.1M+</p>
-                <div class="hidden md:block mt-2 space-y-1 text-xs text-gray-300">
+              <div
+                class="card-style p-2 md:p-4 rounded-lg border border-yellow-400 text-center md:text-left"
+              >
+                <p class="text-[0.625rem] md:text-xs text-gray-400 mb-1">
+                  Year 3
+                </p>
+                <p class="text-xl md:text-3xl font-bold text-yellow-400">
+                  $400K+
+                </p>
+                <div
+                  class="hidden md:block mt-2 space-y-1 text-xs text-gray-300"
+                >
                   <p>
-                    <span class="text-yellow-400">Studio:</span> 300 seats
-                    &mdash; $770K/yr
+                    <span class="text-yellow-400">Studio:</span> 300 Pro seats
+                    at $29/mo &mdash; ~$104K/yr
                   </p>
                   <p>
                     <span class="text-yellow-400">SDK:</span> 3+ contracts
@@ -1833,7 +2141,9 @@
               class="border border-yellow-400/30 rounded-lg p-3 md:p-4 bg-yellow-900/10"
             >
               <div class="flex items-start gap-2 md:gap-3">
-                <span class="text-yellow-400 text-base md:text-lg">&#9650;</span>
+                <span class="text-yellow-400 text-base md:text-lg"
+                  >&#9650;</span
+                >
                 <div>
                   <p class="text-sm font-semibold text-yellow-300">
                     Upside: $4.5M ARR by Year 3
@@ -1851,28 +2161,54 @@
           </div>
         </div>
 
-        <!-- Slide 17: Fundraising -->
+        <!-- Slide 18: Fundraising -->
         <div class="slide w-full">
           <div class="w-full p-4 sm:p-6 md:p-8 lg:p-10">
             <h3 class="hidden md:block mb-2 text-xl font-bold text-yellow-400">
-              Slide 17: Fundraising
+              Slide 18: Fundraising
             </h3>
             <h2 class="mb-3 text-xl sm:text-2xl font-bold md:mb-5 md:text-3xl">
               Raising <span class="text-yellow-400">$500K</span> Pre-Seed
             </h2>
-            <div class="mobile-accordion-list md:hidden space-y-2" data-swipe-lock>
-              <div class="card-style rounded-lg border border-yellow-400/40 p-4 text-center">
-                <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">The ask</p>
-                <p class="mt-1 text-4xl font-black tracking-tight text-yellow-400">$500K</p>
+            <div
+              class="mobile-accordion-list md:hidden space-y-2"
+              data-swipe-lock
+            >
+              <div
+                class="card-style rounded-lg border border-yellow-400/40 p-4 text-center"
+              >
+                <p
+                  class="text-xs font-semibold uppercase tracking-wide text-gray-400"
+                >
+                  The ask
+                </p>
+                <p
+                  class="mt-1 text-4xl font-black tracking-tight text-yellow-400"
+                >
+                  $500K
+                </p>
                 <p class="mt-1 text-sm text-white">Pre-seed round (USD)</p>
               </div>
               <details class="mobile-accordion card-style">
-                <summary class="mobile-accordion__summary">Use of funds</summary>
+                <summary class="mobile-accordion__summary">
+                  Use of funds
+                </summary>
                 <div class="mobile-accordion__body">
-                  <p>Product &amp; inference hardening, benchmarks, and developer docs.</p>
-                  <p>Partner delivery with BrainBit &amp; PiEEG integration milestones.</p>
-                  <p>Convert the 80+ researcher waitlist into Studio revenue.</p>
-                  <p>Senior inference engineers and partner-facing technical hires.</p>
+                  <p>
+                    SDK 0.8 and MCP are shipped. Funds go to OEM integration,
+                    reliability, and docs.
+                  </p>
+                  <p>
+                    Partner delivery with BrainBit &amp; PiEEG integration
+                    milestones.
+                  </p>
+                  <p>
+                    Convert the 80+ researcher waitlist into Studio revenue.
+                  </p>
+                  <p>
+                    Senior inference engineers and partner-facing technical
+                    hires.
+                  </p>
                 </div>
               </details>
             </div>
@@ -1892,18 +2228,18 @@
                 </p>
                 <p class="mt-2 text-lg text-white">Pre-seed round (USD)</p>
                 <p class="mt-4 text-sm leading-relaxed text-gray-300">
-                  Accelerate Nimbus Studio toward paid launch, scale the
-                  RxInfer-powered SDK for OEM partners, and fund execution on
-                  the signed BrainBit &amp; PiEEG hardware codevelopment track.
+                  Scale paid Studio (Pro is live at $29/mo), grow MCP with
+                  research teams, and deliver the signed BrainBit &amp; PiEEG
+                  SDK track.
                 </p>
               </div>
               <ul
                 class="list-outside list-disc space-y-4 pl-6 text-base text-gray-300 marker:text-gray-500"
               >
                 <li class="pl-1">
-                  <strong class="text-white">Product &amp; inference:</strong>
-                  production-hardening, latency and reliability benchmarks,
-                  developer docs.
+                  <strong class="text-white">Product:</strong>
+                  SDK 0.8 and MCP are shipped. Funds go to OEM integration,
+                  reliability, and developer docs.
                 </li>
                 <li class="pl-1">
                   <strong class="text-white">Partner delivery:</strong> SDK
@@ -1923,17 +2259,21 @@
           </div>
         </div>
 
-        <!-- Slide 18: The Team -->
+        <!-- Slide 19: The Team -->
         <div class="slide">
           <div class="w-full p-4 md:p-6 lg:p-8">
             <h3 class="hidden md:block text-lg font-bold text-yellow-400 mb-2">
-              Slide 18: The Team
+              Slide 19: The Team
             </h3>
             <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
               Our Founding Team & Expertise
             </h2>
-            <div class="grid grid-cols-2 gap-2 md:gap-3 lg:grid-cols-4">
-              <div class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900">
+            <div
+              class="team-grid grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3"
+            >
+              <div
+                class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900"
+              >
                 <img
                   src="assets/images/Sergey.svg"
                   alt="Sergey Musienko"
@@ -1961,10 +2301,13 @@
                 </div>
                 <p class="mt-1 text-yellow-400 text-sm">CEO</p>
                 <p class="hidden md:block mt-1 text-xs text-gray-400">
-                  15+ years biotech entrepreneur and founder, drives strategy and partnerships
+                  15+ years biotech entrepreneur and founder, drives strategy
+                  and partnerships
                 </p>
               </div>
-              <div class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900">
+              <div
+                class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900"
+              >
                 <img
                   src="assets/images/Albert.svg"
                   alt="Albert Podusenko"
@@ -1992,10 +2335,80 @@
                 </div>
                 <p class="mt-1 text-yellow-400 text-sm">CTO</p>
                 <p class="hidden md:block mt-1 text-xs text-gray-400">
-                  Ph.D., tech development &amp; probabilistic programming.
+                  Ph.D., probabilistic programming and the Nimbus runtime.
                 </p>
               </div>
-              <div class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900">
+              <div
+                class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900"
+              >
+                <img
+                  src="assets/images/Kirill.svg"
+                  alt="Kirill Parinov"
+                  class="team-photo mx-auto mb-2 rounded-full"
+                  loading="lazy"
+                />
+                <div class="relative">
+                  <h4 class="text-sm font-bold text-white">Kirill Parinov</h4>
+                  <a
+                    href="https://www.linkedin.com/in/kir%C3%ADll-p%C3%A1rinov-1578161a5/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="absolute top-0 right-2 hover:text-yellow-300 transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <p class="mt-1 text-yellow-400 text-sm">CBDO</p>
+                <p class="hidden md:block mt-1 text-xs text-gray-400">
+                  Hardware and research partnerships across the BCI stack.
+                </p>
+              </div>
+              <div
+                class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900"
+              >
+                <img
+                  src="assets/images/AvaAlex.png"
+                  alt="Alex Sidorov"
+                  class="team-photo mx-auto mb-2 rounded-full"
+                  loading="lazy"
+                />
+                <div class="relative">
+                  <h4 class="text-sm font-bold text-white">Alex Sidorov</h4>
+                  <a
+                    href="https://www.linkedin.com/in/sidorovalexey/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="absolute top-0 right-2 hover:text-yellow-300 transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4 text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <p class="mt-1 text-yellow-400 text-sm">CRO</p>
+                <p class="hidden md:block mt-1 text-xs text-gray-400">
+                  Go-to-market. 15+ years in consulting and B2B SaaS.
+                </p>
+              </div>
+              <div
+                class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900"
+              >
                 <img
                   src="assets/images/Ismail_bw.png"
                   alt="İsmail Şenöz"
@@ -2026,7 +2439,9 @@
                   Ph.D. ML from TU/e, leads scientific discovery.
                 </p>
               </div>
-              <div class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900">
+              <div
+                class="card-style p-2.5 md:p-3 rounded-lg text-center bg-slate-900"
+              >
                 <img
                   src="assets/images/Bart_bw.png"
                   alt="Bart van Erp"
@@ -2063,11 +2478,11 @@
           </div>
         </div>
 
-        <!-- Slide 19: Advisory Board -->
+        <!-- Slide 20: Advisory Board -->
         <div class="slide">
           <div class="w-full p-4 sm:p-6 md:p-8">
             <h3 class="hidden md:block text-xl font-bold text-yellow-400 mb-2">
-              Slide 19: Advisory Board
+              Slide 20: Advisory Board
             </h3>
             <h2 class="text-2xl md:text-3xl font-bold mb-1">
               Guidance from World-Class Scientists
@@ -2076,7 +2491,7 @@
               For context: Yann LeCun (ex-Meta Chief AI Scientist) averages ~50K
               citations/year on Google Scholar.
             </p>
-            <div class="grid grid-cols-2 gap-2 md:gap-3 xl:grid-cols-4">
+            <div class="grid grid-cols-1 gap-2 sm:grid-cols-3 md:gap-3">
               <!-- Jeff Beck -->
               <div
                 class="card-style flex flex-col items-center rounded-lg p-3 md:p-4 text-center"
@@ -2107,7 +2522,9 @@
                   Professor of Computational Neuroscience
                 </p>
                 <p class="text-xs text-gray-400 mb-2">Duke University</p>
-                <div class="advisory-card-detail bg-gray-800 rounded px-2 py-1 w-full">
+                <div
+                  class="advisory-card-detail bg-gray-800 rounded px-2 py-1 w-full"
+                >
                   <p class="text-xs text-gray-300">
                     <span class="text-white font-bold">7,169</span> total
                     citations
@@ -2119,53 +2536,6 @@
                 <p class="advisory-card-detail mt-2 text-xs text-gray-400">
                   Computational neuroscience &amp; Bayesian brain models.
                   Co-author of landmark paper cited 1,955&times;.
-                </p>
-              </div>
-
-              <!-- Ryan Smith -->
-              <div
-                class="card-style flex flex-col items-center rounded-lg p-3 md:p-4 text-center"
-              >
-                <img
-                  src="assets/images/logo_libr.png"
-                  alt="LIBR"
-                  class="advisory-logo-libr mb-2 md:mb-3 h-5 md:h-6"
-                />
-                <a
-                  href="https://www.linkedin.com/in/ryan-smith-a03462281/"
-                  target="_blank"
-                  class="inline-flex items-center justify-center hover:text-yellow-300 transition-colors mb-1"
-                >
-                  <h4 class="text-base font-bold text-white">Ryan Smith</h4>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-3.5 w-3.5 ml-1.5 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                    />
-                  </svg>
-                </a>
-                <p class="text-xs font-semibold text-yellow-400 mb-1">
-                  Research Associate Professor
-                </p>
-                <p class="text-xs text-gray-400 mb-2">
-                  Laureate Institute for Brain Research
-                </p>
-                <div class="advisory-card-detail bg-gray-800 rounded px-2 py-1 w-full">
-                  <p class="text-xs text-gray-300">
-                    <span class="text-white font-bold">8,229</span> total
-                    citations
-                  </p>
-                  <p class="text-xs text-gray-400">
-                    ~1,400/year &bull; h-index 48
-                  </p>
-                </div>
-                <p class="advisory-card-detail mt-2 text-xs text-gray-400">
-                  Active Inference &amp; BCI translation. Collaborates with Karl
-                  Friston (UCL).
                 </p>
               </div>
 
@@ -2201,7 +2571,9 @@
                 <p class="text-xs text-gray-400 mb-2">
                   Eindhoven University of Technology
                 </p>
-                <div class="advisory-card-detail bg-gray-800 rounded px-2 py-1 w-full">
+                <div
+                  class="advisory-card-detail bg-gray-800 rounded px-2 py-1 w-full"
+                >
                   <p class="text-xs text-gray-300">
                     <span class="text-white font-bold">3,603</span> total
                     citations
@@ -2246,7 +2618,9 @@
                   Principal Engineer
                 </p>
                 <p class="text-xs text-gray-400 mb-2">Medtronic</p>
-                <div class="advisory-card-detail bg-gray-800 rounded px-2 py-1 w-full">
+                <div
+                  class="advisory-card-detail bg-gray-800 rounded px-2 py-1 w-full"
+                >
                   <p class="text-xs text-gray-300">Industry practitioner</p>
                   <p class="text-xs text-gray-400">
                     Neurotechnology &amp; medical devices
@@ -2261,17 +2635,21 @@
           </div>
         </div>
 
-        <!-- Slide 20: Contact -->
+        <!-- Slide 21: Thank you -->
         <div class="slide bg-black">
           <div
             class="flex w-full flex-col items-center gap-4 p-4 sm:gap-8 sm:p-8 md:flex-row md:items-center md:gap-10 md:p-12 lg:p-16"
           >
             <!-- Left side with text content -->
             <div class="w-full text-center md:w-1/2 md:text-left">
-              <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
+              <h2
+                class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-white"
+              >
                 Thank You
               </h2>
-              <p class="text-lg sm:text-2xl text-yellow-400 font-semibold mb-4 md:mb-8">
+              <p
+                class="text-lg sm:text-2xl text-yellow-400 font-semibold mb-4 md:mb-8"
+              >
                 Let's build the future of neurotechnology together.
               </p>
               <div class="space-y-3 md:space-y-4">
@@ -2383,7 +2761,7 @@
           aria-live="polite"
           aria-atomic="true"
         >
-          1 / 19
+          1 / 21
         </div>
         <button
           id="next-btn"
