@@ -1,19 +1,51 @@
-/**
- * Nimbus BCI Presentation Styles
- * Professional pitch deck styling with dark theme and yellow accents
- */
+/* Hallmark · theme: custom (user named Hallmark; existing deck identity kept) · surface: absolute · posture: restrained · hero: stage · job: investor pitch deck · nav: footer controls · footer: slide controls bar · copy: verbatim */
+/* Hallmark · waive 74 · pre-flight: the yellow accent and slate neutrals were found in this project, in use since the first Nimbus deck · the deck has carried these exact swatches since October */
 
 /* ============================================
-   BASE STYLES
+   TOKENS
    ============================================ */
 
-body {
-  font-family: "Inter", sans-serif;
-  background-color: #0a0a0f;
+:root {
+  --paper: #0a0a0f;
+  --ink-bg: #05070d;
+  --ink-panel: #0c111c;
+  --ink-line: #1b2434;
+  --accent: #f5c518;
+  --accent-line: rgba(245, 197, 24, 0.45);
+  --accent-glow: rgba(250, 204, 21, 0.1);
+  --focus-ring: #fdb714;
+  --signal: #35e0c0;
+  --signal-pulse: #8ff7de;
+  --muted: #5b6779;
+  --text-bright: #f8fafc;
+  --shadow-btn: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  --scroll-fade: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  --font-body: "Inter", sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-label: "IBM Plex Mono", ui-monospace, monospace;
 }
 
 /* ============================================
-   SLIDE ANIMATIONS & TRANSITIONS
+   BASE
+   ============================================ */
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--paper);
+}
+
+/* ============================================
+   SLIDES
    ============================================ */
 
 .slide {
@@ -21,7 +53,7 @@ body {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Full-bleed product slide: opacity-only entrance (avoids scale() subpixel blur on large bitmaps) */
+/* Full-bleed slide: opacity-only entrance (avoids scale() subpixel blur) */
 .slide.slide-image-full {
   animation: slideImageFadeIn 0.45s ease-out;
 }
@@ -35,294 +67,6 @@ body {
   }
 }
 
-/*
- * nimbus_studio_slide8.png is 1024×576 — cap at native px to avoid upscale blur.
- * For retina sharpness, replace with a 2× export and bump the max-* values.
- */
-.studio-screenshot-crisp {
-  width: auto;
-  height: auto;
-  max-width: min(100%, 1024px);
-  max-height: min(100%, 576px);
-  object-fit: contain;
-  object-position: center;
-}
-
-/* Slide 12: identical image slot height for both product shots */
-.slide12-media-slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 11rem;
-}
-
-@media (min-width: 640px) {
-  .slide12-media-slot {
-    height: 13rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .slide12-media-slot {
-    height: 15rem;
-  }
-}
-
-.slide12-media-slot img {
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-}
-
-/* Benchmark slide: paired dark-theme nimbusbench charts */
-.benchmark-charts-grid {
-  max-width: 58rem;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: stretch;
-}
-
-.benchmark-figure {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 0;
-  height: min(42vh, 21rem);
-  background-color: #000000;
-}
-
-.team-photo {
-  width: 7rem;
-  height: 7rem;
-  object-fit: cover;
-}
-
-.team-grid .team-photo {
-  width: 4.75rem;
-  height: 4.75rem;
-}
-
-.benchmark-dark-chart {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-
-/* Slide 13: BCI stack partnership diagram */
-.bci-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 24rem;
-  margin-left: auto;
-  margin-right: auto;
-  min-height: min(52vh, 26rem);
-  justify-content: center;
-}
-
-.bci-stack-layer {
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  border-radius: 0.5rem;
-  padding: 0.6rem 0.75rem;
-  background-color: rgba(17, 24, 39, 0.65);
-  text-align: center;
-}
-
-.bci-stack-layer--middleware {
-  border-color: rgba(96, 165, 250, 0.55);
-  background-color: rgba(30, 58, 138, 0.35);
-}
-
-.bci-stack-layer__title {
-  margin: 0;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #f8fafc;
-}
-
-.bci-stack-layer__sub {
-  margin: 0.15rem 0 0;
-  font-size: 0.65rem;
-  line-height: 1.35;
-  color: #94a3b8;
-}
-
-.bci-stack-adaptive {
-  border: 1px dashed rgba(148, 163, 184, 0.45);
-  border-radius: 0.65rem;
-  padding: 0.65rem 0.55rem;
-  background-color: rgba(15, 23, 42, 0.5);
-  flex: 1;
-}
-
-.bci-stack-adaptive__label {
-  margin: 0 0 0.4rem;
-  text-align: center;
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #94a3b8;
-}
-
-.bci-stack-adaptive__row {
-  display: flex;
-  align-items: stretch;
-  gap: 0.35rem;
-}
-
-.bci-stack-nimbus {
-  flex: 1.15;
-  border: 2px solid rgba(250, 204, 21, 0.75);
-  border-radius: 0.5rem;
-  padding: 0.6rem 0.45rem;
-  background-color: rgba(113, 63, 18, 0.35);
-  text-align: center;
-}
-
-.bci-stack-nimbus__title {
-  margin: 0;
-  font-size: 0.76rem;
-  font-weight: 800;
-  color: #fde047;
-}
-
-.bci-stack-nimbus__sub {
-  margin: 0.15rem 0 0.45rem;
-  font-size: 0.64rem;
-  color: #fcd34d;
-}
-
-.bci-stack-loop {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-  font-size: 0.62rem;
-  font-weight: 600;
-  color: #fef9c3;
-}
-
-.bci-stack-loop__arrow {
-  color: rgba(253, 224, 71, 0.7);
-}
-
-.bci-stack-or {
-  display: flex;
-  align-items: center;
-  font-size: 0.55rem;
-  color: #64748b;
-}
-
-.bci-stack-alt {
-  flex: 1;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  border-radius: 0.5rem;
-  padding: 0.55rem 0.4rem;
-  background-color: rgba(17, 24, 39, 0.45);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.bci-stack-alt__title {
-  margin: 0;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #e2e8f0;
-}
-
-.bci-stack-alt__sub {
-  margin: 0.15rem 0 0;
-  font-size: 0.55rem;
-  color: #94a3b8;
-}
-
-.bci-stack-io {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.35rem;
-  padding: 0 0.15rem;
-  font-size: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #64748b;
-}
-
-.bci-stack-legend {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem 0.75rem;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.55rem;
-  color: #94a3b8;
-}
-
-.bci-stack-legend li {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.bci-stack-legend__swatch {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 0.125rem;
-}
-
-.bci-stack-legend__swatch--nimbus {
-  background-color: rgba(250, 204, 21, 0.85);
-}
-
-.bci-stack-legend__swatch--middleware {
-  background-color: rgba(96, 165, 250, 0.85);
-}
-
-.bci-stack-legend__swatch--stack {
-  border: 1px solid rgba(148, 163, 184, 0.55);
-  background-color: rgba(17, 24, 39, 0.65);
-}
-
-.bci-partner-usps {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.bci-partner-usps__item {
-  display: flex;
-  gap: 0.65rem;
-  align-items: flex-start;
-}
-
-.bci-partner-usps__icon {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgba(250, 204, 21, 0.25);
-  background-color: rgba(17, 24, 39, 0.8);
-  color: #facc15;
-}
-
-.bci-partner-usps__icon svg {
-  width: 1.1rem;
-  height: 1.1rem;
-}
-
 .slide.active {
   display: flex !important;
   flex-direction: column;
@@ -332,7 +76,7 @@ body {
   width: 100%;
 }
 
-/* Override for full-image slides: header above, image below */
+/* Full-bleed slides stretch edge to edge */
 .slide.active.slide-image-full {
   display: flex !important;
   flex-direction: column !important;
@@ -340,7 +84,7 @@ body {
   align-self: stretch !important;
   justify-content: flex-start !important;
   padding: 0 !important;
-  overflow: hidden !important;
+  overflow: clip !important;
   height: 100% !important;
   width: 100% !important;
 }
@@ -361,7 +105,51 @@ body {
   .slide.slide-image-full {
     animation: none;
   }
+}
 
+/* ============================================
+   TYPE
+   ============================================ */
+
+/* Display voice for slide headings */
+.slide h1,
+.slide h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* Section label (Team, The ask): mono label face,
+   sentence case, untracked */
+.slide h3 {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card-style {
+  background-color: var(--ink-panel);
+  color: var(--text-bright);
+  border: 1px solid var(--ink-line);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.card-style:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
   .card-style {
     transition: none;
   }
@@ -370,11 +158,46 @@ body {
     transform: none;
     box-shadow: none;
   }
+}
 
-  .transition-smooth {
-    transition: none;
-  }
+/* ============================================
+   TEAM PHOTOS
+   ============================================ */
 
+.team-photo {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+}
+
+/* ============================================
+   NAVIGATION BUTTONS
+   ============================================ */
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-btn);
+}
+
+button:not(:disabled):active {
+  transform: translateY(0);
+}
+
+button:focus-visible,
+a:focus-visible,
+#prev-btn:focus-visible,
+#next-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
   button:not(:disabled):hover {
     transform: none;
     box-shadow: none;
@@ -382,288 +205,119 @@ body {
 }
 
 /* ============================================
-   CARD COMPONENTS
+   ACCESSIBILITY
    ============================================ */
 
-.card-style {
-  background-color: #111827;
-  border: 1px solid rgba(250, 204, 21, 0.2);
-  transition: all 0.3s ease;
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--focus-ring);
+  color: var(--paper);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
 }
 
-.card-style:hover {
-  border-color: rgba(250, 204, 21, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(250, 204, 21, 0.1);
+.skip-to-content:focus {
+  top: 0;
 }
 
 /* ============================================
-   RESPONSIVE TABLE STYLES
+   UTILITIES
    ============================================ */
 
-.table-container table th,
-.table-container table td {
-  vertical-align: top;
+.transition-smooth {
+  transition:
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Advisory LIBR mark on dark background */
-.advisory-logo-libr {
-  max-width: 120px;
-  object-fit: contain;
-  filter: brightness(10) grayscale(1);
+@media (prefers-reduced-motion: reduce) {
+  .transition-smooth {
+    transition: none;
+  }
 }
+
+.text-shadow-strong {
+  text-shadow: var(--text-shadow);
+}
+
+/* ============================================
+   MOBILE
+   ============================================ */
 
 @media (max-width: 767px) {
-  .table-container:not(:has(.table-cards)) {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .table-container:not(:has(.table-cards)) table {
-    width: 100%;
-    min-width: 600px;
-  }
-
-  .table-cards {
-    min-width: 0;
-  }
-
-  .table-cards thead {
-    display: none;
-  }
-
-  .table-cards tbody tr {
-    display: block;
-    margin-bottom: 0.65rem;
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    border-radius: 0.5rem;
-    padding: 0.5rem 0.65rem;
-    background-color: rgba(17, 24, 39, 0.65);
-  }
-
-  .table-cards tbody tr:last-child {
-    margin-bottom: 0;
-  }
-
-  .table-cards tbody td {
-    display: block;
-    border: none !important;
-    padding: 0.35rem 0 !important;
-  }
-
-  .table-cards tbody td:first-child {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #f8fafc;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.25) !important;
-    margin-bottom: 0.35rem;
-    padding-bottom: 0.45rem !important;
-  }
-
-  .table-cards tbody td:not(:first-child)::before {
-    content: attr(data-label);
-    display: block;
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #64748b;
-    margin-bottom: 0.15rem;
-  }
-
-  .table-cards tbody td.table-cards-highlight {
-    border: 1px solid rgba(250, 204, 21, 0.45) !important;
-    border-radius: 0.375rem;
-    margin-top: 0.25rem;
-    padding: 0.45rem 0.5rem !important;
-    background-color: rgba(113, 63, 18, 0.25);
-  }
-
-  .table-cards-compact tbody td:not(:first-child):not(.table-cards-highlight) {
-    display: none;
-  }
-
-  .table-cards-compact-note {
-    display: block;
-  }
-
   .team-photo {
     width: 4.5rem;
     height: 4.5rem;
   }
 
-  .tech-core-features {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.35rem;
+  /* Silicon slide: chip image + stacked cards fit one fold */
+  .slide-silicon > div {
+    padding: 0.75rem;
   }
 
-  .tech-core-features .card-style {
-    margin-bottom: 0;
+  .slide-silicon img {
+    aspect-ratio: 5 / 2;
   }
 
-  .tech-core-features .mt-3.flex {
-    grid-column: 1 / -1;
-    margin-top: 0.35rem;
-    gap: 0.75rem;
+  .slide-silicon h2 {
+    font-size: 1.05rem;
+    line-height: 1.3;
   }
 
-  .bci-stack {
-    min-height: 0;
-    gap: 0.35rem;
+  .slide-silicon .chips-row p {
+    margin-top: 0.1rem;
   }
 
-  .bci-stack-adaptive {
-    padding: 0.45rem 0.5rem;
+  .slide-silicon .chips-row p:last-child {
+    font-size: 0.65rem;
+    line-height: 1.25;
   }
 
-  .bci-stack-or,
-  .bci-stack-alt {
-    display: none;
+  /* Team slide: founders as horizontal cards so founders + advisors + banner fit one fold */
+  .slide-team > div > .grid {
+    gap: 0.4rem;
   }
 
-  .bci-stack-adaptive__row {
-    gap: 0;
+  .slide-team .founder-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
   }
 
-  .bci-stack-nimbus {
+  .slide-team .founder-card .team-photo {
+    width: 3.25rem;
+    height: 3.25rem;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .slide-team .founder-info {
+    min-width: 0;
     flex: 1;
   }
 
-  .slide12-media-slot {
-    height: 9rem;
+  .slide-team .founder-info p {
+    margin-top: 0.1rem;
   }
 
-  .advisory-card-detail {
-    display: none;
+  .slide-team .founder-info > div {
+    justify-content: flex-start;
+    margin-top: 0.25rem;
   }
 
-  .mobile-accordion-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .mobile-accordion {
-    border-radius: 0.5rem;
-    padding: 0.55rem 0.65rem;
-  }
-
-  .mobile-accordion__summary {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem 0.5rem;
-    list-style: none;
-    cursor: pointer;
-    font-weight: 700;
-    color: #f8fafc;
-    font-size: 0.875rem;
-  }
-
-  .mobile-accordion__summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .mobile-accordion__summary::after {
-    content: "+";
-    margin-left: auto;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #facc15;
-    line-height: 1;
-  }
-
-  .mobile-accordion[open] .mobile-accordion__summary::after {
-    content: "−";
-  }
-
-  .mobile-accordion__badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 1.75rem;
-    padding: 0.1rem 0.35rem;
-    border-radius: 0.25rem;
-    background-color: #4b5563;
-    color: #fff;
-    font-size: 0.625rem;
-    font-weight: 800;
-    letter-spacing: 0.03em;
-  }
-
-  .mobile-accordion__badge--active {
-    background-color: #facc15;
-    color: #000;
-  }
-
-  .mobile-accordion__title {
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-
-  .mobile-accordion__meta {
+  .slide-team .merger-banner {
+    margin-top: 0.55rem;
+    padding: 0.4rem 0.5rem;
     font-size: 0.75rem;
-    font-weight: 700;
+    line-height: 1.25;
   }
 
-  .mobile-accordion__body {
-    margin-top: 0.5rem;
-    padding-top: 0.45rem;
-    border-top: 1px solid rgba(148, 163, 184, 0.25);
-  }
-
-  .mobile-accordion__body p {
-    margin: 0 0 0.45rem;
-    font-size: 0.75rem;
-    line-height: 1.4;
-    color: #cbd5e1;
-  }
-
-  .mobile-accordion__body p:last-child {
-    margin-bottom: 0;
-  }
-
-  .mobile-accordion__label {
-    display: block;
-    margin-bottom: 0.1rem;
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #64748b;
-  }
-
-  .mobile-accordion__highlight {
-    color: #fde047 !important;
-    font-weight: 600;
-  }
-
-  .benchmark-figure--latency {
-    display: none;
-  }
-
-  .benchmark-figure {
-    height: min(34vh, 17rem);
-  }
-
-  .benchmark-mobile-note {
-    display: block;
-  }
-}
-
-@media (min-width: 768px) {
-  .benchmark-mobile-note {
-    display: none;
-  }
-
-  .table-cards-compact-note {
-    display: none;
-  }
-}
-
-/* Scroll hint when slide content extends below the fold (mobile) */
-@media (max-width: 767px) {
   #slides-wrapper {
     scroll-behavior: smooth;
   }
@@ -678,11 +332,7 @@ body {
     height: 2.5rem;
     margin-top: -2.5rem;
     pointer-events: none;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.85) 100%
-    );
+    background: var(--scroll-fade);
   }
 }
 
@@ -693,132 +343,44 @@ body {
     height: min(96dvh, 56rem) !important;
     max-height: 98dvh !important;
   }
-
-  .table-cards tbody tr {
-    margin-bottom: 0.4rem;
-    padding: 0.35rem 0.5rem;
-  }
-
-  .table-cards-compact-note {
-    display: none;
-  }
-
-  .slide-competitive h2 {
-    font-size: 1.125rem;
-    margin-bottom: 0.35rem;
-  }
-
-  .slide-competitive .table-cards tbody tr {
-    margin-bottom: 0.3rem;
-    padding: 0.3rem 0.45rem;
-  }
-
-  .slide-competitive .table-cards tbody td:first-child {
-    font-size: 0.75rem;
-    margin-bottom: 0.15rem;
-    padding-bottom: 0.25rem !important;
-  }
-
-  .slide-competitive .table-cards tbody td.table-cards-highlight {
-    padding: 0.25rem 0.4rem !important;
-    margin-top: 0.1rem;
-    font-size: 0.75rem;
-  }
-
-  .slide-competitive
-    .table-cards-compact
-    tbody
-    td.table-cards-highlight
-    span.block {
-    display: none;
-  }
-
-  .benchmark-figure {
-    height: min(24vh, 10.5rem);
-  }
-
-  .bci-stack-layer__sub,
-  .bci-stack-io,
-  .bci-stack-nimbus__sub {
-    display: none;
-  }
-
-  .bci-stack-layer,
-  .bci-stack-nimbus {
-    padding: 0.4rem 0.5rem;
-  }
-
-  .bci-stack-adaptive {
-    padding: 0.35rem;
-  }
-
-  .mobile-accordion {
-    padding: 0.45rem 0.55rem;
-  }
-
-  .slide-solution-cards h4 {
-    font-size: 0.625rem;
-    line-height: 1.25;
-  }
 }
 
 /* ============================================
-   NAVIGATION BUTTONS
+   EEG SIGNATURE TRACE (title slide)
    ============================================ */
 
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.eeg-trace path {
+  fill: none;
+  stroke: var(--signal);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.eeg-trace .ch1 { opacity: 0.75; }
+.eeg-trace .ch2 { opacity: 0.45; }
+.eeg-trace .ch3 { opacity: 0.28; }
+.eeg-trace .pulse {
+  stroke: var(--signal-pulse);
+  stroke-width: 1.8;
+  stroke-dasharray: 90 510;
+  opacity: 0.9;
+}
+.eeg-trace .ch1-p { animation: eeg-drift 6s linear infinite; }
+.eeg-trace .ch2-p { animation: eeg-drift 9s linear infinite; }
+.eeg-trace .ch3-p { animation: eeg-drift 13s linear infinite; }
+.eeg-trace .eeg-label {
+  font-family: var(--font-body);
+  font-size: 8.5px;
+  letter-spacing: 0.02em;
+  fill: var(--muted);
+}
+@keyframes eeg-drift {
+  from { stroke-dashoffset: 600; }
+  to { stroke-dashoffset: 0; }
 }
 
-button:not(:disabled):hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-button:not(:disabled):active {
-  transform: translateY(0);
-}
-
-/* ============================================
-   ACCESSIBILITY ENHANCEMENTS
-   ============================================ */
-
-/* Focus indicators for keyboard navigation */
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid #fdb714;
-  outline-offset: 2px;
-}
-
-/* Skip to content link for screen readers */
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #fdb714;
-  color: #000;
-  padding: 8px;
-  text-decoration: none;
-  z-index: 100;
-}
-
-.skip-to-content:focus {
-  top: 0;
-}
-
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-
-/* Smooth transitions for interactive elements */
-.transition-smooth {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Text shadow for better readability on images */
-.text-shadow-strong {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+@media (prefers-reduced-motion: reduce) {
+  .eeg-trace .pulse { animation: none; opacity: 0; }
 }
 
 /* ============================================
@@ -826,7 +388,6 @@ a:focus-visible {
    A4 landscape (297mm × 210mm) — one slide per PDF page
    ============================================ */
 
-/* Match browser base (Tailwind default 16px) — 12px was shrinking the whole deck */
 html.pdf-export {
   font-size: 16px;
 }
@@ -837,8 +398,8 @@ html.pdf-export body {
   height: 210mm;
   margin: 0 !important;
   padding: 0 !important;
-  overflow: hidden !important;
-  background-color: #0a0a0f !important;
+  overflow: clip !important;
+  background-color: var(--paper) !important;
   min-height: 0 !important;
   max-height: none !important;
   display: block !important;
@@ -861,7 +422,7 @@ html.pdf-export #presentation-container {
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  overflow: hidden !important;
+  overflow: clip !important;
 }
 
 html.pdf-export #slides-wrapper {
@@ -869,7 +430,7 @@ html.pdf-export #slides-wrapper {
   width: 297mm !important;
   height: 210mm !important;
   flex: none !important;
-  overflow: hidden !important;
+  overflow: clip !important;
   padding: 0 !important;
 }
 
@@ -921,34 +482,7 @@ html.pdf-export-single[data-export-slide="10"]
   > .slide:nth-child(11),
 html.pdf-export-single[data-export-slide="11"]
   #slides-wrapper
-  > .slide:nth-child(12),
-html.pdf-export-single[data-export-slide="12"]
-  #slides-wrapper
-  > .slide:nth-child(13),
-html.pdf-export-single[data-export-slide="13"]
-  #slides-wrapper
-  > .slide:nth-child(14),
-html.pdf-export-single[data-export-slide="14"]
-  #slides-wrapper
-  > .slide:nth-child(15),
-html.pdf-export-single[data-export-slide="15"]
-  #slides-wrapper
-  > .slide:nth-child(16),
-html.pdf-export-single[data-export-slide="16"]
-  #slides-wrapper
-  > .slide:nth-child(17),
-html.pdf-export-single[data-export-slide="17"]
-  #slides-wrapper
-  > .slide:nth-child(18),
-html.pdf-export-single[data-export-slide="18"]
-  #slides-wrapper
-  > .slide:nth-child(19),
-html.pdf-export-single[data-export-slide="19"]
-  #slides-wrapper
-  > .slide:nth-child(20),
-html.pdf-export-single[data-export-slide="20"]
-  #slides-wrapper
-  > .slide:nth-child(21) {
+  > .slide:nth-child(12) {
   display: flex !important;
   flex-direction: column;
   align-items: center;
@@ -957,7 +491,7 @@ html.pdf-export-single[data-export-slide="20"]
   height: 210mm !important;
   min-height: 210mm !important;
   max-height: 210mm !important;
-  overflow: hidden !important;
+  overflow: clip !important;
   animation: none !important;
   opacity: 1 !important;
   transform: none !important;
@@ -972,11 +506,6 @@ html.pdf-export .team-photo {
   height: 7.5rem;
 }
 
-html.pdf-export .team-grid .team-photo {
-  width: 4.25rem;
-  height: 4.25rem;
-}
-
 html.pdf-export,
 html.pdf-export * {
   animation: none !important;
@@ -986,6 +515,11 @@ html.pdf-export * {
 html.pdf-export-single .slide.slide-image-full {
   align-items: stretch !important;
   justify-content: flex-start !important;
+}
+
+html.pdf-export .eeg-trace .pulse {
+  animation: none;
+  opacity: 0;
 }
 
 /* ============================================
@@ -999,7 +533,7 @@ html.pdf-export-single .slide.slide-image-full {
   }
 
   body {
-    background-color: #0a0a0f !important;
+    background-color: var(--paper) !important;
     padding: 0 !important;
     margin: 0 !important;
     min-height: auto !important;
@@ -1038,7 +572,7 @@ html.pdf-export-single .slide.slide-image-full {
     height: 210mm !important;
     min-height: 210mm !important;
     max-height: 210mm !important;
-    overflow: hidden !important;
+    overflow: clip !important;
     page-break-after: always;
     page-break-inside: avoid;
     break-after: page;

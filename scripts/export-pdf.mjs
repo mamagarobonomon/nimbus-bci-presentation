@@ -3,7 +3,7 @@
  * Export pitch deck to PDF (Playwright screenshot per slide → Pillow merge).
  * Usage: node scripts/export-pdf.mjs [baseUrl] [output.pdf]
  */
-import { mkdir, rm } from "node:fs/promises";
+import { mkdir, rm, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
@@ -19,7 +19,8 @@ const outputPath = resolve(
   root,
   process.argv[3] || "Nimbus-BCI-Venture-Deck.pdf",
 );
-const slideCount = Number(process.env.SLIDE_COUNT || "21");
+/** Slide count auto-detected from the deck unless SLIDE_COUNT is set. */
+let slideCount = Number(process.env.SLIDE_COUNT || "0");
 /** 2× retina capture by default; set PDF_SCALE=1 for a faster draft */
 const scale = Number(process.env.PDF_SCALE || "2");
 
@@ -83,9 +84,22 @@ const context = await browser.newContext({
 const page = await context.newPage();
 page.setDefaultTimeout(20_000);
 
+if (!Number.isFinite(slideCount) || slideCount <= 0) {
+  await page.goto(`${baseUrl}?export=pdf`, { waitUntil: "domcontentloaded" });
+  await page.waitForSelector("#slides-wrapper", { state: "visible" });
+  slideCount = await page.evaluate(
+    () => document.querySelectorAll("#slides-wrapper > .slide").length,
+  );
+  if (!slideCount) {
+    throw new Error(`No slides found at ${baseUrl}`);
+  }
+}
+
 console.log(
   `Exporting ${slideCount} slides (A4 landscape, ${scale}×) from ${baseUrl}`,
 );
+
+const allLinks = [];
 
 for (let i = 0; i < slideCount; i++) {
   const url = `${baseUrl}?export=pdf&slide=${i}`;
@@ -109,10 +123,34 @@ for (let i = 0; i < slideCount; i++) {
     animations: "disabled",
     timeout: 15_000,
   });
-  console.log("ok");
+
+  // Collect live link rects (fractions of the container box) so the Python
+  // merge step can stamp real clickable annotations onto the image PDF.
+  const slideLinks = await page.evaluate(() => {
+    const box = document
+      .querySelector("#presentation-container")
+      .getBoundingClientRect();
+    return [...document.querySelectorAll("#slides-wrapper a[href]")]
+      .map((a) => {
+        const r = a.getBoundingClientRect();
+        return {
+          href: a.href,
+          x: (r.left - box.left) / box.width,
+          y: (r.top - box.top) / box.height,
+          w: r.width / box.width,
+          h: r.height / box.height,
+        };
+      })
+      .filter((l) => l.w > 0 && l.h > 0);
+  });
+  allLinks.push(slideLinks);
+
+  console.log(`ok (${slideLinks.length} links)`);
 }
 
 await browser.close();
+
+await writeFile(resolve(tmpDir, "links.json"), JSON.stringify(allLinks));
 
 const merge = spawnSync(
   "python3",
@@ -128,9 +166,11 @@ const merge = spawnSync(
   ],
   {
     input: `
-import glob, sys
+import glob, json, sys
 from pathlib import Path
 from PIL import Image
+from pypdf import PdfReader, PdfWriter
+from pypdf.annotations import Link
 
 tmpdir, output, expected, pw, ph, inch_w, inch_h = sys.argv[1:8]
 expected, pw, ph = int(expected), int(pw), int(ph)
@@ -157,7 +197,28 @@ images[0].save(
     resolution=float(dpi),
     quality=95,
 )
-print(f"Wrote {output} ({len(images)} pages @ {dpi} DPI, {pw}x{ph}px)")
+
+# Stamp real clickable link annotations onto the image-based PDF.
+links = json.loads(Path(tmpdir, "links.json").read_text())
+writer = PdfWriter()
+writer.append(PdfReader(output))
+pad = 1.5  # pt, slightly larger hit area
+total = 0
+for pno, page_links in enumerate(links):
+    page = writer.pages[pno]
+    W = float(page.mediabox.width)
+    H = float(page.mediabox.height)
+    for l in page_links:
+        x1, x2 = l["x"] * W, (l["x"] + l["w"]) * W
+        y2, y1 = H - l["y"] * H, H - (l["y"] + l["h"]) * H
+        writer.add_annotation(
+            page_number=pno,
+            annotation=Link(rect=(x1 - pad, y1 - pad, x2 + pad, y2 + pad), url=l["href"]),
+        )
+        total += 1
+with open(output, "wb") as f:
+    writer.write(f)
+print(f"Wrote {output} ({len(images)} pages @ {dpi} DPI, {pw}x{ph}px, {total} links)")
 `,
     encoding: "utf-8",
     cwd: root,

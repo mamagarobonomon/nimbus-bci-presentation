@@ -25,3 +25,9 @@ Thumbs.db
 # Optional local caches (if tooling adds them later)
 .cache/
 .export-tmp/
+
+# Local tool artifacts
+.v2c/
+.video_agent/
+deck-b-extract/
+out/
